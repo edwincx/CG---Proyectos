@@ -12,63 +12,279 @@
 	#define min( a, b ) ( ((a) < (b)) ? (a) : (b) )
 #endif
 
-struct linea {
+struct line {
       int x0;
       int x1;
       int y0;
       int y1;
 };
-struct linea listaLinea [n];
+struct line line_list [n];
 
-int resolucion;
-int cant_lineas;
-int cant_ciclos;
 
-struct datos {
-      int resolucion;
-      int NumLineas;
-      int ciclos;
+struct data {
+      int resolution;
+      int lines;
+      int cicles;
 };
-struct datos pantalla;
+struct data screen;
 
-void plot();
+
 void plotV();
 void init();
+
 int generarNumRandom();
 void generarLineas();
 void MostrarTabla();
 void fuerzaBruta();
 void incremental();
 void dobleIncremental();
-void bresenham();
 void fuerzaBrutaP();
 void incrementalP();
 void dobleIncrementalP();
-void bresenhamP();
-void bresenham2P();
-void bresenham2();
+
+
+
+void init_nuevo();
+void plot();
+void bresenham();
+void prueba();
+float random_color();
+void createRandomLines(int lines,int resolution);
 
 int main(int argc, char** argv)
 {
-  resolucion = atoi(argv[1]);
-  cant_lineas = atoi(argv[2]);
-  cant_ciclos = atoi(argv[3]);
+	screen.resolution = atoi(argv[1]);
+  	screen.lines = atoi(argv[2]);
+   	screen.cicles = atoi(argv[3]);
 
-  glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-  glutInitWindowSize(resolucion,resolucion);
-  glutCreateWindow("Programa 0");
-  glClear(GL_COLOR_BUFFER_BIT);
-  gluOrtho2D(-0.5, resolucion +0.5, -0.5, resolucion + 0.5);
+  	createRandomLines(screen.lines,screen.resolution);
+	
+	srand(time(NULL));
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutInitWindowSize(screen.resolution,screen.resolution);
+	glutCreateWindow("Programa 0");
+	glClear(GL_COLOR_BUFFER_BIT);
+	gluOrtho2D(-0.5, screen.resolution +0.5, -0.5, screen.resolution + 0.5);
 	glColor3f (1.0f, 1.0f, 1.0f);
-  //glutDisplayFunc(init);
-  glutMainLoop();
+	glutDisplayFunc(init_nuevo);
+	glutMainLoop();
 
 }
 
-void generarLineas (int NumLineas, int resolucion) {
+void init_nuevo(){
+	
+	int amount_cicles;
+	int amount_lines;
+
+	clock_t start = clock();
+	for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
+		for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
+			bresenham(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
+			//printf("(x0: %d,y0: %d )   (x1 = %d,y1 =%d)\n",line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
+		}
+	}
+
+	printf("Bresenham: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
+	
+	printf("FIN------------------------\n\n");
+
+}
+
+void createRandomLines(int lines,int resolution){
+	for (int i = 0; i < lines; i++) {
+		line_list[i].x0 = rand() % resolution;
+    	line_list[i].x1 = rand() % resolution;
+    	line_list[i].y0 = rand() % resolution;
+    	line_list[i].y1 = rand() % resolution;
+    }
+}
+
+void bresenham(int x0, int y0,int x1, int y1) {
+    int d, xp, yp;
+    int Delta_1,Delta_2;
+    int distanceX = fabs((x0 - x1));
+    int distanceY = fabs((y0 - y1));
+    xp = x0; 
+    yp = y0;
+    plot(xp, yp);
+
+    //Cuadrantes 1 y 2
+    if (x0 < x1 && y0 <= y1) {
+    	
+    	if (distanceX > distanceY) {
+    		//Cuadrante 1
+    		Delta_1 = 2*(y1-y0) - 2*(x1-x0);
+    		Delta_2 = 2*(y1-y0);
+    		d = 2*(y1-y0) - (x1-x0);
+
+    		while (xp <= x1) {
+	            if (d > 0) {
+	            	xp++; yp++;
+	             	d += Delta_1;
+	            } else {
+	             	xp++;
+	             	d+= Delta_2;
+	            }
+	            plot(xp, yp);
+	        }
+
+    	}else{
+    		//Cuadrante 2
+    		
+    		Delta_1 = 2*(y1-y0) - 2*(x1-x0);
+			Delta_2 = -2*(x1-x0);
+        	d = (y1-y0) - 2*(x1-x0);
+        	while (yp <= y1) {
+
+	            if (d > 0) {
+	            	yp++;
+	            	d+= Delta_2;
+	            } else {
+	            	xp++; yp++;
+	            	d += Delta_1;
+	            }
+	            plot(xp, yp);
+          }
+    	}
+    }
+    //Cuadrante 3 y 4
+    else if(x1 < x0 && y0 <= y1){
+
+    	
+    	if (distanceX < distanceY) {
+    		//Cuadrante 3
+    		
+    		Delta_1 = -2*(y1-y0) - 2*(x1-x0);
+			Delta_2 = -2*(x1-x0);
+        	d = - (y1-y0) - 2*(x1-x0);
+
+        	while (yp <= y1) {
+	            if (d >= 0) {
+	            	xp--; yp++;
+	            	d += Delta_1;
+	            } else {
+	            	yp++;
+	            	d+= Delta_2;
+	            }
+	        	plot(xp, yp);
+	        }
+    	}else{
+    		//Cuadrante 4
+    		
+    		Delta_1 = -2*(y1-y0) - 2*(x1-x0);
+			Delta_2 = -2*(y1-y0);
+        	d = -2*(y1-y0)-(x1-x0);
+       		while (xp >= x1) {
+        		if (d >= 0) {
+	        		xp--;
+	        		d+= Delta_2;
+	            } else {
+	        		xp--; yp++;
+	        		d += Delta_1;
+	            }
+            	plot(xp, yp);
+          	}
+    	}
+		
+
+    }
+
+    //Cuadrante 5 y 6
+    else if(x1 < x0 && y0 > y1){
+    	if (distanceX > distanceY) {
+    		//Cuadrante 5
+    		
+    		Delta_1 = -2*(y1-y0) + 2*(x1-x0);
+			Delta_2 = -2*(y1-y0);
+        	d = -2*(y1-y0)+(x1-x0);
+        	while (xp >= x1) {
+	        	if (d <= 0) {
+            		xp--;
+            		d+= Delta_2;
+            	}else {
+            		xp--; yp--;
+            		d += Delta_1;
+            	}
+            	plot(xp, yp);
+          	}
+    	}else{
+    		//Cuadrante 6
+    		
+    		Delta_1 = -2*(y1-y0) + 2*(x1-x0);
+			Delta_2 = 2*(x1-x0);
+        	d = -(y1-y0)+2*(x1-x0);
+        	while (yp >= y1) {
+        		if (d >= 0) {
+	            	yp--;
+	            	d+= Delta_2;
+	            } else {
+	            	xp--; yp--;
+	            	d += Delta_1;
+            	}
+            	plot(xp, yp);
+          	}
+    	}
+    }
+
+    //Cuadrante 7 y 8
+
+    else if(x1 > x0 && y0 > y1){
+    	if (distanceX < distanceY) {
+    		//Cuadrante 7
+    		
+    		Delta_1 = 2*(y1-y0) + 2*(x1-x0);
+			Delta_2 = 2*(x1-x0);
+        	d = (y1-y0)+2*(x1-x0);
+        	while (yp >= y1) {
+            	if (d <= 0) {
+	            	yp--;
+	            	d+= Delta_2;
+	            } else {
+	             	xp++; yp--;
+	              	d += Delta_1;
+	            }
+            	plot(xp, yp);
+          	}
+		}else{
+    		//Cuadrante 8
+          	
+			Delta_2 = 2*(y1-y0) + 2*(x1-x0);
+			Delta_1 = 2*(y1-y0);
+          	d = 2*(y1-y0)+(x1-x0);
+          	while (xp <= x1) {
+            	if (d >= 0) {
+	              	xp++;
+	              	d+= Delta_1;
+            	} else {
+              		xp++; yp--;
+            		  d += Delta_2;
+            	}
+            	plot(xp, yp);
+          	}
+
+    	}
+    }
+
+}
+
+/*
+
+float random_color(){
+	int num;
+	num = rand() % 255;
+	return num;
+}
+
+void prueba(){
+	for(int i = 0;i<resolucion;i++){
+		plot(i,resolucion-10);
+	}
+}
+
+void generarLineas (int lineas, int resolucion) {
   int i;
-     for (i = 0; i < NumLineas; i++) {
+     for (i = 0; i < lineas; i++) {
        listaLinea[i].x0 = generarNumRandom(resolucion);
        listaLinea[i].x1 = generarNumRandom(resolucion);
        listaLinea[i].y0 = generarNumRandom(resolucion);
@@ -88,9 +304,9 @@ int generarNumRandom (int resolucion) {
   return num;
 }
 
-void MostrarTabla( int NumLineas) {
+void MostrarTabla( int lineas) {
   int i;
-  for (i = 0; i < NumLineas; i++) {
+  for (i = 0; i < lineas; i++) {
       printf("(x0 = %d, y0 = %d),(x1 = %d, y1 = %d),\n", listaLinea[i].x0, listaLinea[i].y0,listaLinea[i].x1,listaLinea[i].y1);
   }
 }
@@ -134,13 +350,13 @@ void test(){
 }
 void init(){
   int i, k;
-  generarLineas(pantalla.NumLineas,resolucion);
-  //MostrarTabla(NumLineas);
+  generarLineas(pantalla.lineas,screen.resolution);
+  //MostrarTabla(lineas);
   //test();
 
   clock_t start = clock();
   for(k = 0; k < pantalla.ciclos; k++){
-    for (i = 0; i < pantalla.NumLineas; i++)
+    for (i = 0; i < pantalla.lineas; i++)
     {
       fuerzaBruta(listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
       //printf("fuerzaBruta(%d, %d, %d, %d); \n", listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
@@ -150,7 +366,7 @@ void init(){
 
   start = clock();
   for(k = 0; k < pantalla.ciclos; k++){
-    for (i = 0; i < pantalla.NumLineas; i++)
+    for (i = 0; i < pantalla.lineas; i++)
     {
       fuerzaBrutaP(listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
       //printf("fuerzaBruta(%d, %d, %d, %d); \n", listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
@@ -160,7 +376,7 @@ void init(){
 
   start = clock();
   for(k = 0; k < pantalla.ciclos; k++){
-    for (i = 0; i < pantalla.NumLineas; i++)
+    for (i = 0; i < pantalla.lineas; i++)
     {
 
       incremental(listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
@@ -173,7 +389,7 @@ void init(){
 
   start = clock();
   for(k = 0; k < pantalla.ciclos; k++){
-    for (i = 0; i < pantalla.NumLineas; i++)
+    for (i = 0; i < pantalla.lineas; i++)
     {
 
       incrementalP(listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
@@ -185,7 +401,7 @@ void init(){
 
   start = clock();
   for(k = 0; k < pantalla.ciclos; k++){
-    for (i = 0; i < pantalla.NumLineas; i++)
+    for (i = 0; i < pantalla.lineas; i++)
     {
 
       dobleIncremental(listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
@@ -197,7 +413,7 @@ void init(){
 
   start = clock();
   for(k = 0; k < pantalla.ciclos; k++){
-    for (i = 0; i < pantalla.NumLineas; i++)
+    for (i = 0; i < pantalla.lineas; i++)
     {
 
       dobleIncrementalP(listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
@@ -209,7 +425,7 @@ void init(){
 
   start = clock();
   for(k = 0; k < pantalla.ciclos; k++){
-    for (i = 0; i < pantalla.NumLineas; i++)
+    for (i = 0; i < pantalla.lineas; i++)
     {
       //printf("bresenham(%d, %d, %d, %d); \n", listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
       bresenham2(listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
@@ -217,16 +433,7 @@ void init(){
   }
   printf("Bresenham: %f \n", ((double)clock() - start) / CLOCKS_PER_SEC);
 
-  start = clock();
-  for(k = 0; k < pantalla.ciclos; k++){
-    for (i = 0; i < pantalla.NumLineas; i++)
-    {
-      //printf("bresenham(%d, %d, %d, %d); \n", listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
-      bresenham2P(listaLinea[i].x0, listaLinea[i].y0, listaLinea[i].x1, listaLinea[i].y1);
-    }
-  }
-  printf("Bresenham Puro: %f \n", ((double)clock() - start) / CLOCKS_PER_SEC);
-	//MostrarTabla(pantalla.NumLineas);
+  
 }
 
 void fuerzaBruta(int x0, int y0, int x1, int y1){
@@ -607,16 +814,17 @@ void bresenham2(int x0, int y0,int x1, int y1) {
         }
 			}
 }
-
+*/
 
 
 void plot(int x, int y) {
-
-	//glColor3f (1.0f, 1.0f, 1.0f);
+	
+	//glColor3f (float(random_color()), float(random_color()), float(random_color()));
+	//glColor3i (random_color(), random_color(), random_color());
 	glBegin(GL_POINTS);
 	glVertex2i(x,y);
 	glEnd();
-	 glFlush();
+	glFlush();
 }
 
 void plotV(int x, int y) {
