@@ -207,216 +207,159 @@ void createRandomLines(int lines,int resolution){
 
 
 void fuerzaBruta(int x0, int y0, int x1, int y1){
-  long double m, b, y;
-  int i, tempx, tempy, Ymayor, Ymenor;
-  //printf("x0 = %d, y0 = %d, x1 = %d, y1 = %d \n", x0, y0, x1, y1);
+    long double m, b, y;
+    int i, tempx, tempy, Ymayor, Ymenor;
 
+    if((x0 > x1)){tempx = x0; tempy = y0; x0 = x1; y0 = y1; x1 = tempx; y1 = tempy;}
 
-  if((x0 > x1)){
-    tempx = x0;
-    tempy = y0;
-    x0 = x1;
-    y0 = y1;
-    x1 = tempx;
-    y1 = tempy;
-  }
-
-  if(abs(y1-y0) >= abs(x1-x0)){
-    //printf("en el if\n");
-    m = (float)(x1 - x0) / (float)(y1 - y0);
-    b = x0 - m*y0;
-    //printf("m = %Lf, b = %Lf \n", m, b);
-    if(y0 > y1){
-      Ymayor = y0;
-      Ymenor = y1;
-    }else{
-      Ymayor = y1;
-      Ymenor = y0;
+    if(abs(y1-y0) < abs(x1-x0)){
+        m = (float)(y1 - y0) / (float)(x1 - x0);
+        b = y0 - m*x0; 
+        for (i = x0; i <= x1; i++){
+            y = m*i + b;
+            plot(i, (int)y);
+        }
     }
-    for (i = Ymenor; i <= Ymayor; i++)
-    {
-      y = m*i + b;
-      plot((int)y, i);
+    else{  
+        m = (float)(x1 - x0) / (float)(y1 - y0);
+        b = x0 - m*y0;
+    
+        if(y0 > y1){
+            Ymayor = y0;
+            Ymenor = y1;
+        }else{
+            Ymayor = y1;
+            Ymenor = y0;
+        }
+        for (i = Ymenor; i <= Ymayor; i++){
+            y = m*i + b;
+            plot((int)y, i);
+        }
     }
-  }
-  else{
-    //printf("en el else\n");
-    m = (float)(y1 - y0) / (float)(x1 - x0);
-    b = y0 - m*x0;
-    //printf("m = %Lf, b = %Lf \n", m, b);
-    for (i = x0; i <= x1; i++)
-    {
-      y = m*i + b;
-      plot(i, (int)y);
-    }
-  }
 
 }
 
 void fuerzaBruta_sinPlot(int x0, int y0, int x1, int y1){
-  long double m, b, y;
-  int i, tempx, tempy, Ymayor, Ymenor;
-  //printf("x0 = %d, y0 = %d, x1 = %d, y1 = %d \n", x0, y0, x1, y1);
+    long double m, b, y;
+    int i, tempx, tempy, Ymayor, Ymenor;
 
-  
-  if((x0 > x1)){
-    tempx = x0;
-    tempy = y0;
-    x0 = x1;
-    y0 = y1;
-    x1 = tempx;
-    y1 = tempy;
-  }
+    if((x0 > x1)){tempx = x0; tempy = y0; x0 = x1; y0 = y1; x1 = tempx; y1 = tempy;}
 
-  if(abs(y1-y0) >= abs(x1-x0)){
-    //printf("en el if\n");
-    m = (float)(x1 - x0) / (float)(y1 - y0);
-    b = x0 - m*y0;
-    //printf("m = %Lf, b = %Lf \n", m, b);
-    if(y0 > y1){
-      Ymayor = y0;
-      Ymenor = y1;
-    }else{
-      Ymayor = y1;
-      Ymenor = y0;
+    if(abs(y1-y0) >= abs(x1-x0)){
+    
+        m = (float)(x1 - x0) / (float)(y1 - y0);
+        b = x0 - m*y0;
+    
+        if(y0 > y1){
+            Ymayor = y0;
+            Ymenor = y1;
+        }else{
+            Ymayor = y1;
+            Ymenor = y0;
+        }
+        for (i = Ymenor; i <= Ymayor; i++){
+            y = m*i + b;
+        }
     }
-    for (i = Ymenor; i <= Ymayor; i++)
-    {
-      y = m*i + b;
+    else{  
+        m = (float)(y1 - y0) / (float)(x1 - x0);
+        b = y0 - m*x0; 
+        for (i = x0; i <= x1; i++){
+            y = m*i + b;
+        }
     }
-  }
-  else{
-    //printf("en el else\n");
-    m = (float)(y1 - y0) / (float)(x1 - x0);
-    b = y0 - m*x0;
-    //printf("m = %Lf, b = %Lf \n", m, b);
-    for (i = x0; i <= x1; i++)
-    {
-      y = m*i + b;
-    }
-  }
-
 }
 
 void incremental(int x0, int y0, int x1, int y1){
     long double m, b, y;
-  int i, tempx, tempy, Ymayor, Ymenor;;
+    int i, tempx, tempy, Ymayor, Ymenor;;
 
-  if((x0 > x1)){
-    tempx = x0;
-    tempy = y0;
-    x0 = x1;
-    y0 = y1;
-    x1 = tempx;
-    y1 = tempy;
-  }
+    if((x0 > x1)){tempx = x0;tempy = y0;x0 = x1;y0 = y1;x1 = tempx;y1 = tempy;}
 
-  if(abs(y1-y0) >= abs(x1-x0)){
-    m = (float)(x1 - x0) / (float)(y1 - y0);
-
-      if(y0 > y1){
-      y = x1;
-      Ymayor = y0;
-      Ymenor = y1;
+    if(abs(y1-y0) < abs(x1-x0)){
+        m = (float)(y1 - y0) / (float)(x1 - x0);
+        y = y0;
+        for (i = x0; i <= x1; i++){
+            plot(i, (int)y);
+            y += m;
+        }
     }else{
-      y = x0;
-      Ymayor = y1;
-      Ymenor = y0;
+        m = (float)(x1 - x0) / (float)(y1 - y0);
+        if(y0 > y1){
+            y = x1;
+            Ymayor = y0;
+            Ymenor = y1;
+        }else{
+            y = x0;
+            Ymayor = y1;
+            Ymenor = y0;
+        }
+        for (i = Ymenor; i <= Ymayor; i++){
+            plot((int)y, i);
+            y += m;
+        }
     }
-      for (i = Ymenor; i <= Ymayor; i++)
-      {
-      
-      plot((int)y, i);
-        y += m;
-      }
-  }else{
-    m = (float)(y1 - y0) / (float)(x1 - x0);
-      y = y0;
-      for (i = x0; i <= x1; i++)
-      {
-      int yy = (int)(y < 0 ? (y - 0.5) : (y + 0.5));
-      plot(i, (int)y);
-        y += m;
-      }
-  }
 }
 
 void incremental_sinPlot(int x0, int y0, int x1, int y1){
     long double m, b, y;
-  int i, tempx, tempy, Ymayor, Ymenor;;
+    int i, tempx, tempy, Ymayor, Ymenor;;
 
-  if((x0 > x1)){
-    tempx = x0;
-    tempy = y0;
-    x0 = x1;
-    y0 = y1;
-    x1 = tempx;
-    y1 = tempy;
-  }
+    if((x0 > x1)){tempx = x0;tempy = y0;x0 = x1;y0 = y1;x1 = tempx;y1 = tempy;}
 
-  if(abs(y1-y0) >= abs(x1-x0)){
-    m = (float)(x1 - x0) / (float)(y1 - y0);
-
-      if(y0 > y1){
-      y = x1;
-      Ymayor = y0;
-      Ymenor = y1;
+    if(abs(y1-y0) < abs(x1-x0)){
+        m = (float)(y1 - y0) / (float)(x1 - x0);
+        y = y0;
+        for (i = x0; i <= x1; i++){
+            y += m;
+        }
     }else{
-      y = x0;
-      Ymayor = y1;
-      Ymenor = y0;
+        m = (float)(x1 - x0) / (float)(y1 - y0);
+        if(y0 > y1){
+            y = x1;
+            Ymayor = y0;
+            Ymenor = y1;
+        }else{
+            y = x0;
+            Ymayor = y1;
+            Ymenor = y0;
+        }
+        for (i = Ymenor; i <= Ymayor; i++){
+            y += m;
+        }
     }
-      for (i = Ymenor; i <= Ymayor; i++)
-      {
-        y += m;
-      }
-  }else{
-    m = (float)(y1 - y0) / (float)(x1 - x0);
-      y = y0;
-      for (i = x0; i <= x1; i++)
-      {
-      int yy = (int)(y < 0 ? (y - 0.5) : (y + 0.5));
-        y += m;
-      }
-  }
 }
 
 
 void incremental2 (int x0, int y0, int x1, int y1 ){
- float x, y, paso_x, paso_y;
- int i, ancho;
+    float x, y, move_x, move_y;
+    int i, width_temp;
 
- ancho = max(abs(x1-x0), abs(y1-y0));
- //printf("%d\n", ancho);
- paso_x = (float)(x1 - x0)/ancho;
- paso_y = (float)(y1 - y0)/ancho ;
- x = (float)x0; y = (float)y0;
-  for(i = 0 ; i <= ancho ; i++){
-      //printf("%i\n", i);
-      int XX = (int)(x < 0 ? (x - 0.5) : (x + 0.5));
-      int YY = (int)(y < 0 ? (y - 0.5) : (y + 0.5));
-       plot (XX,YY);
-       x += paso_x;
-       y += paso_y;
-  }
+    width_temp = max(abs(x1-x0), abs(y1-y0));
+ 
+    move_x = (float)(x1 - x0)/width_temp;
+    move_y = (float)(y1 - y0)/width_temp ;
+    x = (float)x0; y = (float)y0;
+    for(i = 0 ; i <= width_temp ; i++){
+        plot ((int)x,(int)y);
+        x += move_x;
+        y += move_y;
+    }
 }
 
 void incremental2_sinPlot (int x0, int y0, int x1, int y1 ){
- float x, y, paso_x, paso_y;
- int i, ancho;
+    float x, y, move_x, move_y;
+    int i, width_temp;
 
- ancho = max(abs(x1-x0), abs(y1-y0));
- //printf("%d\n", ancho);
- paso_x = (float)(x1 - x0)/ancho;
- paso_y = (float)(y1 - y0)/ancho ;
- x = (float)x0; y = (float)y0;
-  for(i = 0 ; i <= ancho ; i++){
-      //printf("%i\n", i);
-      int XX = (int)(x < 0 ? (x - 0.5) : (x + 0.5));
-      int YY = (int)(y < 0 ? (y - 0.5) : (y + 0.5));
-       x += paso_x;
-       y += paso_y;
-  }
+    width_temp = max(abs(x1-x0), abs(y1-y0));
+ 
+    move_x = (float)(x1 - x0)/width_temp;
+    move_y = (float)(y1 - y0)/width_temp ;
+    x = (float)x0; y = (float)y0;
+    for(i = 0 ; i <= width_temp ; i++){
+        x += move_x;
+        y += move_y;
+    }
 }
 
 void bresenham(int x0, int y0,int x1, int y1) {
@@ -750,8 +693,6 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
 
 void plot(int x, int y) {
 	
-	//glColor3f (float(random_color()), float(random_color()), float(random_color()));
-	//glColor3i (random_color(), random_color(), random_color());
 	glBegin(GL_POINTS);
 	glVertex2i(x,y);
 	glEnd();
