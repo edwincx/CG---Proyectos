@@ -1,0 +1,14 @@
+Descartar cambios: git reset --hard
+
+Ver estado: git status
+
+Agregar cambios: git add .
+
+Crear rama: git checkout -b "nombre rama"
+
+Cambiar de rama: git checkout "nombre rama"
+
+Hacer merge con su rama: 
+git checkout master
+git pull
+git merge "nombre rama"
