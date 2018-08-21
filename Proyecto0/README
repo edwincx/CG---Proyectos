@@ -1,18 +1,18 @@
+---------------------------------------------------------------------------------
 Instituto Tecnológico de Costa Rica
 Gráficos por Computadora
+
 Proyecto #0 - Lineas Rectas
 Estudiantes:
 Melissa Molina Corrales
 Edwin Cen Xu
-
-Este es un programa para dibujar lineas "rectas" aleatoriamente, n cantidad de veces. Se utilizan 4 algoritmos diferentes
-los cuales son:
-Fuerza Bruta
-Incremental
-Incremental versión 2
-Bresenham
-
-Se miden los tiempos de cada algoritmo para dibujar las lineas y los algoritmos puros (sin dibujar nada)
+----------------------------------------------------------------------------------
+Este es un programa para dibujar lineas rectas aleatoriamente, n cantidad de veces. 
+Se utilizan 4 algoritmos diferentes los cuales son:
+1-Fuerza Bruta
+2-Incremental
+3-Incremental versión 2
+4-Bresenham
 
 Pasos para correr el programa:
 
@@ -20,15 +20,25 @@ Pasos para correr el programa:
 sudo apt-get install gcc
 
 2. Se debe instalar la librería de glut. Si no lo tiene deberá instalarlo con el siguiente comando
-sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
+sudo apt-get install freeglut3 freeglut3-dev
 
-3. 
+3. En la carpeta del proyecto ya habrá un ejecutable llamado "main" y un makefile.
 
-una vez con el ejecutable se debe digitar
-./<nombre del ejecutable> <resolución> <número de lineas> <n veces>
+4. En caso de realizar algún cambio solo se debe ejecutar el makefile con el comando "make" para guardar los cambios y crear de nuevo el ejecutable.
 
-donde: 
-<resolución> es el tamaño de la pantalla donde se deplegarán las lineas
+5. Para ejecutar el programa se debe poner:
+./<nombre del ejecutable> <resolución> <número de lineas> <n veces><modo 0 o 1>
+
+<resolución> es el tamaño de la pantalla donde se deplegarán las lineas, esta debe ser mayor o igual a 200
 <número de lineas> es la cantidad de lineas que cada algoritmo dibujará
 <n veces> es la cantidad de veces que los algoritmos dibujarán las lineas
+<modo 0 o 1>:
+-El modo 0 es para ver en la pantalla todas las líneas dibujadas juntas.
+-El modo 1 es para ver en la pantallas las líneas dibujadas separadas.
 
+------------------------------------------------------------------------------------------------
+El programa mostrará mensajes en caso de haber ingresado de forma incorrecta los datos:
+1. La resolución tiene que ser mayor o igual a 200
+2. La cantidad de líneas tiene que ser entre 1 y 10000.
+3. Tiene que poner al menos un cíclo o veces.
+------------------------------------------------------------------------------------------------
