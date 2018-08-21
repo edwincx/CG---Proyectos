@@ -365,7 +365,7 @@ void bresenham(int x0, int y0,int x1, int y1) {
     plot(xp, yp);
 
     //Cuadrantes 1 y 2
-    if (x0 < x1 && y0 <= y1) {
+    if (x0 <= x1 && y0 <= y1) {
     	
     	if (distanceX > distanceY) {
     		//Cuadrante 1
@@ -404,7 +404,7 @@ void bresenham(int x0, int y0,int x1, int y1) {
     	}
     }
     //Cuadrante 3 y 4
-    else if(x1 < x0 && y0 <= y1){
+    else if(x1 <= x0 && y0 <= y1){
 
     	
     	if (distanceX < distanceY) {
@@ -446,7 +446,7 @@ void bresenham(int x0, int y0,int x1, int y1) {
     }
 
     //Cuadrante 5 y 6
-    else if(x1 < x0 && y0 > y1){
+    else if(x1 <= x0 && y0 >= y1){
     	if (distanceX > distanceY) {
     		//Cuadrante 5
     		
@@ -484,7 +484,7 @@ void bresenham(int x0, int y0,int x1, int y1) {
 
     //Cuadrante 7 y 8
 
-    else if(x1 > x0 && y0 > y1){
+    else if(x1 >= x0 && y0 >= y1){
     	if (distanceX < distanceY) {
     		//Cuadrante 7
     		
