@@ -24,6 +24,7 @@ struct line {
 
 struct line line_list [50000];
 struct data screen;
+int modo = 0;
 
 void init();
 void plot();
@@ -39,9 +40,28 @@ void createRandomLines(int lines,int resolution);
 
 int main(int argc, char** argv)
 {
-	screen.resolution = atoi(argv[1]);
-  	screen.lines = atoi(argv[2]);
-   	screen.cicles = atoi(argv[3]);
+    if(argv[1]==NULL||argv[2]==NULL||argv[3]==NULL||argv[4]==NULL){
+        printf("El formato tiene que ser ./main \"cantidad de líneas\" \"cantidad de cíclos\" \"modo(0 ó 1)\"\n");
+        exit(0);    
+    }
+    screen.resolution = atoi(argv[1]);
+    screen.lines = atoi(argv[2]);
+    screen.cicles = atoi(argv[3]);
+    modo = atoi(argv[4]);
+    if(screen.resolution < 200){
+        printf("La resolución tiene que ser mayor que 200.\n");
+        exit(0);    
+    }
+    if(screen.lines < 1){
+        printf("Tiene que poner al menos una línea.\n");
+        exit(0);    
+    }
+    if(screen.cicles < 1){
+        printf("Tiene que poner al menos un cíclo.\n");
+        exit(0);    
+    }
+    srand(time(NULL));
+    createRandomLines(screen.lines,screen.resolution);
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
@@ -54,14 +74,26 @@ int main(int argc, char** argv)
     glutMainLoop();
 }
 
+void move(){
+    int i = 0;
+    int l = 10;
+    while(i < screen.lines){
+        line_list[i].x0 += l;
+        line_list[i].x1 += l;
+        line_list[i].y0 += l;
+        line_list[i].y1 += l;
+        i++;
+    }
+}
+
 void init(){
-    
-    srand(time(NULL));
-    createRandomLines(screen.lines,screen.resolution);
 
     int amount_cicles;
     int amount_lines;
 	
+    printf("FuerzaBruta - Amarillo\nBresenham - Verde\nIncremental - Rojo\nIncremental2 - Morado\n\n");
+
+    if(modo==1){move();}
     glColor3f (1.0f, 1.0f, 0.0f);
     clock_t start_all = clock();
     clock_t start = clock();
@@ -73,18 +105,18 @@ void init(){
     }
     printf("FuerzaBruta: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
 
-
+    if(modo==1){move();}
     glColor3f (0.0f, 1.0f, 0.0f);
     start = clock();
     for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
         for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
             bresenham(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
-            //printf("(x0: %d,y0: %d )   (x1 = %d,y1 =%d)\n",line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
+            
         }
     }
     printf("Bresenham: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
 
-
+    if(modo==1){move();}
     glColor3f (1.0f, 0.0f, 0.0f);
     start = clock();
     for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
@@ -95,7 +127,7 @@ void init(){
     }
     printf("Incremental: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
 
-
+    if(modo==1){move();}
     glColor3f (1.0f, 0.1f, 1.0f);
     start = clock();
     for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
