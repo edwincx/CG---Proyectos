@@ -41,7 +41,7 @@ void createRandomLines(int lines,int resolution);
 int main(int argc, char** argv)
 {
     if(argv[1]==NULL||argv[2]==NULL||argv[3]==NULL||argv[4]==NULL){
-        printf("El formato tiene que ser ./main \"cantidad de líneas\" \"cantidad de cíclos\" \"modo(0 ó 1)\"\n");
+        printf("El formato tiene que ser ./main \"Resolución\" \"Cantidad de líneas\" \"Cantidad de cíclos\" \"Modo(0 ó 1)\"\n");
         exit(0);    
     }
     screen.resolution = atoi(argv[1]);
@@ -49,11 +49,11 @@ int main(int argc, char** argv)
     screen.cicles = atoi(argv[3]);
     modo = atoi(argv[4]);
     if(screen.resolution < 200){
-        printf("La resolución tiene que ser mayor que 200.\n");
+        printf("La resolución tiene que ser mayor o igual a 200.\n");
         exit(0);    
     }
     if(screen.lines < 1 ||screen.lines > 10000){
-        printf("LA cantidad de líneas tiene que ser entre 1 y 10000.\n");
+        printf("La cantidad de líneas tiene que ser entre 1 y 10000.\n");
         exit(0);    
     }
     if(screen.cicles < 1){
@@ -67,7 +67,7 @@ int main(int argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(screen.resolution,screen.resolution);
-	glutCreateWindow("Programa 0");
+	glutCreateWindow("Proyecto 0: Lineas Rectas");
 	glClear(GL_COLOR_BUFFER_BIT);
 	gluOrtho2D(-0.5, screen.resolution +0.5, -0.5, screen.resolution + 0.5);
     glColor3f (1.0f, 1.0f, 1.0f);
@@ -191,7 +191,8 @@ void init(){
 }
 
 void createRandomLines(int lines,int resolution){
-    for (int i = 0; i < lines; i++) {
+	int i;
+    for (i = 0; i < lines; i++) {
         line_list[i].x0 = rand() % resolution;
         line_list[i].x1 = rand() % resolution;
         line_list[i].y0 = rand() % resolution;

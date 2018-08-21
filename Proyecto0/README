@@ -1,0 +1,34 @@
+Instituto Tecnológico de Costa Rica
+Gráficos por Computadora
+Proyecto #0 - Lineas Rectas
+Estudiantes:
+Melissa Molina Corrales
+Edwin Cen Xu
+
+Este es un programa para dibujar lineas "rectas" aleatoriamente, n cantidad de veces. Se utilizan 4 algoritmos diferentes
+los cuales son:
+Fuerza Bruta
+Incremental
+Incremental versión 2
+Bresenham
+
+Se miden los tiempos de cada algoritmo para dibujar las lineas y los algoritmos puros (sin dibujar nada)
+
+Pasos para correr el programa:
+
+1. Para poder correr el programa primero se debe tener instalado el compilador de C, gcc. Si no lo tiene deberá instalarlo con el siguiente comando
+sudo apt-get install gcc
+
+2. Se debe instalar la librería de glut. Si no lo tiene deberá instalarlo con el siguiente comando
+sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
+
+3. 
+
+una vez con el ejecutable se debe digitar
+./<nombre del ejecutable> <resolución> <número de lineas> <n veces>
+
+donde: 
+<resolución> es el tamaño de la pantalla donde se deplegarán las lineas
+<número de lineas> es la cantidad de lineas que cada algoritmo dibujará
+<n veces> es la cantidad de veces que los algoritmos dibujarán las lineas
+
