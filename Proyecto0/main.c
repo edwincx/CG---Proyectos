@@ -28,6 +28,7 @@ int modo = 0;
 
 void init();
 void plot();
+void plotVacio();
 void bresenham(int x0, int y0, int x1, int y1 );
 void bresenham_sinPlot(int x0, int y0,int x1, int y1);
 void fuerzaBruta(int x0, int y0, int x1, int y1 );
@@ -254,6 +255,7 @@ void fuerzaBruta_sinPlot(int x0, int y0, int x1, int y1){
         }
         for (i = Ymenor; i <= Ymayor; i++){
             y = m*i + b;
+            plotVacio((int)y, i);
         }
     }
     else{  
@@ -261,6 +263,7 @@ void fuerzaBruta_sinPlot(int x0, int y0, int x1, int y1){
         b = y0 - m*x0; 
         for (i = x0; i <= x1; i++){
             y = m*i + b;
+            plotVacio(i, (int)y);
         }
     }
 }
@@ -306,6 +309,7 @@ void incremental_sinPlot(int x0, int y0, int x1, int y1){
         m = (float)(y1 - y0) / (float)(x1 - x0);
         y = y0;
         for (i = x0; i <= x1; i++){
+            plotVacio(i, (int)y);
             y += m;
         }
     }else{
@@ -320,6 +324,7 @@ void incremental_sinPlot(int x0, int y0, int x1, int y1){
             Ymenor = y0;
         }
         for (i = Ymenor; i <= Ymayor; i++){
+            plotVacio((int)y, i);
             y += m;
         }
     }
@@ -352,6 +357,7 @@ void incremental2_sinPlot (int x0, int y0, int x1, int y1 ){
     move_y = (float)(y1 - y0)/width_temp ;
     x = (float)x0; y = (float)y0;
     for(i = 0 ; i <= width_temp ; i++){
+        plotVacio ((int)x,(int)y);
         x += move_x;
         y += move_y;
     }
@@ -532,7 +538,7 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
     int distanceY = fabs((y0 - y1));
     xp = x0; 
     yp = y0;
-
+    plotVacio(xp, yp);
     //Cuadrantes 1 y 2
     if (x0 < x1 && y0 <= y1) {
         
@@ -550,6 +556,7 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
                     xp++;
                     d+= Delta_2;
                 }
+                plotVacio(xp, yp);
             }
 
         }else{
@@ -567,6 +574,7 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
                     xp++; yp++;
                     d += Delta_1;
                 }
+                plotVacio(xp, yp);
           }
         }
     }
@@ -589,6 +597,7 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
                     yp++;
                     d+= Delta_2;
                 }
+                plotVacio(xp, yp);
             }
         }else{
             //Cuadrante 4
@@ -604,6 +613,7 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
                     xp--; yp++;
                     d += Delta_1;
                 }
+                plotVacio(xp, yp);
             }
         }
         
@@ -626,6 +636,7 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
                     xp--; yp--;
                     d += Delta_1;
                 }
+                plotVacio(xp, yp);
             }
         }else{
             //Cuadrante 6
@@ -641,6 +652,7 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
                     xp--; yp--;
                     d += Delta_1;
                 }
+                plotVacio(xp, yp);
             }
         }
     }
@@ -662,6 +674,7 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
                     xp++; yp--;
                     d += Delta_1;
                 }
+                plotVacio(xp, yp);
             }
         }else{
             //Cuadrante 8
@@ -677,6 +690,7 @@ void bresenham_sinPlot(int x0, int y0,int x1, int y1) {
                     xp++; yp--;
                       d += Delta_2;
                 }
+                plotVacio(xp, yp);
             }
 
         }
