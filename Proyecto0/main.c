@@ -22,7 +22,7 @@ struct line {
       int y1;
 };
 
-struct line line_list [50000];
+struct line line_list [10001];
 struct data screen;
 int modo = 0;
 
@@ -52,8 +52,8 @@ int main(int argc, char** argv)
         printf("La resolución tiene que ser mayor que 200.\n");
         exit(0);    
     }
-    if(screen.lines < 1){
-        printf("Tiene que poner al menos una línea.\n");
+    if(screen.lines < 1 ||screen.lines > 10000){
+        printf("LA cantidad de líneas tiene que ser entre 1 y 10000.\n");
         exit(0);    
     }
     if(screen.cicles < 1){
@@ -62,6 +62,7 @@ int main(int argc, char** argv)
     }
     srand(time(NULL));
     createRandomLines(screen.lines,screen.resolution);
+    
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
