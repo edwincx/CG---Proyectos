@@ -22,8 +22,16 @@ struct line {
       int y1;
 };
 
+struct ventana {
+      int xmin;
+      int xmax;
+      int ymin;
+      int ymax;
+};
+
 struct line line_list [10001];
 struct data screen;
+struct ventana rectanguloRecorte;
 int modo = 0;
 
 void init();
@@ -38,6 +46,10 @@ void incremental_sinPlot(int x0, int y0, int x1, int y1 );
 void incremental2 (int x0, int y0, int x1, int y1 );
 void incremental2_sinPlot(int x0, int y0, int x1, int y1 );
 void createRandomLines(int lines,int resolution);
+static int clipT(float num, float denom, float *tE, float *tL);
+static int is_zero(float v);
+
+
 
 int main(int argc, char** argv)
 {
@@ -76,115 +88,81 @@ int main(int argc, char** argv)
     glutMainLoop();
 }
 
-void move(){
-    int i = 0;
-    int l = 10;
-    while(i < screen.lines){
-        line_list[i].x0 += l;
-        line_list[i].x1 += l;
-        line_list[i].y0 += l;
-        line_list[i].y1 += l;
-        i++;
+static int is_zero(float v)
+{
+    return (v > -0.000001f && v < 0.000001f);
+}
+
+static inline int point_inside(struct ventana rect, int x, int y)
+{
+    return (x >= rect.xmin && x <= rect.xmax &&
+        y >= rect.ymin && y <= rect.ymax);
+}
+
+
+static int clipT(float num, float denom, float *tE, float *tL)
+{
+    float t;
+
+    if (is_zero(denom))
+        return num < 0.0;
+
+    t = num / denom;
+
+    if (denom > 0) {
+        if (t > *tL)
+            return 0;
+        if (t > *tE)
+            *tE = t;
+    } else {
+        if (t < *tE)
+            return 0;
+        if (t < *tL)
+            *tL = t;
     }
+    return 1;
 }
 
 void init(){
 
     int amount_cicles;
     int amount_lines;
-	
-    printf("FuerzaBruta - Amarillo\nBresenham - Verde\nIncremental - Rojo\nIncremental2 - Morado\n\n");
+	float dx, dy, tE, tL;
+    rectanguloRecorte.xmin=100;
+    rectanguloRecorte.ymin=100;
+    rectanguloRecorte.xmax=250;
+    rectanguloRecorte.ymax=250;
 
-    if(modo==1){move();}
-    glColor3f (1.0f, 1.0f, 0.0f);
-    clock_t start_all = clock();
-    clock_t start = clock();
-    for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
-        for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
-            fuerzaBruta(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
-
-        }
-    }
-    printf("FuerzaBruta: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
-
-    if(modo==1){move();}
     glColor3f (0.0f, 1.0f, 0.0f);
-    start = clock();
-    for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
-        for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
-            bresenham(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
+  
+    
+    for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
+        
+        dx=line_list[amount_lines].x1-line_list[amount_lines].x0;
+        dy=line_list[amount_lines].y1-line_list[amount_lines].y0;
+        
+        if (is_zero(dx) && is_zero(dy) && point_inside(rectanguloRecorte, line_list[amount_lines].x0, line_list[amount_lines].y0)){
+            continue;
+        }
             
+        tE = 0;
+        tL = 1;
+
+        if (clipT(rectanguloRecorte.xmin - line_list[amount_lines].x0,  dx, &tE, &tL) &&
+        clipT(line_list[amount_lines].x0 - rectanguloRecorte.xmax, -dx, &tE, &tL) &&
+        clipT(rectanguloRecorte.ymin - line_list[amount_lines].y0,  dy, &tE, &tL) &&
+        clipT(line_list[amount_lines].y0 - rectanguloRecorte.ymax, -dy, &tE, &tL)) {
+            if (tL < 1) {
+                line_list[amount_lines].x1 = (int) (line_list[amount_lines].x0 + tL * dx);
+                line_list[amount_lines].y1 = (int) (line_list[amount_lines].y0 + tL * dy);
+            }
+            if (tE > 0) {
+                line_list[amount_lines].x0 += tE * dx;
+                line_list[amount_lines].y0 += tE * dy;
+            }
+            bresenham(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
         }
     }
-    printf("Bresenham: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
-
-    if(modo==1){move();}
-    glColor3f (1.0f, 0.0f, 0.0f);
-    start = clock();
-    for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
-        for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
-            incremental(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
-
-        }
-    }
-    printf("Incremental: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
-
-    if(modo==1){move();}
-    glColor3f (1.0f, 0.1f, 1.0f);
-    start = clock();
-    for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
-        for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
-            incremental2(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
-
-        }
-    }
-    printf("Incremental2: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
-
-
-    printf("Total: %f seg.\n\n", ((double)clock() - start_all) / CLOCKS_PER_SEC);
-
-    start_all = clock();
-    
-    start = clock();
-    for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
-        for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
-            fuerzaBruta_sinPlot(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
-
-        }
-    }
-    printf("FuerzaBruta sin plot: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
-
-
-    start = clock();
-    for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
-        for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
-            bresenham_sinPlot(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
-            //printf("(x0: %d,y0: %d )   (x1 = %d,y1 =%d)\n",line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
-        }
-    }
-    printf("Bresenham sin plot: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
-    
-
-    start = clock();
-    for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
-        for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
-            incremental_sinPlot(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
-
-        }
-    }
-    printf("Incremental sin plot: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
-
-
-    start = clock();
-    for(amount_cicles = 0; amount_cicles < screen.cicles;amount_cicles++){
-        for(amount_lines = 0;amount_lines < screen.lines;amount_lines++){
-            incremental2_sinPlot(line_list[amount_lines].x0,line_list[amount_lines].y0,line_list[amount_lines].x1,line_list[amount_lines].y1);
-
-        }
-    }
-    printf("Incremental2 sin plot: %f seg.\n\n", ((double)clock() - start) / CLOCKS_PER_SEC);
-
-    printf("Total: %f seg.\n\n", ((double)clock() - start_all) / CLOCKS_PER_SEC);
 
     printf("FIN------------------------\n\n");
     glFlush();
