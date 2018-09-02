@@ -1,12 +1,12 @@
 #define resolucion 800
 #define numVerticesSJ 415
-#define numVerticesHeredia 321
 #define numVerticesCartago 199
 #define numVerticesGuana 2788
 #define numVerticesAlajuela 686
 #define numVerticesPunta 2029
 #define numVerticesLimon 932
 
+int numVerticesHeredia = 320;
 
 vertice verticesSJ[numVerticesSJ];
 vertice verticesGuana[numVerticesGuana];
