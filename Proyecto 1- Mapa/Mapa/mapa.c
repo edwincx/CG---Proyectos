@@ -12,7 +12,7 @@
 #endif
 
 #define resolucion 1024
-#define numVerticesSJ 19
+#define numVerticesSJ 13
 #define numVerticesHeredia 13
 #define numVerticesCartago 13
 #define numVerticesGuana 35
@@ -69,6 +69,7 @@ int main(int argc, char** argv)
 	readFile("Heredia.txt",verticesHeredia,numVerticesHeredia);
 	readFile("Limon.txt",verticesLimon,numVerticesLimon);
 	readFile("Cartago.txt",verticesCartago,numVerticesCartago);
+	readFile("SanJose.txt",verticesSJ,numVerticesSJ);
 
 	// verticesSJ[19].Y = 1029-373; 
 	// verticesSJ[20].X = 408; 
@@ -555,8 +556,8 @@ void mostrarBordes(){
 void mostrarProvinciasPintadas(){
 	setcolor (0.4f, 0.6f, 0.3f);	
 	pintarProvincia(verticesHeredia, numVerticesHeredia);
-	// setcolor (1.0f, 0.0f, 0.0f);	
-	// pintarProvincia(verticesSJ, numVerticesSJ);
+	setcolor (1.0f, 0.0f, 0.0f);	
+	pintarProvincia(verticesSJ, numVerticesSJ);
 	setcolor (0.0f, 0.0f, 1.0f);	
 	pintarProvincia(verticesGuana, numVerticesGuana);
 	memset(verticesActivos, 0, 100);
