@@ -18,7 +18,7 @@
 #define numVerticesGuana 35
 #define numVerticesAlajuela 23
 #define numVerticesPuntaGolfo 6
-#define numVerticesPunta 35
+#define numVerticesPunta 31
 #define numVerticesLimon 29
 void plot();
 void strip(char *s);
@@ -70,6 +70,7 @@ int main(int argc, char** argv)
 	readFile("Limon.txt",verticesLimon,numVerticesLimon);
 	readFile("Cartago.txt",verticesCartago,numVerticesCartago);
 	readFile("SanJose.txt",verticesSJ,numVerticesSJ);
+	readFile("Puntarenas.txt",verticesPunta,numVerticesPunta);
 
 	// verticesSJ[19].Y = 1029-373; 
 	// verticesSJ[20].X = 408; 
@@ -560,10 +561,8 @@ void mostrarProvinciasPintadas(){
 	pintarProvincia(verticesSJ, numVerticesSJ);
 	setcolor (0.0f, 0.0f, 1.0f);	
 	pintarProvincia(verticesGuana, numVerticesGuana);
-	memset(verticesActivos, 0, 100);
-	memset(intersecciones, 0, 100);
-	// setcolor (0.0f, 1.0f, 0.0f);	
-	// pintarProvincia(verticesPunta, numVerticesPunta);
+	setcolor (0.0f, 1.0f, 0.0f);	
+	pintarProvincia(verticesPunta, numVerticesPunta);
 	// pintarProvincia(verticesPuntaGolfo, numVerticesPuntaGolfo);
 	setcolor (0.6f, 0.6f, 0.1f);	
 	pintarProvincia(verticesAlajuela, numVerticesAlajuela);
