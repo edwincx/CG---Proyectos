@@ -14,12 +14,12 @@
 #define resolucion 1024
 #define numVerticesSJ 19
 #define numVerticesHeredia 13
-#define numVerticesCartago 8
+#define numVerticesCartago 13
 #define numVerticesGuana 35
 #define numVerticesAlajuela 23
 #define numVerticesPuntaGolfo 6
 #define numVerticesPunta 35
-#define numVerticesLimon 16
+#define numVerticesLimon 29
 void plot();
 void strip(char *s);
 void plotV();
@@ -67,187 +67,9 @@ int main(int argc, char** argv)
 	readFile("Guanacaste.txt",verticesGuana,numVerticesGuana);
 	readFile("Alajuela.txt",verticesAlajuela,numVerticesAlajuela);
 	readFile("Heredia.txt",verticesHeredia,numVerticesHeredia);
+	readFile("Limon.txt",verticesLimon,numVerticesLimon);
+	readFile("Cartago.txt",verticesCartago,numVerticesCartago);
 
-
-	verticesPuntaGolfo[0].X =257;
-	verticesPuntaGolfo[0].Y =1029-328;
-	verticesPuntaGolfo[1].X =240;
-	verticesPuntaGolfo[1].Y =1029-393;;
-	verticesPuntaGolfo[2].X =276;
-	verticesPuntaGolfo[2].Y =1029-438;
-	verticesPuntaGolfo[3].X =333;
-	verticesPuntaGolfo[3].Y =1029-376;
-	verticesPuntaGolfo[4].X =310;
-	verticesPuntaGolfo[4].Y =1029-342;
-	verticesPuntaGolfo[5].X =257;
-	verticesPuntaGolfo[5].Y =1029-328;
-
-	verticesPunta[0].X =354;
-	verticesPunta[0].Y =1029-251;
-	verticesPunta[1].X =406;
-	verticesPunta[1].Y =1029-331;
-	verticesPunta[2].X =387;
-	verticesPunta[2].Y =1029-347;
-	verticesPunta[3].X =406;
-	verticesPunta[3].Y =1029-372;
-	verticesPunta[4].X =411;
-	verticesPunta[4].Y =1029-392;
-	verticesPunta[5].X =400;
-	verticesPunta[5].Y =1029-403;
-	verticesPunta[6].X =419;
-	verticesPunta[6].Y =1029-437;
-	verticesPunta[7].X =450;
-	verticesPunta[7].Y =1029-420;
-	verticesPunta[8].X =503;
-	verticesPunta[8].Y =1029-421;
-	verticesPunta[9].X =660;
-	verticesPunta[9].Y =1029-553;
-	verticesPunta[10].X =673;
-	verticesPunta[10].Y =1029-479;
-	verticesPunta[11].X =790;
-	verticesPunta[11].Y =1029-543;
-	verticesPunta[12].X =846;
-	verticesPunta[12].Y =1029-583;
-	verticesPunta[13].X =802;
-	verticesPunta[13].Y =1029-634;
-	verticesPunta[14].X =826;
-	verticesPunta[14].Y =1029-665;
-	verticesPunta[15].X =817;
-	verticesPunta[15].Y =1029-706;
-	verticesPunta[16].X =777;
-	verticesPunta[16].Y =1029-733;
-	verticesPunta[17].X =825;
-	verticesPunta[17].Y =1029-801;
-	verticesPunta[18].X =746;
-	verticesPunta[18].Y =1029-728;
-	verticesPunta[19].X =741;
-	verticesPunta[19].Y =1029-663;
-	verticesPunta[20].X =681;
-	verticesPunta[20].Y =1029-639;
-	verticesPunta[21].X =679;
-	verticesPunta[21].Y =1029-672;
-	verticesPunta[22].X =715;
-	verticesPunta[22].Y =1029-698;
-	verticesPunta[23].X =710;
-	verticesPunta[23].Y =1029-730;
-	verticesPunta[24].X =635;
-	verticesPunta[24].Y =1029-708;
-	verticesPunta[25].X =600;
-	verticesPunta[25].Y =1029-656;
-	verticesPunta[26].X =637;
-	verticesPunta[26].Y =1029-613;
-	verticesPunta[27].X =550;
-	verticesPunta[27].Y =1029-500;
-	verticesPunta[28].X =397;
-	verticesPunta[28].Y =1029-436;
-	verticesPunta[29].X =354;
-	verticesPunta[29].Y =1029-338;
-	verticesPunta[30].X =281;
-	verticesPunta[30].Y =1029-290;
-	verticesPunta[31].X =322;
-	verticesPunta[31].Y =1029-301;
-	verticesPunta[32].X =333;
-	verticesPunta[32].Y =1029-283;
-	verticesPunta[33].X =331;
-	verticesPunta[33].Y =1029-259;
-	verticesPunta[34].X =354;
-	verticesPunta[34].Y =1029-251;
-
-	
-	verticesCartago[0].X=564;
-	verticesCartago[0].Y=1029-294;
-	verticesCartago[1].X=645;
-	verticesCartago[1].Y=1029-338;
-	verticesCartago[2].X=699;
-	verticesCartago[2].Y=1029-334;
-	verticesCartago[3].X=699;
-	verticesCartago[3].Y=1029-377;
-	verticesCartago[4].X=661;
-	verticesCartago[4].Y=1029-452;
-	verticesCartago[5].X=528;
-	verticesCartago[5].Y=1029-384;
-	verticesCartago[6].X=569;
-	verticesCartago[6].Y=1029-331;
-	verticesCartago[7].X=564;
-	verticesCartago[7].Y=1029-294;
-
-	/*verticesCartago[6].X=569;
-	verticesCartago[6].Y=500;
-	verticesCartago[7].X=564;
-	verticesCartago[7].Y=700;*/
-
-	verticesLimon[0].X=673;
-	verticesLimon[0].Y=1029-479;
-	verticesLimon[1].X=661;
-	verticesLimon[1].Y=1029-452;
-	verticesLimon[2].X=699;
-	verticesLimon[2].Y=1029-377;
-	verticesLimon[3].X=699;
-	verticesLimon[3].Y=1029-334;
-	verticesLimon[4].X=645;
-	verticesLimon[4].Y=1029-338;
-	verticesLimon[5].X=564;
-	verticesLimon[5].Y=1029-294;
-	verticesLimon[6].X=581;
-	verticesLimon[6].Y=1029-174;
-	verticesLimon[7].X=609;
-	verticesLimon[7].Y=1029-165;
-	verticesLimon[8].X=603;
-	verticesLimon[8].Y=1029-140;
-	verticesLimon[9].X=623;
-	verticesLimon[9].Y=1029-106;
-	verticesLimon[10].X=822;
-	verticesLimon[10].Y=1029-395;
-	verticesLimon[11].X=891;
-	verticesLimon[11].Y=1029-435;
-	verticesLimon[12].X=870;
-	verticesLimon[12].Y=1029-452;
-	verticesLimon[13].X=824;
-	verticesLimon[13].Y=1029-425;
-	verticesLimon[14].X=798;
-	verticesLimon[14].Y=1029-548;
-	verticesLimon[15].X=673;
-	verticesLimon[15].Y=1029-479;
-
-	verticesSJ[0].X = 406; 
-	verticesSJ[0].Y = 1029-372; 
-	verticesSJ[1].X = 437; 
-	verticesSJ[1].Y = 1029-344;
-	verticesSJ[2].X = 492; 
-	verticesSJ[2].Y = 1029-339; 
-	verticesSJ[3].X = 538; 
-	verticesSJ[3].Y = 1029-323; 
-	verticesSJ[4].X = 526; 
-	verticesSJ[4].Y = 1029-292; 
-	verticesSJ[5].X = 564; 
-	verticesSJ[5].Y = 1029-294; 
-	verticesSJ[6].X = 569; 
-	verticesSJ[6].Y = 1029-331; 
-	verticesSJ[7].X = 538; 
-	verticesSJ[7].Y = 1029-384; 
-	verticesSJ[8].X = 661; 
-	verticesSJ[8].Y = 1029-452; 
-	verticesSJ[9].X = 673; 
-	verticesSJ[9].Y = 1029-479; 
-	verticesSJ[10].X = 660; 
-	verticesSJ[10].Y = 1029-553; 
-	verticesSJ[11].X = 673; 
-	verticesSJ[11].Y = 1029-479; 
-	verticesSJ[12].X = 660; 
-	verticesSJ[12].Y = 1029-553; 
-	verticesSJ[13].X = 503; 
-	verticesSJ[13].Y = 1029-421; 
-	verticesSJ[14].X = 450; 
-	verticesSJ[14].Y = 1029-421; 
-	verticesSJ[15].X = 419; 
-	verticesSJ[15].Y = 1029-437; 
-	verticesSJ[16].X = 400; 
-	verticesSJ[16].Y = 1029-403; 
-	verticesSJ[17].X = 411; 
-	verticesSJ[17].Y = 1029-392; 
-	verticesSJ[18].X = 406; 
-	verticesSJ[18].Y = 1029-372; 
-	// verticesSJ[19].X = 407; 
 	// verticesSJ[19].Y = 1029-373; 
 	// verticesSJ[20].X = 408; 
 	// verticesSJ[20].Y = 1029-374; 
@@ -531,6 +353,7 @@ int evaluarY(int Y1, int Y2, int scanline){
 	if((Y1 <= scanline && Y2 <= scanline) || (Y1 >= scanline && Y2 >= scanline)){
 		n = 0;
 	}
+
 	return n;
 }
 
@@ -743,10 +566,10 @@ void mostrarProvinciasPintadas(){
 	// pintarProvincia(verticesPuntaGolfo, numVerticesPuntaGolfo);
 	setcolor (0.6f, 0.6f, 0.1f);	
 	pintarProvincia(verticesAlajuela, numVerticesAlajuela);
-	// setcolor (0.5f, 0.5f, 0.5f);	
-	// pintarProvincia(verticesCartago, numVerticesCartago);
-	// setcolor (0.1f, 0.5f, 0.0f);	
-	// pintarProvincia(verticesLimon, numVerticesLimon);
+	setcolor (0.5f, 0.5f, 0.5f);	
+	pintarProvincia(verticesCartago, numVerticesCartago);
+	setcolor (0.1f, 0.5f, 0.0f);	
+	pintarProvincia(verticesLimon, numVerticesLimon);
 	// setcolor (0.0f, 0.5f, 0.1f);
 }
 
