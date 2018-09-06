@@ -12,7 +12,7 @@
 #endif
 
 #define resolucion 1024
-#define numVerticesSJ 13
+#define numVerticesSJ 23
 #define numVerticesHeredia 13
 #define numVerticesCartago 13
 #define numVerticesGuana 35
