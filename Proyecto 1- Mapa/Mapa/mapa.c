@@ -18,7 +18,7 @@
 #define numVerticesGuana 35
 #define numVerticesAlajuela 23
 #define numVerticesPuntaGolfo 6
-#define numVerticesPunta 31
+#define numVerticesPunta 49
 #define numVerticesLimon 29
 void plot();
 void strip(char *s);
