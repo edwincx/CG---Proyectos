@@ -18,6 +18,16 @@
 #define H_SIZE_MAP 1029
 #define V_SIZE_MAP 1029
 
+#define resolucion 1024
+#define numVerticesSJ 19
+#define numVerticesHeredia 11
+#define numVerticesCartago 8
+#define numVerticesGuana 33
+#define numVerticesAlajuela 3
+#define numVerticesPuntaGolfo 6
+#define numVerticesPunta 35
+#define numVerticesLimon 16
+
 typedef struct{
     int X;
     int Y;
@@ -60,7 +70,7 @@ vertice verticesCartago[250];
 vertice verticesLimon[1000];
 
 
-void readFile(char* filename,vertice* puntos);
+void readFile(char* filename,vertice* puntos,int numVert);
 void dibujarProvincia(int cant_vertices,vertice* puntos);
 void mostrarProvinciasPintadas();
 void pintarProvincia(vertice* vertices, int numVertices,int*picosrodillas);
@@ -105,11 +115,9 @@ int main(int argc, char** argv)
     // numVerticesAlajuela=limpieza2(verticesAlajuela,numVerticesAlajuela);
     // evaluarPicoRodilla(picosrodillasAlajuela,verticesAlajuela,numVerticesAlajuela);
 
-    // readFile("Guanacaste.txt",puntos_Guanacaste);
-    // readFile("Guanacaste.txt",verticesGuanacaste);
-    // numVerticesGuanacaste=limpiarRepetido(verticesGuanacaste,numVerticesGuanacaste);
-    // numVerticesGuanacaste=limpieza2(verticesGuanacaste,numVerticesGuanacaste);
-    // evaluarPicoRodilla(picosrodillasGuanacaste,verticesGuanacaste,numVerticesGuanacaste);
+
+    readFile("Guanacaste.txt",verticesGuanacaste);
+    evaluarPicoRodilla(picosrodillasGuanacaste,verticesGuanacaste,numVerticesGuanacaste);
 
     // readFile("Puntarenas.txt",puntos_Puntarenas);
     // readFile("Puntarenas.txt",verticesPuntarenas);
@@ -153,56 +161,8 @@ int main(int argc, char** argv)
     evaluarPicoRodilla(picosrodillasEstrella,verticesEstrella,numVerticesEstrella);
 
 
-    verticesGuanacaste[0].X = 154;
-    verticesGuanacaste[0].Y = 800-33;
-    verticesGuanacaste[1].X = 169;
-    verticesGuanacaste[1].Y = 800-33;
-    verticesGuanacaste[2].X = 182;
-    verticesGuanacaste[2].Y =800-50;
-    verticesGuanacaste[3].X = 249;
-    verticesGuanacaste[3].Y =800-69;
-    verticesGuanacaste[4].X =196;
-    verticesGuanacaste[4].Y =800-109;
-    verticesGuanacaste[5].X =240;
-    verticesGuanacaste[5].Y =800-142;
-    verticesGuanacaste[6].X =298;
-    verticesGuanacaste[6].Y =800-160;
-    verticesGuanacaste[7].X =320;
-    verticesGuanacaste[7].Y =800-195;
-    verticesGuanacaste[8].X =256;
-    verticesGuanacaste[8].Y =800-214;
-    verticesGuanacaste[9].X =354;
-    verticesGuanacaste[9].Y =800-251;
-    verticesGuanacaste[10].X =331;
-    verticesGuanacaste[10].Y =800-259;
-    verticesGuanacaste[11].X =333;
-    verticesGuanacaste[11].Y =800-283;
-    verticesGuanacaste[12].X =322;
-    verticesGuanacaste[12].Y =800-301;
-    verticesGuanacaste[13].X =281;
-    verticesGuanacaste[13].Y =800-290;
-    verticesGuanacaste[14].X =241;
-    verticesGuanacaste[14].Y =800-268;
-    verticesGuanacaste[15].X =257;
-    verticesGuanacaste[15].Y =800-328;
-    verticesGuanacaste[16].X =240;
-    verticesGuanacaste[16].Y =800-393;
-    verticesGuanacaste[17].X =142;
-    verticesGuanacaste[17].Y =800-354;
-    verticesGuanacaste[18].X =94;
-    verticesGuanacaste[18].Y =800-242;
-    verticesGuanacaste[19].X =153;
-    verticesGuanacaste[19].Y =800-178;
-    verticesGuanacaste[20].X =139;
-    verticesGuanacaste[20].Y =800-139;
-    verticesGuanacaste[21].X =79;
-    verticesGuanacaste[21].Y =800-112;
-    verticesGuanacaste[22].X =136;
-    verticesGuanacaste[22].Y =800-97;
-    verticesGuanacaste[23].X =154;
-    verticesGuanacaste[23].Y =800-33;
 
-    evaluarPicoRodilla(picosrodillasGuanacaste,verticesGuanacaste,numVerticesGuanacaste);
+    // evaluarPicoRodilla(picosrodillasGuanacaste,verticesGuanacaste,numVerticesGuanacaste);
 
     //sort(verticesHeredia,0,numVerticesHeredia);
     
@@ -369,29 +329,15 @@ int limpieza2(vertice* vert,int n){
 
 
 
-void readFile(char* filename,vertice* puntos)
+void readFile(char* filename,vertice* puntos,int numVert)
 {   
-    int lines = 0;
-    FILE *linecounter;
-    linecounter = fopen(filename, "r");
-    int ch = 0;
-    while(!feof(linecounter))
-    {
-      ch = fgetc(linecounter);
-      if(ch == '\n')
-      {
-        lines++;
-      }
-    }
-    fclose(linecounter);
-    lines++;
-    FILE *file;
+   FILE *file;
     file = fopen(filename, "r");
     char array[100000];
 
     fgets(array, sizeof(array), file);
     strip(array);
-    for(int i=0;i<lines;i++){    
+    for(int i=0;i<numVert;i++){    
 
         fgets(array, sizeof(array), file);
         strip(array); //Quita espacios null
@@ -402,19 +348,17 @@ void readFile(char* filename,vertice* puntos)
         int flag = 0;
         while (ch != NULL) {
             if(flag ==0){
-                puntos[i].X = UC_TO_FB(atof(ch),'x');
+                puntos[i].X = atof(ch);
                 //printf("%dx - %d\n",i,puntos[i].x );
                 flag = 1;
             }else{
-                puntos[i].Y = UC_TO_FB(atof(ch),'y');
+                puntos[i].Y = atof(ch);
                 //printf("%dyRead - %d\n",i,puntos[i].Y );
                 flag = 0;
             }
             ch = strtok(NULL, " ,");
         }  
     }
-    puntos[lines-1].Y = puntos[0].Y;
-    puntos[lines-1].X = puntos[0].X;
     fclose(file);
 }
 int evaluarY(int Y1, int Y2, int scanline){

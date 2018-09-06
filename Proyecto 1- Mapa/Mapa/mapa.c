@@ -15,8 +15,8 @@
 #define numVerticesSJ 19
 #define numVerticesHeredia 11
 #define numVerticesCartago 8
-#define numVerticesGuana 33
-#define numVerticesAlajuela 16
+#define numVerticesGuana 35
+#define numVerticesAlajuela 23
 #define numVerticesPuntaGolfo 6
 #define numVerticesPunta 35
 #define numVerticesLimon 16
@@ -65,112 +65,7 @@ int main(int argc, char** argv)
 {
 
 	readFile("Guanacaste.txt",verticesGuana,numVerticesGuana);
-	// verticesGuana[0].X = 154;
-	// verticesGuana[0].Y = 1029-33;
-	// verticesGuana[1].X = 169;
-	// verticesGuana[1].Y = 1029-33;
-	// verticesGuana[2].X = 182;
-	// verticesGuana[2].Y =1029-50;
-	// verticesGuana[3].X = 249;
-	// verticesGuana[3].Y =1029-69;
-	// verticesGuana[4].X =196;
-	// verticesGuana[4].Y =1029-109;
-	// verticesGuana[5].X =240;
-	// verticesGuana[5].Y =1029-142;
-	// verticesGuana[6].X =298;
-	// verticesGuana[6].Y =1029-160;
-	// verticesGuana[7].X =320;
-	// verticesGuana[7].Y =1029-195;
-
-	// verticesGuana[8].X =356;
-	// verticesGuana[8].Y =1029-214;
-	// verticesGuana[9].X =354;
-	// verticesGuana[9].Y =1029-251;
-	// verticesGuana[10].X =331;
-	// verticesGuana[10].Y =1029-259;
-	// verticesGuana[11].X =333;
-	// verticesGuana[11].Y =1029-283;
-
-
-
-	// verticesGuana[12].X =322;
-	// verticesGuana[12].Y =1029-317;
-
-	// verticesGuana[13].X =276;
-	// verticesGuana[13].Y =1029-320;
-
-	// verticesGuana[14].X =241;
-	// verticesGuana[14].Y =1029-268;
-
-	// verticesGuana[15].X =257;
-	// verticesGuana[15].Y =1029-328;
-	// verticesGuana[16].X =240;
-	// verticesGuana[16].Y =1029-393;
-
-	// verticesGuana[17].X =155;
-	// verticesGuana[17].Y =1029-480;
-
-	// verticesGuana[18].X =155;
-	// verticesGuana[18].Y =1029-480;
-
-	// verticesGuana[19].X =155;
-	// verticesGuana[19].Y =1029-480;
-
-	// verticesGuana[20].X =155;
-	// verticesGuana[20].Y =1029-480;
-
-	// verticesGuana[21].X =155;
-	// verticesGuana[21].Y =1029-480;
-
-	// verticesGuana[22].X =98;
-	// verticesGuana[22].Y =1029-360;
-
-	// verticesGuana[23].X =94;
-	// verticesGuana[23].Y =1029-242;
-	// verticesGuana[24].X =153;
-	// verticesGuana[24].Y =1029-178;
-	// verticesGuana[25].X =139;
-	// verticesGuana[25].Y =1029-139;
-	// verticesGuana[26].X =79;
-	// verticesGuana[26].Y =1029-112;
-	// verticesGuana[27].X =136;
-	// verticesGuana[27].Y =1029-97;
-	// verticesGuana[28].X =154;
-	// verticesGuana[28].Y =1029-33;
-
-
-	verticesAlajuela[0].X =249;
-	verticesAlajuela[0].Y =1029-69;
-	verticesAlajuela[1].X =196;
-	verticesAlajuela[1].Y =1029-109;
-	verticesAlajuela[2].X =240;
-	verticesAlajuela[2].Y =1029-142;
-	verticesAlajuela[3].X =298;
-	verticesAlajuela[3].Y =1029-160;
-	verticesAlajuela[4].X =320;
-	verticesAlajuela[4].Y =1029-195;
-	verticesAlajuela[5].X =256;
-	verticesAlajuela[5].Y =1029-214;
-	verticesAlajuela[6].X =354;
-	verticesAlajuela[6].Y =1029-251;
-	verticesAlajuela[7].X =406;
-	verticesAlajuela[7].Y =1029-331;
-	verticesAlajuela[8].X =387;
-	verticesAlajuela[8].Y =1029-347;
-	verticesAlajuela[9].X =406;
-	verticesAlajuela[9].Y =1029-372;
-	verticesAlajuela[10].X =437;
-	verticesAlajuela[10].Y =1029-344;
-	verticesAlajuela[11].X =492;
-	verticesAlajuela[11].Y =1029-339;
-	verticesAlajuela[12].X =506;
-	verticesAlajuela[12].Y =1029-143;
-	verticesAlajuela[13].X =381;
-	verticesAlajuela[13].Y =1029-67;
-	verticesAlajuela[14].X =328;
-	verticesAlajuela[14].Y =1029-98;
-	verticesAlajuela[15].X =249;
-	verticesAlajuela[15].Y =1029-69;
+	readFile("Alajuela.txt",verticesAlajuela,numVerticesAlajuela);
 
 
 	verticesPuntaGolfo[0].X =257;
@@ -862,11 +757,13 @@ void mostrarProvinciasPintadas(){
 	// pintarProvincia(verticesSJ, numVerticesSJ);
 	setcolor (0.0f, 0.0f, 1.0f);	
 	pintarProvincia(verticesGuana, numVerticesGuana);
+	memset(verticesActivos, 0, 100);
+	memset(intersecciones, 0, 100);
 	// setcolor (0.0f, 1.0f, 0.0f);	
 	// pintarProvincia(verticesPunta, numVerticesPunta);
 	// pintarProvincia(verticesPuntaGolfo, numVerticesPuntaGolfo);
-	// setcolor (0.6f, 0.6f, 0.1f);	
-	// pintarProvincia(verticesAlajuela, numVerticesAlajuela);
+	setcolor (0.6f, 0.6f, 0.1f);	
+	pintarProvincia(verticesAlajuela, numVerticesAlajuela);
 	// setcolor (0.5f, 0.5f, 0.5f);	
 	// pintarProvincia(verticesCartago, numVerticesCartago);
 	// setcolor (0.1f, 0.5f, 0.0f);	
