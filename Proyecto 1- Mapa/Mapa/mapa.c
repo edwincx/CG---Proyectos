@@ -13,7 +13,7 @@
 
 #define resolucion 1024
 #define numVerticesSJ 19
-#define numVerticesHeredia 11
+#define numVerticesHeredia 13
 #define numVerticesCartago 8
 #define numVerticesGuana 35
 #define numVerticesAlajuela 23
@@ -66,6 +66,7 @@ int main(int argc, char** argv)
 
 	readFile("Guanacaste.txt",verticesGuana,numVerticesGuana);
 	readFile("Alajuela.txt",verticesAlajuela,numVerticesAlajuela);
+	readFile("Heredia.txt",verticesHeredia,numVerticesHeredia);
 
 
 	verticesPuntaGolfo[0].X =257;
@@ -152,29 +153,7 @@ int main(int argc, char** argv)
 	verticesPunta[34].X =354;
 	verticesPunta[34].Y =1029-251;
 
-	verticesHeredia[0].X=492;
-	verticesHeredia[0].Y=1029-339;
-	verticesHeredia[1].X=506;
-	verticesHeredia[1].Y=1029-143;
-	verticesHeredia[2].X=544;
-	verticesHeredia[2].Y=1029-137;
-	verticesHeredia[3].X=565;
-	verticesHeredia[3].Y=1029-154;
-	verticesHeredia[4].X=603;
-	verticesHeredia[4].Y=1029-140;
-	verticesHeredia[5].X=609;
-	verticesHeredia[5].Y=1029-165;
-	verticesHeredia[6].X=581;
-	verticesHeredia[6].Y=1029-174;
-	verticesHeredia[7].X=564;
-	verticesHeredia[7].Y=1029-294;
-	verticesHeredia[8].X=526;
-	verticesHeredia[8].Y=1029-292;
-	verticesHeredia[9].X=538;
-	verticesHeredia[9].Y=1029-323;
-	verticesHeredia[10].X=492;
-	verticesHeredia[10].Y=1029-339;
-
+	
 	verticesCartago[0].X=564;
 	verticesCartago[0].Y=1029-294;
 	verticesCartago[1].X=645;
@@ -751,8 +730,8 @@ void mostrarBordes(){
 }
 
 void mostrarProvinciasPintadas(){
-	// setcolor (0.4f, 0.6f, 0.3f);	
-	// pintarProvincia(verticesHeredia, numVerticesHeredia);
+	setcolor (0.4f, 0.6f, 0.3f);	
+	pintarProvincia(verticesHeredia, numVerticesHeredia);
 	// setcolor (1.0f, 0.0f, 0.0f);	
 	// pintarProvincia(verticesSJ, numVerticesSJ);
 	setcolor (0.0f, 0.0f, 1.0f);	
