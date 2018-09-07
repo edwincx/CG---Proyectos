@@ -36,12 +36,23 @@ void mouse();
 void mostrarBordes();
 void mostrarProvinciasPintadas();
 void dibujarBotones();
+void processSpecialKeys(int key, int x, int y);
+void keyBoard(unsigned char key, int x, int y);
+void ArrowKey(int key, int x, int y);
 
 typedef struct{
 	int X;
 	int Y;
 }
 vertice;
+
+float grados = 0.0;
+float zoom = 1.0;
+
+float xmin = -0.5;
+float ymin = -0.5;
+float xmax = resolucion + 0.5;
+float ymax = resolucion + 0.5;
 
 
 vertice verticesGuana[numVerticesGuana];
@@ -52,8 +63,20 @@ vertice verticesHeredia[numVerticesHeredia];
 vertice verticesCartago[numVerticesCartago];
 vertice verticesLimon[numVerticesLimon];
 vertice verticesSJ[numVerticesSJ];
+
+
+vertice verticesAuxSJ[numVerticesSJ];
+vertice verticesAuxGuana[numVerticesGuana];
+vertice verticesAuxAlajuela[numVerticesAlajuela];
+vertice verticesAuxPunta[numVerticesPunta];
+vertice verticesAuxHeredia[numVerticesHeredia];
+vertice verticesAuxCartago[numVerticesCartago];
+vertice verticesAuxLimon[numVerticesLimon];
+vertice verticesAuxSJ[numVerticesSJ];
+
 vertice verticesActivos[100];
 vertice intersecciones[100];
+
 void readFile(char* filename,vertice* puntos,int numVert);
 
 
@@ -82,17 +105,341 @@ int main(int argc, char** argv)
 	glutInitWindowSize(resolucion,resolucion);
 	glutCreateWindow("Progra 1");
 	glClear(GL_COLOR_BUFFER_BIT);
-	gluOrtho2D(-0.5, resolucion +0.5, -0.5, resolucion + 0.5);
+	gluOrtho2D(xmin, xmax, ymin, ymax);
 	setcolor (1.0f, 1.0f, 1.0f);
 	glutMouseFunc(mouse);
+	glutKeyboardFunc(keyBoard);
+	glutSpecialFunc(ArrowKey);
 	glutDisplayFunc(init);
 	glutMainLoop();
 
 }
 
+//Rotación
+void keyBoard(unsigned char key, int x, int y){
 
-void mouse(int bin, int state , int x , int y) {
-	if(bin == GLUT_LEFT_BUTTON && state == GLUT_DOWN
+  printf("%d\n", key);
+
+  //Rotacion hacia la izquierda
+   if(key == 'a' || key == 'A'){
+		
+		float xc = (xmin+xmax)/ 2;
+		float yc = (ymin+ymax)/ 2;
+		
+		grados += 0.17;
+
+		int i = 0;
+		//San José
+		for ( i = 0; i < numVerticesSJ; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesSJ[i].X;
+			tempY = verticesSJ[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+		    verticesAuxSJ[i].X = a;
+			verticesAuxSJ[i].Y = b;
+
+		}
+		//Guanacaste
+		for ( i = 0; i < numVerticesGuana; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesGuana[i].X;
+			tempY = verticesGuana[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxGuana[i].X = a;
+			verticesAuxGuana[i].Y = b;
+
+		}
+		//Alajuela
+		for ( i = 0; i < numVerticesAlajuela; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesAlajuela[i].X;
+			tempY = verticesAlajuela[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxAlajuela[i].X = a;
+			verticesAuxAlajuela[i].Y = b;
+
+		}
+		//Heredia
+		for ( i = 0; i < numVerticesHeredia; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesHeredia[i].X;
+			tempY = verticesHeredia[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxHeredia[i].X = a;
+			verticesAuxHeredia[i].Y = b;
+
+		}
+		//Cartago
+		for ( i = 0; i < numVerticesCartago; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesCartago[i].X;
+			tempY = verticesCartago[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxCartago[i].X = a;
+			verticesAuxCartago[i].Y = b;
+
+		}
+		//Limon
+		for ( i = 0; i < numVerticesLimon; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesLimon[i].X;
+			tempY = verticesLimon[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxLimon[i].X = a;
+			verticesAuxLimon[i].Y = b;
+
+		}
+		//Puntarenas
+		for ( i = 0; i < numVerticesPunta; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesPunta[i].X;
+			tempY = verticesPunta[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxPunta[i].X = a;
+			verticesAuxPunta[i].Y = b;
+  		}
+  }
+
+  //Rotacion hacia la derecha
+  
+  else if(key == 'd' || key == 'D'){
+		float xc = (xmin+xmax)/ 2;
+		float yc = (ymin+ymax)/ 2;
+		
+		grados -= 0.17;
+
+		int i = 0;
+		//San José
+		for ( i = 0; i < numVerticesSJ; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesSJ[i].X;
+			tempY = verticesSJ[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+		  verticesAuxSJ[i].X = a;
+			verticesAuxSJ[i].Y = b;
+
+		}
+		//Guanacaste
+		for ( i = 0; i < numVerticesGuana; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesGuana[i].X;
+			tempY = verticesGuana[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxGuana[i].X = a;
+			verticesAuxGuana[i].Y = b;
+
+		}
+		//Alajuela
+		for ( i = 0; i < numVerticesAlajuela; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesAlajuela[i].X;
+			tempY = verticesAlajuela[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxAlajuela[i].X = a;
+			verticesAuxAlajuela[i].Y = b;
+
+		}
+		//Heredia
+		for ( i = 0; i < numVerticesHeredia; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesHeredia[i].X;
+			tempY = verticesHeredia[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxHeredia[i].X = a;
+			verticesAuxHeredia[i].Y = b;
+
+		}
+		//Cartago
+		for ( i = 0; i < numVerticesCartago; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesCartago[i].X;
+			tempY = verticesCartago[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxCartago[i].X = a;
+			verticesAuxCartago[i].Y = b;
+
+		}
+		//Limon
+		for ( i = 0; i < numVerticesLimon; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesLimon[i].X;
+			tempY = verticesLimon[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxLimon[i].X = a;
+			verticesAuxLimon[i].Y = b;
+
+		}
+		//Puntarenas
+		for ( i = 0; i < numVerticesPunta; i++) {
+			int tempX;
+			int tempY;
+			tempX = verticesPunta[i].X;
+			tempY = verticesPunta[i].Y;
+			double  tempXX = xc +(tempX - xc) * cos(grados) - (tempY - yc)* sin(grados);//( tempX * cos(grados)) + ( -tempY * sin (grados)) + xc - (xc * cos(grados)) + (yc * sin(grados));
+			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
+			int a = (int) tempXX;
+			int b = (int) tempYY;
+			verticesAuxPunta[i].X = a;
+			verticesAuxPunta[i].Y = b;
+  }
+	glutPostRedisplay();
+ }
+}
+
+//Función para el Pan
+void ArrowKey(int key, int x, int y){
+
+  printf("%d\n", key);
+  if(key == GLUT_KEY_DOWN){ //Abajo
+		float auxmin = xmin + 0.0;
+		float auxmax = xmax + 0.0;
+		float auymin = ymin + 2.0;
+		float  auymax = ymax + 2.0;
+		
+		xmin = xmin + (auxmin - xmin);
+		ymin = ymin + (auymin - ymin);
+		xmax = xmax + (auxmax - xmax);
+		ymax = ymax + (auymax - ymax);
+  }
+  else if(key == GLUT_KEY_RIGHT){ //Derecha
+		float auxmin = xmin - 2.0;
+		float auxmax = xmax - 2.0;
+		float auymin = ymin - 0.0;
+		float  auymax = ymax - 0.0;
+		xmin = xmin + (auxmin - xmin);
+		ymin = ymin + (auymin - ymin);
+		xmax = xmax + (auxmax - xmax);
+		ymax = ymax + (auymax - ymax);
+  }
+  else if(key == GLUT_KEY_UP){ //Arriba
+		float auxmin = xmin - 0.0;
+		float auxmax = xmax - 0.0;
+		float auymin = ymin - 2.0;
+		float  auymax = ymax - 2.0;
+		xmin = xmin + (auxmin - xmin);
+		ymin = ymin + (auymin - ymin);
+		xmax = xmax + (auxmax - xmax);
+		ymax = ymax + (auymax - ymax);
+  }
+  else if(key == GLUT_KEY_LEFT){ //Izquierda
+		float auxmin = xmin + 2.0;
+		float auxmax = xmax + 2.0;
+		float auymin = ymin - 0.0;
+		float auymax = ymax - 0.0;
+		xmin = xmin + (auxmin - xmin);
+		ymin = ymin + (auymin - ymin);
+		xmax = xmax + (auxmax - xmax);
+		ymax = ymax + (auymax - ymax);
+  }
+	glutPostRedisplay();
+ }
+
+
+
+//Zoom in y Zoom out
+void mouse(int button, int state , int x , int y) {
+	
+	float xc = (xmin+xmax)/ 2;
+	float yc = (ymin+ymax)/ 2;
+
+	if(button == 3 && state == GLUT_DOWN){ // Rueda hacia abajo
+
+		zoom -= 0.05;
+
+		xmin = ((xmin - xc) * zoom) + xc;
+		ymin = ((ymin - yc) * zoom) + yc;
+
+		xmax = ((xmax - xc) * zoom) + xc;
+		ymax = ((ymax - yc) * zoom) + yc;
+	}
+
+	if(button == 3 && state == GLUT_UP){
+
+		zoom += 0.05;
+		xmin = ((xmin - xc)*zoom) + xc;
+		ymin = ((ymin - yc)*zoom) + yc;
+
+		xmax = ((xmax - xc)*zoom) + xc;
+		ymax = ((ymax - yc)*zoom) + yc;	
+	}
+
+	if(button == 4 && state == GLUT_UP){ // Rueda hacia arriba
+
+		zoom -= 0.05;
+
+		xmin = ((xmin - xc) * zoom) + xc;
+		ymin = ((ymin - yc) * zoom) + yc;
+
+		xmax = ((xmax - xc) * zoom) + xc;
+		ymax = ((ymax - yc) * zoom) + yc;
+	}
+
+	if(button == 4 && state == GLUT_DOWN){
+
+		zoom += 0.05;
+		xmin = ((xmin - xc)*zoom) + xc;
+		ymin = ((ymin - yc)*zoom) + yc;
+
+		xmax = ((xmax - xc)*zoom) + xc;
+		ymax = ((ymax - yc)*zoom) + yc;
+		
+	}
+
+	//Botones para el color
+
+	if(button == GLUT_LEFT_BUTTON && state == GLUT_DOWN
 		&& (x >= 0 && x <= 50) && (y >= 0 && y <= 50)){ 
 		glClearColor (0.0, 0.0, 0.0, 1.0);
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -100,8 +447,9 @@ void mouse(int bin, int state , int x , int y) {
 		setcolor (1.0f, 1.0f, 1.0f);
 		mostrarBordes();
 		glutSwapBuffers();
+
 	}
-	if(bin == GLUT_LEFT_BUTTON && state == GLUT_DOWN
+	if(button == GLUT_LEFT_BUTTON && state == GLUT_DOWN
 		&& (x >= 0 && x <= 50) && (y >= 55 && y <= 105)){ 
 		glClearColor (0.0, 0.0, 0.0, 1.0);
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -109,8 +457,12 @@ void mouse(int bin, int state , int x , int y) {
 		mostrarProvinciasPintadas();
 		glutSwapBuffers();
 	}
+	glutPostRedisplay();
+	
 
-  printf("%d %d\n", x, y);
+  	printf("%f %f\n", xmin, ymin);
+	printf("%f\n",zoom);
+			
 }
 
 void printGuana() {
@@ -283,7 +635,8 @@ void readFile(char* filename,vertice* puntos,int numVert)
 
     fgets(array, sizeof(array), file);
     strip(array);
-    for(int i=0;i<numVert;i++){    
+    int i;
+    for(i=0;i<numVert;i++){    
 
         fgets(array, sizeof(array), file);
         strip(array); //Quita espacios null
