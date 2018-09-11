@@ -93,7 +93,7 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(resolucion,resolucion);
 
-	glutCreateWindow("Progra 1");
+	glutCreateWindow("Proyecto 1: Mapa de Costa Rica");
 	setcolor (1.0f, 1.0f, 1.0f);
 	glutMouseFunc(mouse);
 	glutSpecialFunc(processSpecialKeys);
