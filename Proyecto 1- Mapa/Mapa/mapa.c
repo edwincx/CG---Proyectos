@@ -33,6 +33,7 @@ void keyBoard(unsigned char key, int x, int y);
 void ArrowKey(int key, int x, int y);
 void readFile(char* filename, vertice* puntos,int numVert);
 void mostrarProvinciasPintadasRotadas();
+void mostrarBordesRotados();
 
 
 float grados = 0.0;
@@ -183,6 +184,9 @@ void keyBoard(unsigned char key, int x, int y){
 	 else if (key == '3') {
 		flag = 2;
 	}
+	else if (key == '4') {
+		flag = 3;
+	}
   //Rotacion hacia la izquierda
    else if(key == 'a' || key == 'A'){
 		
@@ -201,7 +205,7 @@ void keyBoard(unsigned char key, int x, int y){
 			double tempYY = yc + (tempX - xc) * sin(grados) + (tempY - yc)* cos(grados);//(tempX * sin (grados)) +( tempY * cos(grados)) + yc - (xc * sin (grados)) + (yc *	cos (grados));
 			int a = (int) tempXX;
 			int b = (int) tempYY;
-		  verticesAuxSJ[i].X = a;
+		    verticesAuxSJ[i].X = a;
 			verticesAuxSJ[i].Y = b;
 
 		}
@@ -396,11 +400,8 @@ void keyBoard(unsigned char key, int x, int y){
 			int b = (int) tempYY;
 			verticesAuxPunta[i].X = a;
 			verticesAuxPunta[i].Y = b;
-
 		}
-
 	}
-
 
 	glutPostRedisplay();
 }
@@ -705,6 +706,8 @@ void bordeProvincia(vertice* provincia, int num){
 	}
 }
 
+
+
 void mostrarBordes(){
 	bordeProvincia(verticesGuana, numVerticesGuana);
 	bordeProvincia(verticesAlajuela, numVerticesAlajuela);
@@ -755,6 +758,17 @@ void dibujarBotones(){
 	}
 }
 
+void mostrarBordesRotados(){
+	bordeProvincia(verticesAuxGuana, numVerticesGuana);
+	bordeProvincia(verticesAuxAlajuela, numVerticesAlajuela);
+	bordeProvincia(verticesAuxPunta, numVerticesPunta);
+	bordeProvincia(verticesAuxSJ, numVerticesSJ);
+	bordeProvincia(verticesAuxHeredia, numVerticesHeredia);
+	bordeProvincia(verticesAuxLimon, numVerticesLimon);
+	bordeProvincia(verticesAuxCartago, numVerticesCartago);
+}
+
+
 void mostrarProvinciasPintadasRotadas(){
 	setcolor (0.4f, 0.6f, 0.3f);
 	pintarProvincia(verticesAuxHeredia, numVerticesHeredia);
@@ -800,6 +814,14 @@ void init(){
 		mostrarProvinciasPintadasRotadas();
 		glutSwapBuffers();
 	}
+	else if (flag == 3) {
+		glClearColor (0.0, 0.0, 0.0, 1.0);
+		//glClear(GL_COLOR_BUFFER_BIT);
+		//dibujarBotones();
+		mostrarBordesRotados();
+		glutSwapBuffers();
+	}
+
 	//dibujarBotones();
 	
    	glFlush();
