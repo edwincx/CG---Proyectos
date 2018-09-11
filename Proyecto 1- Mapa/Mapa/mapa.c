@@ -35,6 +35,9 @@ void readFile(char* filename, vertice* puntos,int numVert);
 void mostrarProvinciasPintadasRotadas();
 void mostrarBordesRotados();
 
+int ventana_principal;  
+int ventana_instrucciones;  
+static char label[100];  
 
 float grados = 0.0;
 
@@ -71,7 +74,61 @@ vertice verticesAuxSJ[numVerticesSJ];
 vertice verticesActivos[100];
 vertice intersecciones[100];
 
+   
+void   drawStringBig (char *s) 
+{ 
+  unsigned int i; 
+  for (i = 0; i < strlen (s); i++) 
+    glutBitmapCharacter (GLUT_BITMAP_HELVETICA_18, s[i]); 
+}; 
+ 
 
+void  mostrar_ventana_instrucciones () 
+{ 
+  /* Clear subwindow */ 
+  glutSetWindow (ventana_instrucciones); 
+  glClearColor (0.20, 0.20, 0.20, 0.0); 
+  glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
+ 
+  /* Draw border */ 
+  glColor3f (0.0F, 0.0F, 1.0F); 
+  glBegin (GL_LINE_LOOP); 
+  glVertex2f (0.0F, 0.0F); 
+  glVertex2f (0.0F, 0.99F); 
+  glVertex2f (0.999F, 0.99F); 
+  glVertex2f (0.999F, 0.0F); 
+  glEnd (); 
+ 
+  glColor3f (0.0F, 0.0F, 1.0F); 
+  sprintf (label, "Instrucciones"); 
+  glRasterPos2f (0.40F, 0.70F); 
+  drawStringBig (label); 
+ 
+  glColor3f (1.0F, 1.0F, 1.0F); 
+  sprintf (label, "Tecla 1: Muestra el mapa sin relleno                                     Tecla 4: Para activar la rotacion sin relleno"); 
+  glRasterPos2f (0.10F, 0.50F); 
+  drawStringBig (label); 
+
+  glColor3f (1.0F, 1.0F, 1.0F); 
+  sprintf (label, "Tecla 2: Muestra el mapa con relleno                                   Tecla 5: Para salir del programa"); 
+  glRasterPos2f (0.10F, 0.30F); 
+  drawStringBig (label);
+
+  glColor3f (1.0F, 1.0F, 1.0F); 
+  sprintf (label, "Tecla 3: Para activar la rotacion                                            Tecla 'a' para hacer rotacion a la izquierda"); 
+  glRasterPos2f (0.10F, 0.13F); 
+  drawStringBig (label);
+
+  glutSwapBuffers (); 
+}; 
+
+void remodelar_ventana (int w, int h) 
+{ 
+  glViewport (0, 0, w, h); 
+  glMatrixMode (GL_PROJECTION); 
+  glLoadIdentity (); 
+  gluOrtho2D (0.0F, 1.0F, 0.0F, 1.0F); 
+}; 
 
 
 void setcolor(float r, float g, float b){
@@ -94,13 +151,19 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(resolucion,resolucion);
 
-	glutCreateWindow("Proyecto 1: Mapa de Costa Rica");
+	ventana_principal = glutCreateWindow("Proyecto 1: Mapa de Costa Rica");
 	setcolor (1.0f, 1.0f, 1.0f);
 	glutMouseFunc(mouse);
 	glutSpecialFunc(processSpecialKeys);
 	glutKeyboardFunc(keyBoard);
 	glutSpecialFunc(ArrowKey);
 	glutDisplayFunc(init);
+
+	ventana_instrucciones = glutCreateSubWindow (ventana_principal, 5, 5, resolucion - 10, resolucion/10); 
+	glutDisplayFunc (mostrar_ventana_instrucciones); 
+	glutReshapeFunc (remodelar_ventana); 
+
+
 	glutMainLoop();
 
 }
@@ -186,6 +249,9 @@ void keyBoard(unsigned char key, int x, int y){
 	}
 	else if (key == '4') {
 		flag = 3;
+	}
+	else if (key == '5') {
+		flag = 5;
 	}
   //Rotacion hacia la izquierda
    else if(key == 'a' || key == 'A'){
