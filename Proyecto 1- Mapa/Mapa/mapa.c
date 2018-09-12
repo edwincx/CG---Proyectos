@@ -21,6 +21,7 @@ typedef struct{
 vertice;
 
 
+
 void plot();
 void strip(char *s);
 void init();
@@ -34,6 +35,7 @@ void ArrowKey(int key, int x, int y);
 void readFile(char* filename, vertice* puntos,int numVert);
 void mostrarProvinciasPintadasRotadas();
 void mostrarBordesRotados();
+void leerTextura(char* filename);
 
 int ventana_principal;  
 int ventana_instrucciones;  
@@ -41,7 +43,7 @@ static char label[100];
 
 float grados = 0.0;
 
-
+float **imagenTextura;
 vertice verticesActivos[100];
 vertice intersecciones[100];
 int flag = -1;
@@ -51,6 +53,7 @@ float xmax = 1029.5;
 float ymax = 1029.5;
 float zoom = 1.0;
 
+int tamanioTextura;
 
 vertice verticesGuana[numVerticesGuana];
 vertice verticesAlajuela[numVerticesAlajuela];
@@ -159,9 +162,9 @@ int main(int argc, char** argv)
 	glutSpecialFunc(ArrowKey);
 	glutDisplayFunc(init);
 
-	ventana_instrucciones = glutCreateSubWindow (ventana_principal, 5, 5, resolucion - 10, resolucion/10); 
-	glutDisplayFunc (mostrar_ventana_instrucciones); 
-	glutReshapeFunc (remodelar_ventana); 
+	//ventana_instrucciones = glutCreateSubWindow (ventana_principal, 5, 5, resolucion - 10, resolucion/10); 
+	//glutDisplayFunc (mostrar_ventana_instrucciones); 
+	//glutReshapeFunc (remodelar_ventana); 
 
 
 	glutMainLoop();
@@ -252,6 +255,10 @@ void keyBoard(unsigned char key, int x, int y){
 	}
 	else if (key == '5') {
 		flag = 5;
+	}
+	else if (key == 't') {
+		flag = 6;
+		
 	}
   //Rotacion hacia la izquierda
    else if(key == 'a' || key == 'A'){
@@ -548,8 +555,30 @@ void ArrowKey(int key, int x, int y){
 
 
 
-void leerTextura(char* filename,vertice * puntos,int numVert){
+void leerTextura(char* filename){
+	FILE *file;
+	int byte,i;
+	file = fopen(filename,"r");
 
+	if(file == (FILE *) 0){
+		printf("no se encontro texturas\n");
+		exit(0);
+	}
+
+	imagenTextura = malloc(800 * 800 * sizeof(int*));
+	for(i = 0; i < 18; i++){
+		byte = getc(file);
+	}
+	
+	for(i = 0; i < 800*800; i++){
+		imagenTextura[i] = malloc(3 * sizeof(int));
+		imagenTextura[i][2] = getc(file) / 255.0;
+		imagenTextura[i][1] = getc(file) / 255.0;
+		imagenTextura[i][0] = getc(file) / 255.0;
+
+		
+	//printf("i: %d r:%f g:%f b:%f\n",i,imagenTextura[i][0],imagenTextura[i][1],imagenTextura[i][2] );
+	}
 }
 
 
@@ -769,7 +798,7 @@ void ordenarIntersecciones(int numIntersecciones){
 
 void pintarProvincia(vertice* vertices, int numVertices){
 	int scanline = calcularYmax(vertices, numVertices);
-	
+	int textY = -1;
 	while(scanline > calcularYmin(vertices, numVertices)){
 	
 	    int numVerticesActivos = activarVertices(scanline, vertices, numVertices);
@@ -782,15 +811,45 @@ void pintarProvincia(vertice* vertices, int numVertices){
 		ordenarIntersecciones(numIntersecciones);
 		for (i = 0; i < numIntersecciones; i+=2)
 		{	
-			if(intersecciones[i].Y==intersecciones[i+1].Y){
-			bresenham(intersecciones[i].X,intersecciones[i].Y,intersecciones[i+1].X,intersecciones[i+1].Y);}
+			if(intersecciones[i].Y==intersecciones[i+1].Y&&flag !=6){
+				bresenham(intersecciones[i].X,intersecciones[i].Y,intersecciones[i+1].X,intersecciones[i+1].Y);
+			}else if(flag ==6){
+				plotEspecialExtendido(textY,intersecciones[i].X,0,intersecciones[i+1].X,scanline);
+			}
+			
 		
 		}
+		textY++;
 	    scanline--;
 	}
 
+
+
 }
 
+void pruebaText(){
+	int t = -1;
+	int u;
+	for(u = 0;u < 800;u++){
+		plotEspecialExtendido(t,0,0,800,u);
+		t++;
+	}
+}
+
+void plotEspecial(int x, int y,float r, float g, float b) {
+	setcolor (r, g, b);
+	glBegin(GL_POINTS);
+	glVertex2i(x,y);
+	glEnd();
+}
+
+void plotEspecialExtendido(int textY,int x1,int y1, int x2,int y2){
+	int u;
+	int newInd = 800 + 800*textY;
+	for(u = x1;u < x2;u++){
+		plotEspecial(u,y2,imagenTextura[u+newInd][0],imagenTextura[u+newInd][1],imagenTextura[u+newInd][2]);
+	}
+}
 
 void bordeProvincia(vertice* provincia, int num){
 	int i;
@@ -916,6 +975,11 @@ void init(){
 		//dibujarBotones();
 		mostrarBordesRotados();
 		glutSwapBuffers();
+	}else if (flag == 6){
+		leerTextura("galaxias.tga");
+		//pruebaText();
+		mostrarProvinciasPintadas();
+		glutSwapBuffers();
 	}
 
 	//dibujarBotones();
@@ -929,6 +993,8 @@ void init(){
 
 void plot(int x, int y) {
 	//setcolor (1.0f, 1.0f, 1.0f);
+
+
 	glBegin(GL_POINTS);
 	glVertex2i(x,y);
 	glEnd();
