@@ -35,7 +35,7 @@ void ArrowKey(int key, int x, int y);
 void readFile(char* filename, vertice* puntos,int numVert);
 void mostrarProvinciasPintadasRotadas();
 void mostrarBordesRotados();
-void leerTextura(char* filename);
+void leerTextura(char* filename,int prov);
 
 int ventana_principal;  
 int ventana_instrucciones;  
@@ -43,7 +43,13 @@ static char label[100];
 
 float grados = 0.0;
 
-float **imagenTextura;
+float **imagenTexturaHeredia;
+float **imagenTexturaSanJose;
+float **imagenTexturaGuana;
+float **imagenTexturaAlajuela;
+float **imagenTexturaPunta;
+float **imagenTexturaCartago;
+float **imagenTexturaLimon;
 vertice verticesActivos[100];
 vertice intersecciones[100];
 int flag = -1;
@@ -141,6 +147,15 @@ void setcolor(float r, float g, float b){
 int main(int argc, char** argv)
 {
 
+	leerTextura("heredia.tga",1);
+	leerTextura("sanjose.tga",2);
+	leerTextura("guanacaste.tga",3);
+	leerTextura("puntarenas.tga",4);
+	leerTextura("alajuela.tga",5);
+	leerTextura("cartago.tga",6);
+	leerTextura("limon.tga",7);
+
+
 	readFile("Guanacaste.txt",verticesGuana,numVerticesGuana);
 	readFile("Alajuela.txt",verticesAlajuela,numVerticesAlajuela);
 	readFile("Heredia.txt",verticesHeredia,numVerticesHeredia);
@@ -149,6 +164,7 @@ int main(int argc, char** argv)
 	readFile("SanJose.txt",verticesSJ,numVerticesSJ);
 	readFile("Puntarenas.txt",verticesPunta,numVerticesPunta);
 	readFile("PuntaGolfo.txt",verticesPuntaGolfo,numVerticesPuntaGolfo);
+
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
@@ -257,6 +273,7 @@ void keyBoard(unsigned char key, int x, int y){
 		flag = 5;
 	}
 	else if (key == 't') {
+		
 		flag = 6;
 		
 	}
@@ -555,7 +572,7 @@ void ArrowKey(int key, int x, int y){
 
 
 
-void leerTextura(char* filename){
+void leerTextura(char* filename,int prov){
 	FILE *file;
 	int byte,i;
 	file = fopen(filename,"r");
@@ -565,16 +582,90 @@ void leerTextura(char* filename){
 		exit(0);
 	}
 
-	imagenTextura = malloc(800 * 800 * sizeof(int*));
 	for(i = 0; i < 18; i++){
 		byte = getc(file);
 	}
 	
+
+	
+	
+	switch(prov){
+			case 1:
+				imagenTexturaHeredia = malloc(800 * 800 * sizeof(int*));
+				break;
+			case 2:
+				imagenTexturaSanJose = malloc(800 * 800 * sizeof(int*));
+				break;
+			case 3:
+				imagenTexturaGuana = malloc(800 * 800 * sizeof(int*));
+				break;
+			case 4:
+				imagenTexturaPunta = malloc(800 * 800 * sizeof(int*));
+				break;
+			case 5:
+				imagenTexturaAlajuela = malloc(800 * 800 * sizeof(int*));
+				break;
+			case 6:
+				imagenTexturaCartago = malloc(800 * 800 * sizeof(int*));
+				break;
+			case 7:
+				imagenTexturaLimon = malloc(800 * 800 * sizeof(int*));
+				break;
+			default:
+				break;
+		}
+
 	for(i = 0; i < 800*800; i++){
-		imagenTextura[i] = malloc(3 * sizeof(int));
-		imagenTextura[i][2] = getc(file) / 255.0;
-		imagenTextura[i][1] = getc(file) / 255.0;
-		imagenTextura[i][0] = getc(file) / 255.0;
+
+		switch(prov){
+			case 1:
+				imagenTexturaHeredia[i] = malloc(3 * sizeof(int));
+				imagenTexturaHeredia[i][2] = getc(file) / 255.0;
+				imagenTexturaHeredia[i][1] = getc(file) / 255.0;
+				imagenTexturaHeredia[i][0] = getc(file) / 255.0;
+			break;
+			case 2:
+				imagenTexturaSanJose[i] = malloc(3 * sizeof(int));
+				imagenTexturaSanJose[i][2] = getc(file) / 255.0;
+				imagenTexturaSanJose[i][1] = getc(file) / 255.0;
+				imagenTexturaSanJose[i][0] = getc(file) / 255.0;
+			break;
+			case 3:
+				imagenTexturaGuana[i] = malloc(3 * sizeof(int));
+				imagenTexturaGuana[i][0] = getc(file) / 255.0;
+				imagenTexturaGuana[i][1] = getc(file) / 255.0;
+				imagenTexturaGuana[i][2] = getc(file) / 255.0;
+			break;
+			case 4:
+				imagenTexturaPunta[i] = malloc(3 * sizeof(int));
+				imagenTexturaPunta[i][2] = getc(file) / 255.0;
+				imagenTexturaPunta[i][1] = getc(file) / 255.0;
+				imagenTexturaPunta[i][0] = getc(file) / 255.0;
+			break;
+			case 5:
+				imagenTexturaAlajuela[i] = malloc(3 * sizeof(int));
+				imagenTexturaAlajuela[i][2] = getc(file) / 255.0;
+				imagenTexturaAlajuela[i][1] = getc(file) / 255.0;
+				imagenTexturaAlajuela[i][0] = getc(file) / 255.0;
+			break;
+			case 6:
+				imagenTexturaCartago[i] = malloc(3 * sizeof(int));
+				imagenTexturaCartago[i][2] = getc(file) / 255.0;
+				imagenTexturaCartago[i][1] = getc(file) / 255.0;
+				imagenTexturaCartago[i][0] = getc(file) / 255.0;
+			break;
+			case 7:
+				imagenTexturaLimon[i] = malloc(3 * sizeof(int));
+				imagenTexturaLimon[i][2] = getc(file) / 255.0;
+				imagenTexturaLimon[i][1] = getc(file) / 255.0;
+				imagenTexturaLimon[i][0] = getc(file) / 255.0;
+			break;
+			default:
+				imagenTexturaHeredia[i] = malloc(3 * sizeof(int));
+				imagenTexturaHeredia[i][2] = getc(file) / 255.0;
+				imagenTexturaHeredia[i][1] = getc(file) / 255.0;
+				imagenTexturaHeredia[i][0] = getc(file) / 255.0;
+		}
 
 		
 	//printf("i: %d r:%f g:%f b:%f\n",i,imagenTextura[i][0],imagenTextura[i][1],imagenTextura[i][2] );
@@ -796,7 +887,7 @@ void ordenarIntersecciones(int numIntersecciones){
 	}
 }
 
-void pintarProvincia(vertice* vertices, int numVertices){
+void pintarProvincia(vertice* vertices, int numVertices,int prov){
 	int scanline = calcularYmax(vertices, numVertices);
 	int textY = -1;
 	while(scanline > calcularYmin(vertices, numVertices)){
@@ -814,7 +905,36 @@ void pintarProvincia(vertice* vertices, int numVertices){
 			if(intersecciones[i].Y==intersecciones[i+1].Y&&flag !=6){
 				bresenham(intersecciones[i].X,intersecciones[i].Y,intersecciones[i+1].X,intersecciones[i+1].Y);
 			}else if(flag ==6){
-				plotEspecialExtendido(textY,intersecciones[i].X,0,intersecciones[i+1].X,scanline);
+				switch(prov) {
+
+				   case 1  :
+
+				      plotEspecialExtendido(textY,intersecciones[i].X,0,intersecciones[i+1].X,scanline,imagenTexturaHeredia);
+				      break; /* optional */
+					
+				   case 2 :
+				     	plotEspecialExtendido(textY,intersecciones[i].X,0,intersecciones[i+1].X,scanline,imagenTexturaSanJose);
+				      break; /* optional */
+				     	case 3 :
+				     	plotEspecialExtendido(textY,intersecciones[i].X,0,intersecciones[i+1].X,scanline,imagenTexturaGuana);
+				      break; /* optional */
+				     	case 4 :
+				     	plotEspecialExtendido(textY,intersecciones[i].X,0,intersecciones[i+1].X,scanline,imagenTexturaPunta);
+				      break; /* optional */
+				     	case 5 :
+				     	plotEspecialExtendido(textY,intersecciones[i].X,0,intersecciones[i+1].X,scanline,imagenTexturaAlajuela);
+				      break;
+				      case 6 :
+				     	plotEspecialExtendido(textY,intersecciones[i].X,0,intersecciones[i+1].X,scanline,imagenTexturaCartago);
+				      break;
+				  	case 7 :
+				     	plotEspecialExtendido(textY,intersecciones[i].X,0,intersecciones[i+1].X,scanline,imagenTexturaLimon);
+				      break;
+			
+				   default : /* Optional */
+				   	bresenham(intersecciones[i].X,intersecciones[i].Y,intersecciones[i+1].X,intersecciones[i+1].Y);
+				}
+				
 			}
 			
 		
@@ -843,7 +963,7 @@ void plotEspecial(int x, int y,float r, float g, float b) {
 	glEnd();
 }
 
-void plotEspecialExtendido(int textY,int x1,int y1, int x2,int y2){
+void plotEspecialExtendido(int textY,int x1,int y1, int x2,int y2,float ** imagenTextura){
 	int u;
 	int newInd = 800 + 800*textY;
 	for(u = x1;u < x2;u++){
@@ -874,20 +994,20 @@ void mostrarBordes(){
 
 void mostrarProvinciasPintadas(){
 	setcolor (0.4f, 0.6f, 0.3f);	
-	pintarProvincia(verticesHeredia, numVerticesHeredia);
+	pintarProvincia(verticesHeredia, numVerticesHeredia,1);
 	setcolor (1.0f, 0.0f, 0.0f);	
-	pintarProvincia(verticesSJ, numVerticesSJ);
+	pintarProvincia(verticesSJ, numVerticesSJ,2);
 	setcolor (0.0f, 0.0f, 1.0f);	
-	pintarProvincia(verticesGuana, numVerticesGuana);
+	pintarProvincia(verticesGuana, numVerticesGuana,3);
 	setcolor (0.0f, 1.0f, 0.0f);	
-	pintarProvincia(verticesPunta, numVerticesPunta);
-	pintarProvincia(verticesPuntaGolfo, numVerticesPuntaGolfo);
+	pintarProvincia(verticesPunta, numVerticesPunta,4);
+	pintarProvincia(verticesPuntaGolfo, numVerticesPuntaGolfo,4);
 	setcolor (0.6f, 0.6f, 0.1f);	
-	pintarProvincia(verticesAlajuela, numVerticesAlajuela);
+	pintarProvincia(verticesAlajuela, numVerticesAlajuela,5);
 	setcolor (0.5f, 0.5f, 0.5f);	
-	pintarProvincia(verticesCartago, numVerticesCartago);
+	pintarProvincia(verticesCartago, numVerticesCartago,6);
 	setcolor (0.1f, 0.5f, 0.0f);	
-	pintarProvincia(verticesLimon, numVerticesLimon);
+	pintarProvincia(verticesLimon, numVerticesLimon,7);
 	// setcolor (0.0f, 0.5f, 0.1f);
 }
 
@@ -925,20 +1045,20 @@ void mostrarBordesRotados(){
 
 void mostrarProvinciasPintadasRotadas(){
 	setcolor (0.4f, 0.6f, 0.3f);
-	pintarProvincia(verticesAuxHeredia, numVerticesHeredia);
+	pintarProvincia(verticesAuxHeredia, numVerticesHeredia,1);
 	setcolor (1.0f, 0.0f, 0.0f);
-	pintarProvincia(verticesAuxSJ, numVerticesSJ);
+	pintarProvincia(verticesAuxSJ, numVerticesSJ,2);
 	setcolor (0.0f, 0.0f, 1.0f);
-	pintarProvincia(verticesAuxGuana, numVerticesGuana);
+	pintarProvincia(verticesAuxGuana, numVerticesGuana,3);
 	setcolor (0.0f, 1.0f, 0.0f);
-	pintarProvincia(verticesAuxPunta, numVerticesPunta);
-	pintarProvincia(verticesAuxPuntaGolfo, numVerticesPuntaGolfo);
+	pintarProvincia(verticesAuxPunta, numVerticesPunta,4);
+	pintarProvincia(verticesAuxPuntaGolfo, numVerticesPuntaGolfo,4);
 	setcolor (0.6f, 0.6f, 0.1f);
-	pintarProvincia(verticesAuxAlajuela, numVerticesAlajuela);
+	pintarProvincia(verticesAuxAlajuela, numVerticesAlajuela,5);
 	setcolor (0.5f, 0.5f, 0.5f);
-	pintarProvincia(verticesAuxCartago, numVerticesCartago);
+	pintarProvincia(verticesAuxCartago, numVerticesCartago,6);
 	setcolor (0.1f, 0.5f, 0.0f);
-	pintarProvincia(verticesAuxLimon, numVerticesLimon);
+	pintarProvincia(verticesAuxLimon, numVerticesLimon,7);
 	setcolor (0.0f, 0.5f, 0.1f);
 }
 
@@ -976,7 +1096,7 @@ void init(){
 		mostrarBordesRotados();
 		glutSwapBuffers();
 	}else if (flag == 6){
-		leerTextura("galaxias.tga");
+		
 		//pruebaText();
 		mostrarProvinciasPintadas();
 		glutSwapBuffers();
