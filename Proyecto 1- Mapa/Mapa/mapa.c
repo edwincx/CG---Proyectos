@@ -148,7 +148,7 @@ void setcolor(float r, float g, float b){
 
 int main(int argc, char** argv)
 {
-	printf("\n\n----------------------------\nInstrucciones\n----------------------------\n\n\n1 - Mostrar bordes\n2 - Pintar provincias\n3 - Agregar texturas a provincias pintadas\n4 - Habilitar o deshabilitar rotación\n5 - Salir\n\n\n");
+	printf("\n\n----------------------------\nInstrucciones\n----------------------------\n\n\n1 - Mostrar bordes\n2 - Pintar provincias\n3 - Agregar texturas a provincias pintadas\n4 - Habilitar o deshabilitar rotación\n5 - Salir\n\nZoom In -  rueda del mouse hacia arriba\nZoom Out - rueda del mouse hacia abajo\nPan -      con las flechas\n\n");
 
 	leerTextura("heredia.tga",1);
 	leerTextura("sanjose.tga",2);
