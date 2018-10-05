@@ -59,8 +59,8 @@ int main(int argc, char** argv)
 	  // 	fprintf(inFile, v);
   	// }
 
-    x =100;
-    y = 233;
+    x =104;
+    y = 333;
     z = 0;
 
     for(int i = 0;i < 80;i++){
@@ -72,8 +72,8 @@ int main(int argc, char** argv)
         strcpy(v,"/////////////////\n#esfera\nradio:2\ncentro: (");
       }
 
-      x =104+200*cos(grados);
-      z =100+200*sin(grados);
+      y =333+50*cos(grados);
+      z =100+50*sin(grados);
       
       sprintf(integ,"%d,%d,%d",x,y,z);
       strcat(v,integ);
@@ -97,6 +97,96 @@ int main(int argc, char** argv)
 
       fprintf(inFile, v);
     }
+
+     x =100;
+    y = 333;
+    z = 0;
+
+    for(int i = 0;i < 80;i++){
+
+      if(i%10 ==0){
+        strcpy(v,"/////////////////\n#esfera\nradio:4\ncentro: (");
+      }
+      else{
+        strcpy(v,"/////////////////\n#esfera\nradio:2\ncentro: (");
+      }
+
+      x =104+50*cos(grados);
+      z =100+50*sin(grados);
+      
+      sprintf(integ,"%d,%d,%d",x,y,z);
+      strcat(v,integ);
+      grados+=0.1;
+
+
+  
+      strcat(v,")\ncolor:(");
+
+
+      if(i%10 ==0){
+        sprintf(integ,"0.%d,0.%d,0.%d",99,0,99);
+        strcat(v,integ);
+        strcat(v,")\nkd:1.0\nka:0.7\nks:0.8\nkn:1\n\n");
+      }
+      else{
+        sprintf(integ,"0.%d,0.%d,0.%d",0,0,0);
+        strcat(v,integ);
+        strcat(v,")\nkd:0.1\nka:0.1\nks:0.1\nkn:0.1\n\n");
+      }
+
+      fprintf(inFile, v);
+    }
+
+    for(int i = 0;i < 10;i++){
+
+     
+      strcpy(v,"/////////////////\n#esfera\nradio:4\ncentro: (");
+     
+
+      x =84+rand() % 20;
+      y =314+rand() % 20;
+      z =80+rand() % 20;
+      
+      sprintf(integ,"%d,%d,%d",x,y,z);
+      strcat(v,integ);
+      grados+=0.1;
+
+
+  
+      strcat(v,")\ncolor:(");
+
+      int c = rand() % 120;
+
+      if(c > 60){
+        sprintf(integ,"0.%d,0.%d,0.%d",99,0,0);
+      }
+      else{
+        sprintf(integ,"0.%d,0.%d,0.%d",0,0,99);
+      }
+
+      
+      strcat(v,integ);
+      strcat(v,")\nkd:1.0\nka:0.7\nks:0.8\nkn:1\n\n");
+
+      fprintf(inFile, v);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     x =504;
