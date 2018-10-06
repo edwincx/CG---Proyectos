@@ -341,10 +341,7 @@ COLOR De_que_color(PUNTO3D ojo, VECTOR vDir){
 					I = I + (ProductoPunto(N,L) * Q->Kd * Fatt * p->Ip);
 					R = calcularVectorR(N, L);
 					
-					if(ProductoPunto(V,R) > 0.0){
-						E += (pow(ProductoPunto(V,R), Q->Kn) * Q->Ks * p->Ip * Fatt);
-						
-					}
+					
 				}
 			}
 			p = p->sig;

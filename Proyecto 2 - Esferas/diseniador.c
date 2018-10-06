@@ -25,168 +25,6 @@ int main(int argc, char** argv)
   	int y = 233;
     int z = 1;
 
-  	// for(int i = 0;i < 70;i++){
-
-  	// 	if(i%10 ==0){
-   //      strcpy(v,"/////////////////\n#esfera\nradio:10\ncentro: (");
-   //    }
-   //    else{
-   //      strcpy(v,"/////////////////\n#esfera\nradio:5\ncentro: (");
-   //    }
-
-   //    x =504+200*cos(grados);
-   //    y =233+200*sin(grados);
-      
-		 //  sprintf(integ,"%d,%d,%d",x,y,z);
-  	// 	strcat(v,integ);
-   //    grados+=0.1;
-  	// 	strcat(v,")\ncolor:(");
-   //    //z+=15;
-
-
-   //    if(i%10 ==0){
-   //      sprintf(integ,"0.%d,0.%d,0.%d",99,0,99);
-   //      strcat(v,integ);
-   //      strcat(v,")\nkd:1.0\nka:0.7\nks:0.8\nkn:1\n\n");
-   //    }
-   //    else{
-   //      sprintf(integ,"0.%d,0.%d,0.%d",0,0,0);
-   //      strcat(v,integ);
-   //      strcat(v,")\nkd:0.1\nka:0.1\nks:0.1\nkn:0.1\n\n");
-   //    }
-
-
-	  // 	fprintf(inFile, v);
-  	// }
-
-
-/*
-    x =104;
-    y = 333;
-    z = 0;
-
-    for(int i = 0;i < 80;i++){
-
-      if(i%10 ==0){
-        strcpy(v,"/////////////////\n#esfera\nradio:4\ncentro: (");
-      }
-      else{
-        strcpy(v,"/////////////////\n#esfera\nradio:2\ncentro: (");
-      }
-
-      y =333+50*cos(grados);
-      z =100+50*sin(grados);
-      
-      sprintf(integ,"%d,%d,%d",x,y,z);
-      strcat(v,integ);
-      grados+=0.1;
-
-
-  
-      strcat(v,")\ncolor:(");
-
-
-      if(i%10 ==0){
-        sprintf(integ,"0.%d,0.%d,0.%d",99,0,99);
-        strcat(v,integ);
-        strcat(v,")\nkd:1.0\nka:0.7\nks:0.8\nkn:1\n\n");
-      }
-      else{
-        sprintf(integ,"0.%d,0.%d,0.%d",0,0,0);
-        strcat(v,integ);
-        strcat(v,")\nkd:0.1\nka:0.1\nks:0.1\nkn:0.1\n\n");
-      }
-
-      fprintf(inFile, v);
-    }
-
-     x =100;
-    y = 333;
-    z = 0;
-
-    for(int i = 0;i < 80;i++){
-
-      if(i%10 ==0){
-        strcpy(v,"/////////////////\n#esfera\nradio:4\ncentro: (");
-      }
-      else{
-        strcpy(v,"/////////////////\n#esfera\nradio:2\ncentro: (");
-      }
-
-      x =104+50*cos(grados);
-      z =100+50*sin(grados);
-      
-      sprintf(integ,"%d,%d,%d",x,y,z);
-      strcat(v,integ);
-      grados+=0.1;
-
-
-  
-      strcat(v,")\ncolor:(");
-
-
-      if(i%10 ==0){
-        sprintf(integ,"0.%d,0.%d,0.%d",99,0,99);
-        strcat(v,integ);
-        strcat(v,")\nkd:1.0\nka:0.7\nks:0.8\nkn:1\n\n");
-      }
-      else{
-        sprintf(integ,"0.%d,0.%d,0.%d",0,0,0);
-        strcat(v,integ);
-        strcat(v,")\nkd:0.1\nka:0.1\nks:0.1\nkn:0.1\n\n");
-      }
-
-      fprintf(inFile, v);
-    }
-
-    for(int i = 0;i < 10;i++){
-
-     
-      strcpy(v,"/////////////////\n#esfera\nradio:4\ncentro: (");
-     
-
-      x =84+rand() % 20;
-      y =314+rand() % 20;
-      z =80+rand() % 20;
-      
-      sprintf(integ,"%d,%d,%d",x,y,z);
-      strcat(v,integ);
-      grados+=0.1;
-
-
-  
-      strcat(v,")\ncolor:(");
-
-      int c = rand() % 120;
-
-      if(c > 60){
-        sprintf(integ,"0.%d,0.%d,0.%d",99,0,0);
-      }
-      else{
-        sprintf(integ,"0.%d,0.%d,0.%d",0,0,99);
-      }
-
-      
-      strcat(v,integ);
-      strcat(v,")\nkd:1.0\nka:0.7\nks:0.8\nkn:1\n\n");
-
-      fprintf(inFile, v);
-    }
-
-
-*/
-
-
-
-
-    
-
-
-
-
-
-
-
 
 
 
@@ -242,7 +80,7 @@ int main(int argc, char** argv)
       
         sprintf(integ,"0.%d,0.%d,0.%d",r,g,b);
         strcat(v,integ);
-        strcat(v,")\nkd:1.0\nka:0.5\nks:0.0\nkn:1\n\n");
+        strcat(v,")\nkd:1.0\nka:0.5\n\n");
       
         
       fprintf(inFile, v);
@@ -299,7 +137,7 @@ int main(int argc, char** argv)
       
         sprintf(integ,"0.%d,0.%d,0.%d",r,g,b);
         strcat(v,integ);
-        strcat(v,")\nkd:1.0\nka:0.5\nks:0.0\nkn:1\n\n");
+        strcat(v,")\nkd:1.0\nka:0.5\n\n");
       
         
       fprintf(inFile, v);
@@ -352,7 +190,7 @@ for(int i = 0;i < 70;i++){
       
         sprintf(integ,"0.%d,0.%d,0.%d",r,g,b);
         strcat(v,integ);
-        strcat(v,")\nkd:1.0\nka:0.5\nks:0.0\nkn:1\n\n");
+        strcat(v,")\nkd:1.0\nka:0.5\n\n");
       
         
       fprintf(inFile, v);
@@ -385,86 +223,12 @@ z =1500;
 
         sprintf(integ,"0.%d,0.%d,0.%d",99,99,99);
         strcat(v,integ);
-        strcat(v,")\nkd:1.0\nka:0.9\nks:0.0\nkn:1\n\n");
+        strcat(v,")\nkd:1.0\nka:0.9\n\n");
       
         
       fprintf(inFile, v);
     }
 
-
-/*
-    x =504;
-    y = 233;
-    z = 0;
-
-    for(int i = 0;i < 80;i++){
-
-      if(i%10 ==0){
-        strcpy(v,"/////////////////\n#esfera\nradio:10\ncentro: (");
-      }
-      else{
-        strcpy(v,"/////////////////\n#esfera\nradio:5\ncentro: (");
-      }
-
-      y =233+200*cos(grados);
-      z =200*sin(grados);
-      
-      sprintf(integ,"%d,%d,%d",x,y,z);
-      strcat(v,integ);
-      grados+=0.1;
-
-
-  
-      strcat(v,")\ncolor:(");
-
-
-      if(i%10 ==0){
-        sprintf(integ,"0.%d,0.%d,0.%d",99,0,99);
-        strcat(v,integ);
-        strcat(v,")\nkd:1.0\nka:0.7\nks:0.8\nkn:1\n\n");
-      }
-      else{
-        sprintf(integ,"0.%d,0.%d,0.%d",0,0,0);
-        strcat(v,integ);
-        strcat(v,")\nkd:0.1\nka:0.1\nks:0.1\nkn:0.1\n\n");
-      }
-
-      fprintf(inFile, v);
-    }
-
-    for(int i = 0;i < 20;i++){
-
-     
-      strcpy(v,"/////////////////\n#esfera\nradio:17\ncentro: (");
-     
-
-      x =480+rand() % 40;
-      y =210+rand() % 40;
-      z =rand() % 120;
-      
-      sprintf(integ,"%d,%d,%d",x,y,z);
-      strcat(v,integ);
-      grados+=0.1;
-
-
-  
-      strcat(v,")\ncolor:(");
-
-      int c = rand() % 120;
-
-      if(c > 60){
-        sprintf(integ,"0.%d,0.%d,0.%d",99,0,0);
-      }
-      else{
-        sprintf(integ,"0.%d,0.%d,0.%d",0,0,99);
-      }
-
-      
-      strcat(v,integ);
-      strcat(v,")\nkd:1.0\nka:0.7\nks:0.8\nkn:1\n\n");
-
-      fprintf(inFile, v);
-    }*/
     
 	return 0;
 }

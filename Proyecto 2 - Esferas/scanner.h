@@ -53,9 +53,7 @@ void generar_estrellas(int cantidad, float profundidad)
 		//kd
 		ptr1->Kd = 1;
 		//ks
-		ptr1->Ks = 0;
-		//kn
-		ptr1->Kn = 1;
+	
 	
 	}
 
@@ -507,22 +505,7 @@ int scanner(FILE *inFile){
 						// Aca asignar el radio con atof(token_buffer);
 						ptr1->Kd = kd_temp;
 					}
-					//kn
-					else if((strcmp (token_buffer,"kn:"))==0){
-						if( scanner(inFile) != 0 ) return -1;
-						float kn_temp = atof(token_buffer);
-						//printf("Radio:%f\n",radio_temp);
-						// Aca asignar el radio con atof(token_buffer);
-						ptr1->Kn = kn_temp;
-					}
-					//ks
-					else if((strcmp (token_buffer,"ks:"))==0){
-						if( scanner(inFile) != 0 ) return -1;
-						float ks_temp = atof(token_buffer);
-						//printf("Radio:%f\n",radio_temp);
-						// Aca asignar el radio con atof(token_buffer);
-						ptr1->Ks = ks_temp;
-					}
+				
 					else
 					{
 						//printf("Error en archivo, propiedad \"%s\" de esfera no identificada!!!\n",token_buffer );

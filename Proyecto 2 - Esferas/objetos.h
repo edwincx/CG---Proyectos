@@ -3,8 +3,6 @@ struct OBJETO {
   	COLOR color;
   	float Kd;
   	float Ka;
-  	float Kn;
-  	float Ks;
   	void *p;
   	struct OBJETO *sig;
 };
