@@ -8,17 +8,50 @@ nombre_atributo:valor
 */
 
 #escena
-background:(0.8,0.8,1.0)
-ojo:(804, 533, -1000)
+background:(0.0,0.00002352,0.004117)
+ojo:(504, 233, -1000)
 //iluminacion ambiente
 ia:0.5
 
 #luz
-posicion:(1900,-600,-1700)
+posicion:(1004,200,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1.0
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+#luz
+posicion:(1004,567,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+#luz
+posicion:(1204,367,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+#luz
+posicion:(1204,233,300)
 //Intensidad
 ip:10
 //valores de atenuacion
-c1:1.0
+c1:1
 c2:0.005
 c3:0.0
 //color
@@ -32,3590 +65,4246 @@ color:(1,1,1)
 /////////////////
 #esfera
 radio:20
-centro: (100,100,0)
-color:(1, 0, 1)
+centro: (800,305,200)
+color:(0.0,0.00002352,0.004117)
+//Coeficiente reflexion difusa [0,1]
+kd:0
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.7
+//Coeficiente de reflexión especular
+ks:0
+//Potencia
+kn:0
+
+
+/////////////////
+#esfera
+radio:20
+centro: (810,300,210)
+color:(1, 1, 1)
 //Coeficiente reflexion difusa [0,1]
 kd:1.0
 //Coeficiente Iluminacion Ambiente [0,1]
-ka:0.5
+ka:0.0
 //Coeficiente de reflexión especular
 ks:0.0
 //Potencia
 kn:1
 
-
 /////////////////
 #esfera
-radio:20
-centro: (115,105,20)
-color:(0, 1, 0)
+radio:150
+centro: (514,273,0)
+color:(1, 0.8117, 0.4313)
 //Coeficiente reflexion difusa [0,1]
 kd:1.0
 //Coeficiente Iluminacion Ambiente [0,1]
-ka:0.7
-//Coeficiente de reflexión especular
-ks:0.8
-//Potencia
-kn:1
-
-/////////////////
-#esfera
-radio:20
-centro: (700,100,0)
-color:(0.2, 0.8, 0.4)
-//Coeficiente reflexion difusa [0,1]
-kd:1.0
-//Coeficiente Iluminacion Ambiente [0,1]
-ka:0.5
+ka:0.1
 //Coeficiente de reflexión especular
 ks:0.0
 //Potencia
-kn:1
-
-
-/////////////////
-#esfera
-radio:20
-centro: (715,100,20)
-color:(0.4, 0.1, 0.8)
-//Coeficiente reflexion difusa [0,1]
-kd:1.0
-//Coeficiente Iluminacion Ambiente [0,1]
-ka:0.7
-//Coeficiente de reflexión especular
-ks:0.8
-//Potencia
-kn:1
-
-/////////////////
-#esfera
-radio:20
-centro: (800,300,200)
-color:(0.9, 0.8, 0.1)
-//Coeficiente reflexion difusa [0,1]
-kd:1.0
-//Coeficiente Iluminacion Ambiente [0,1]
-ka:0.5
-//Coeficiente de reflexión especular
-ks:0.0
-//Potencia
-kn:1
-
-
-/////////////////
-#esfera
-radio:20
-centro: (815,300,220)
-color:(0.4, 0.1, 0.1)
-//Coeficiente reflexion difusa [0,1]
-kd:1.0
-//Coeficiente Iluminacion Ambiente [0,1]
-ka:0.7
-//Coeficiente de reflexión especular
-ks:0.8
-//Potencia
-kn:1
+kn:0
 
 /////////////////inicio
 
 
 /////////////////
 #esfera
+radio:8
+centro: (526,508,1)
+color:(0.58,0.35,0.30)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (256,456,79)
+color:(0.61,0.39,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (313,416,143)
+color:(0.67,0.36,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (363,348,189)
+color:(0.70,0.41,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (443,271,201)
+color:(0.67,0.36,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (528,195,183)
+color:(0.71,0.34,0.18)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (612,134,139)
+color:(0.69,0.41,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (679,96,66)
+color:(0.61,0.42,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (718,91,-9)
+color:(0.57,0.39,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (722,113,-87)
+color:(0.59,0.39,0.12)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (691,162,-151)
+color:(0.65,0.48,0.23)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (635,231,-186)
+color:(0.57,0.45,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (554,308,-197)
+color:(0.60,0.44,0.15)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (466,383,-172)
+color:(0.59,0.39,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (384,439,-122)
+color:(0.62,0.38,0.20)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (326,473,-52)
+color:(0.60,0.49,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (289,477,25)
+color:(0.53,0.44,0.20)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (289,449,102)
+color:(0.68,0.44,0.21)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (323,394,158)
+color:(0.59,0.42,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (387,327,197)
+color:(0.68,0.35,0.27)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (465,245,201)
+color:(0.64,0.42,0.12)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (557,173,171)
+color:(0.71,0.46,0.14)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (636,122,117)
+color:(0.56,0.38,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (695,93,46)
+color:(0.64,0.36,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (720,93,-34)
+color:(0.61,0.40,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (720,124,-105)
+color:(0.63,0.42,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (680,182,-162)
+color:(0.63,0.44,0.14)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (610,256,-196)
+color:(0.66,0.33,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (526,332,-194)
+color:(0.69,0.41,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (439,403,-163)
+color:(0.57,0.43,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (364,450,-105)
+color:(0.54,0.47,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (311,477,-31)
+color:(0.61,0.37,0.27)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (288,470,50)
+color:(0.70,0.34,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (295,438,122)
+color:(0.53,0.45,0.16)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (337,377,172)
+color:(0.71,0.46,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (406,302,201)
+color:(0.70,0.48,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (493,224,193)
+color:(0.70,0.42,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (580,159,161)
+color:(0.63,0.41,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (653,110,99)
+color:(0.70,0.38,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (705,89,22)
+color:(0.63,0.47,0.12)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (727,101,-53)
+color:(0.63,0.33,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (708,137,-126)
+color:(0.61,0.45,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (663,200,-174)
+color:(0.72,0.36,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (592,277,-196)
+color:(0.66,0.36,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (502,355,-189)
+color:(0.68,0.39,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (416,417,-146)
+color:(0.69,0.41,0.12)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (349,464,-83)
+color:(0.59,0.38,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (298,479,-8)
+color:(0.54,0.40,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (285,465,71)
+color:(0.68,0.33,0.24)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (303,420,139)
+color:(0.67,0.38,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (356,353,182)
+color:(0.59,0.44,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (436,281,199)
+color:(0.67,0.36,0.15)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (519,202,188)
+color:(0.65,0.35,0.20)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (608,141,145)
+color:(0.65,0.38,0.30)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (671,100,79)
+color:(0.60,0.40,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (714,89,2)
+color:(0.61,0.45,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (723,107,-76)
+color:(0.72,0.40,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (700,156,-144)
+color:(0.56,0.32,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (643,225,-187)
+color:(0.59,0.46,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (561,299,-195)
+color:(0.66,0.34,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (476,373,-178)
+color:(0.61,0.37,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (396,437,-131)
+color:(0.65,0.39,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (325,472,-61)
+color:(0.68,0.34,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (289,477,14)
+color:(0.57,0.38,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (288,455,90)
+color:(0.71,0.36,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (316,403,153)
+color:(0.59,0.38,0.27)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (378,334,192)
+color:(0.61,0.35,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (459,254,202)
+color:(0.64,0.41,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (548,182,177)
+color:(0.64,0.35,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (626,128,124)
+color:(0.62,0.41,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (687,93,55)
+color:(0.58,0.42,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (721,94,-24)
+color:(0.70,0.40,0.20)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (716,120,-99)
+color:(0.57,0.39,0.25)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (685,172,-157)
+color:(0.59,0.48,0.24)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (625,243,-194)
+color:(0.70,0.41,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (541,324,-195)
+color:(0.62,0.35,0.31)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (452,391,-168)
+color:(0.57,0.48,0.14)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (377,449,-115)
+color:(0.67,0.47,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (315,474,-42)
+color:(0.68,0.32,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (288,473,40)
+color:(0.72,0.44,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (292,441,113)
+color:(0.67,0.48,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (331,384,169)
+color:(0.72,0.35,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (398,312,200)
+color:(0.59,0.34,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (481,234,199)
+color:(0.55,0.34,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (569,163,164)
+color:(0.55,0.49,0.12)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (648,117,109)
+color:(0.54,0.40,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (696,88,31)
+color:(0.68,0.46,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (727,96,-44)
+color:(0.71,0.48,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (716,134,-115)
+color:(0.64,0.44,0.16)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (668,194,-171)
+color:(0.71,0.34,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (557,263,-195)
+color:(0.54,0.33,0.23)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (518,338,-191)
+color:(0.62,0.45,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (434,402,-153)
+color:(0.61,0.43,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (363,445,-94)
+color:(0.60,0.34,0.20)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (319,459,-16)
+color:(0.64,0.44,0.18)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (308,449,62)
+color:(0.66,0.46,0.23)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (322,412,132)
+color:(0.59,0.47,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (364,356,180)
+color:(0.58,0.49,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (429,289,199)
+color:(0.70,0.37,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (510,217,189)
+color:(0.71,0.38,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (590,158,149)
+color:(0.72,0.32,0.27)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (653,123,87)
+color:(0.70,0.49,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (691,107,11)
+color:(0.58,0.32,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (704,123,-70)
+color:(0.69,0.42,0.15)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (685,159,-135)
+color:(0.62,0.34,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (637,221,-182)
+color:(0.61,0.37,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (565,288,-197)
+color:(0.54,0.44,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (489,359,-184)
+color:(0.55,0.38,0.16)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (411,417,-140)
+color:(0.64,0.42,0.15)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (350,449,-72)
+color:(0.64,0.38,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (317,460,6)
+color:(0.64,0.41,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (309,442,82)
+color:(0.59,0.32,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (330,398,147)
+color:(0.66,0.43,0.25)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (384,340,190)
+color:(0.67,0.49,0.24)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (450,267,200)
+color:(0.69,0.36,0.23)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (531,199,182)
+color:(0.69,0.41,0.18)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (607,148,134)
+color:(0.61,0.33,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (664,114,63)
+color:(0.61,0.32,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (698,108,-14)
+color:(0.66,0.32,0.14)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (702,131,-89)
+color:(0.60,0.37,0.25)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (671,174,-150)
+color:(0.64,0.48,0.21)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (623,241,-188)
+color:(0.57,0.40,0.31)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (543,313,-195)
+color:(0.70,0.47,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (465,374,-171)
+color:(0.54,0.41,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (396,429,-120)
+color:(0.61,0.43,0.25)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (337,458,-51)
+color:(0.65,0.47,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (305,458,26)
+color:(0.70,0.40,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (308,432,101)
+color:(0.58,0.43,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (342,380,161)
+color:(0.72,0.46,0.18)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (401,318,196)
+color:(0.61,0.40,0.31)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (474,247,199)
+color:(0.55,0.40,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (553,181,171)
+color:(0.61,0.34,0.16)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (626,136,117)
+color:(0.59,0.46,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (675,109,41)
+color:(0.59,0.35,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (704,112,-36)
+color:(0.72,0.38,0.16)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (698,142,-107)
+color:(0.68,0.47,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (658,195,-167)
+color:(0.60,0.41,0.18)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (599,260,-193)
+color:(0.55,0.35,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (522,331,-194)
+color:(0.65,0.39,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (443,391,-160)
+color:(0.55,0.38,0.24)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (375,439,-100)
+color:(0.66,0.34,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (327,462,-27)
+color:(0.64,0.43,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (301,452,51)
+color:(0.56,0.42,0.30)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (317,421,125)
+color:(0.58,0.42,0.23)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (356,366,176)
+color:(0.57,0.48,0.31)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (422,298,199)
+color:(0.59,0.37,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (499,226,196)
+color:(0.71,0.40,0.18)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (577,168,159)
+color:(0.56,0.48,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (640,122,98)
+color:(0.56,0.37,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (690,108,18)
+color:(0.53,0.41,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (703,119,-60)
+color:(0.69,0.33,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (688,157,-126)
+color:(0.66,0.43,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (640,210,-179)
+color:(0.68,0.42,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (579,283,-198)
+color:(0.65,0.33,0.12)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (496,349,-185)
+color:(0.67,0.36,0.25)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (423,409,-144)
+color:(0.67,0.38,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (359,449,-83)
+color:(0.59,0.34,0.23)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (316,460,-2)
+color:(0.72,0.45,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (306,448,75)
+color:(0.68,0.38,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (324,406,141)
+color:(0.58,0.43,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (372,345,184)
+color:(0.66,0.45,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (446,276,202)
+color:(0.65,0.41,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (520,209,185)
+color:(0.65,0.33,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (595,149,140)
+color:(0.66,0.41,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (663,114,76)
+color:(0.65,0.37,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (697,108,-4)
+color:(0.55,0.33,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (701,126,-82)
+color:(0.55,0.48,0.15)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (681,169,-146)
+color:(0.58,0.37,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (625,232,-184)
+color:(0.64,0.39,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (554,302,-197)
+color:(0.64,0.33,0.27)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (475,388,-177)
+color:(0.69,0.34,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (376,450,-127)
+color:(0.63,0.49,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (312,490,-61)
+color:(0.61,0.44,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (271,493,17)
+color:(0.55,0.37,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (269,469,94)
+color:(0.65,0.35,0.14)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (301,412,157)
+color:(0.59,0.36,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (370,334,191)
+color:(0.54,0.48,0.20)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (459,248,201)
+color:(0.67,0.42,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (558,173,178)
+color:(0.58,0.39,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (638,110,124)
+color:(0.67,0.49,0.30)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (707,74,51)
+color:(0.65,0.39,0.20)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (741,76,-25)
+color:(0.57,0.39,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (736,105,-99)
+color:(0.58,0.39,0.16)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (701,167,-159)
+color:(0.57,0.33,0.25)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (629,247,-192)
+color:(0.60,0.39,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (538,330,-194)
+color:(0.64,0.48,0.25)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (441,405,-165)
+color:(0.57,0.43,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (360,465,-111)
+color:(0.61,0.44,0.20)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (294,495,-36)
+color:(0.64,0.42,0.18)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (267,491,41)
+color:(0.68,0.45,0.24)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (275,451,113)
+color:(0.59,0.41,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (321,391,171)
+color:(0.57,0.43,0.31)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (394,311,201)
+color:(0.57,0.32,0.31)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (486,226,194)
+color:(0.57,0.37,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (580,149,163)
+color:(0.53,0.34,0.30)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (663,98,102)
+color:(0.59,0.43,0.23)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (718,73,31)
+color:(0.56,0.37,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (746,80,-47)
+color:(0.62,0.49,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (729,120,-119)
+color:(0.55,0.42,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (684,187,-171)
+color:(0.59,0.38,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (602,270,-195)
+color:(0.70,0.48,0.14)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (508,355,-187)
+color:(0.57,0.39,0.12)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (414,428,-152)
+color:(0.69,0.39,0.28)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (335,475,-90)
+color:(0.53,0.32,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (283,499,-15)
+color:(0.67,0.37,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (260,481,66)
+color:(0.53,0.37,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (284,439,132)
+color:(0.59,0.49,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (337,370,180)
+color:(0.65,0.46,0.21)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (420,285,200)
+color:(0.63,0.40,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (516,202,188)
+color:(0.67,0.39,0.15)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (606,134,148)
+color:(0.61,0.44,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (682,89,82)
+color:(0.58,0.46,0.31)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (729,69,8)
+color:(0.69,0.45,0.16)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (748,92,-73)
+color:(0.55,0.37,0.22)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (719,140,-136)
+color:(0.55,0.43,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (659,213,-183)
+color:(0.58,0.34,0.11)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (574,296,-197)
+color:(0.56,0.45,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (481,377,-179)
+color:(0.61,0.46,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (388,443,-137)
+color:(0.59,0.41,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (320,485,-67)
+color:(0.65,0.48,0.27)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (273,495,9)
+color:(0.55,0.49,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (268,474,84)
+color:(0.61,0.49,0.15)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (296,417,152)
+color:(0.68,0.35,0.34)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (361,347,191)
+color:(0.60,0.41,0.29)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (445,261,199)
+color:(0.62,0.33,0.23)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:6
+centro: (541,178,179)
+color:(0.70,0.46,0.33)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (631,115,131)
+color:(0.64,0.47,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (703,78,62)
+color:(0.62,0.45,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (738,75,-17)
+color:(0.56,0.44,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (740,102,-91)
+color:(0.61,0.42,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (706,156,-154)
+color:(0.59,0.46,0.32)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (638,233,-189)
+color:(0.57,0.43,0.31)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:5
+centro: (553,321,-198)
+color:(0.62,0.44,0.19)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (453,400,-172)
+color:(0.67,0.33,0.14)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (365,458,-118)
+color:(0.64,0.44,0.17)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:7
+centro: (301,490,-47)
+color:(0.67,0.38,0.26)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (268,493,30)
+color:(0.54,0.33,0.15)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (272,461,106)
+color:(0.57,0.33,0.27)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:8
+centro: (313,397,162)
+color:(0.64,0.48,0.18)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:9
+centro: (386,318,196)
+color:(0.68,0.35,0.13)
+kd:1.0
+ka:0.5
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
 radio:4
-centro: (104,383,100)
-color:(0.99,0.0,0.99)
+centro: (-1793,-393,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,382,104)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,382,109)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,380,114)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,379,119)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,376,123)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,374,128)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,371,132)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,367,135)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,364,139)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (104,360,142)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,355,144)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,351,146)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,346,148)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,341,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,336,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,331,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,326,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,321,148)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,316,147)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (104,312,145)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,307,143)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,303,140)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,299,137)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,296,133)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,292,129)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,290,125)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,287,121)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,285,116)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,284,111)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (104,283,107)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,283,102)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,283,97)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,283,92)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,284,87)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,286,82)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,288,77)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,290,73)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,293,69)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,296,65)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (104,300,62)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,304,59)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,308,56)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,312,54)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,317,52)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,322,51)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,327,50)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,332,50)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,337,50)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,342,50)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (104,347,52)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,351,53)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,356,55)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,360,58)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,364,61)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,368,64)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,371,68)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,374,72)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,377,76)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,379,81)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (104,381,86)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,382,90)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,382,95)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,382,100)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,382,105)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,381,110)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,380,115)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,378,120)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,376,124)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,373,128)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (104,370,132)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,367,136)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,363,139)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,359,142)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,354,144)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,350,146)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,345,148)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,340,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,335,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (104,330,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (96,333,149)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (91,333,148)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (87,333,147)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (82,333,145)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (78,333,142)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (73,333,139)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (70,333,136)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (66,333,133)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (63,333,129)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (60,333,125)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (58,333,120)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (56,333,115)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (55,333,111)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (54,333,106)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (54,333,101)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (54,333,96)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (54,333,91)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (55,333,86)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (57,333,81)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (59,333,77)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (62,333,72)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (64,333,68)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (68,333,65)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (71,333,61)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (75,333,58)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (80,333,56)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (84,333,53)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (89,333,52)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (94,333,50)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (99,333,50)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (104,333,50)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (109,333,50)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (114,333,51)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (118,333,52)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (123,333,54)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (128,333,56)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (132,333,58)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (136,333,61)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (140,333,65)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (143,333,69)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (146,333,73)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (148,333,77)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (150,333,82)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (152,333,86)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (153,333,91)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (153,333,96)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (153,333,101)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (153,333,106)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (152,333,111)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (151,333,116)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (149,333,121)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (147,333,125)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (144,333,129)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (141,333,133)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (137,333,137)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (133,333,140)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (129,333,142)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (125,333,145)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (120,333,147)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (115,333,148)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (110,333,149)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (105,333,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (100,333,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (95,333,149)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (91,333,148)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (86,333,146)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (81,333,144)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (77,333,142)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (73,333,139)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (69,333,136)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (66,333,132)
-color:(0.99,0.0,0.99)
-kd:1.0
-ka:0.7
-ks:0.8
-kn:1
-
-/////////////////
-#esfera
-radio:2
-centro: (62,333,128)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (60,333,124)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (58,333,119)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (56,333,115)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (55,333,110)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (54,333,105)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (54,333,100)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (54,333,95)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:2
-centro: (54,333,90)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:4
-centro: (91,333,98)
-color:(0.99,0.0,0.0)
-kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
 radio:4
-centro: (90,323,85)
-color:(0.99,0.0,0.0)
+centro: (-732,1039,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-118,246,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (1637,-496,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (332,-768,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-1628,666,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (400,518,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (-1906,-507,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
 radio:4
-centro: (93,329,98)
-color:(0.0,0.0,0.99)
+centro: (1741,-785,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (-1555,569,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-982,-344,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (782,689,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (712,-313,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (231,1072,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-391,-864,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (967,-603,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
 radio:4
-centro: (98,333,91)
-color:(0.0,0.0,0.99)
+centro: (-1236,-959,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (260,535,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
 radio:4
-centro: (100,321,89)
-color:(0.0,0.0,0.99)
+centro: (-1762,385,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-1280,-414,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-2004,240,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-599,-238,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (204,475,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
 radio:4
-centro: (88,326,96)
-color:(0.0,0.0,0.99)
+centro: (-1013,-1058,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (44,-569,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (-1433,-357,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (654,1051,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
 radio:4
-centro: (103,331,89)
-color:(0.0,0.0,0.99)
+centro: (-1531,808,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-445,430,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-521,30,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-1542,-714,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (748,576,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-560,-732,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (466,-989,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-715,-821,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-1625,770,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (1900,-216,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
 radio:4
-centro: (93,330,96)
-color:(0.0,0.0,0.99)
+centro: (308,141,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (1518,-432,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
 radio:4
-centro: (92,328,90)
-color:(0.0,0.0,0.99)
+centro: (1222,684,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-245,654,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-1978,-994,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (-923,-169,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (1362,45,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-814,-42,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
 radio:4
-centro: (99,321,93)
-color:(0.99,0.0,0.0)
+centro: (1984,1106,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:10
-centro: (448,233,-192)
-color:(0.99,0.0,0.99)
+radio:3
+centro: (771,-146,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (468,233,-196)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (488,233,-199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (508,233,-199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (528,233,-198)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (547,233,-195)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (567,233,-189)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (585,233,-182)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (603,233,-173)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (620,233,-162)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (636,233,-150)
-color:(0.99,0.0,0.99)
+radio:3
+centro: (104,-89,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (650,233,-136)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (663,233,-120)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (674,233,-104)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (684,233,-86)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (691,233,-68)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (697,233,-49)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (701,233,-29)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (703,233,-9)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (703,233,10)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (701,233,29)
-color:(0.99,0.0,0.99)
+radio:4
+centro: (-1646,1049,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (697,233,49)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (691,233,68)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (684,233,87)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (674,233,104)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (663,233,121)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (650,233,136)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (635,233,150)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (620,233,162)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (603,233,173)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (585,233,182)
-color:(0.99,0.0,0.99)
+radio:4
+centro: (-319,883,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (566,233,189)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (547,233,195)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (528,233,198)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (508,233,199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (488,233,199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (468,233,196)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (448,233,192)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (429,233,185)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (411,233,177)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (394,233,167)
-color:(0.99,0.0,0.99)
+radio:3
+centro: (661,-498,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (378,233,155)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (363,233,142)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (349,233,127)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (337,233,111)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (327,233,94)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (319,233,76)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (312,233,57)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (307,233,37)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (304,233,18)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (304,233,-1)
-color:(0.99,0.0,0.99)
+radio:0
+centro: (1177,548,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (305,233,-21)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (308,233,-41)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (313,233,-60)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (320,233,-79)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (329,233,-97)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (339,233,-114)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (352,233,-130)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (365,233,-144)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (381,233,-157)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (397,233,-169)
-color:(0.99,0.0,0.99)
+radio:1
+centro: (-1385,382,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (414,233,-179)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (433,233,-187)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (452,233,-193)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (471,233,-197)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (491,233,-199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (511,233,-199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (531,233,-198)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (551,233,-194)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (570,233,-188)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (588,233,-181)
-color:(0.99,0.0,0.99)
+radio:4
+centro: (-901,-652,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (606,233,-171)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (623,233,-160)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (638,233,-147)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (652,233,-133)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (665,233,-118)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (676,233,-101)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (685,233,-83)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (693,233,-65)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (698,233,-46)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (504,431,-26)
-color:(0.99,0.0,0.99)
+radio:4
+centro: (-272,422,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (504,432,-6)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,432,13)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,430,33)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,425,52)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,419,71)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,411,90)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,401,107)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,390,123)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,376,138)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (504,362,152)
-color:(0.99,0.0,0.99)
+radio:4
+centro: (-1726,-365,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (504,346,164)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,329,175)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,311,183)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,292,190)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,273,195)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,253,198)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,233,199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,213,199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,193,196)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (504,174,191)
-color:(0.99,0.0,0.99)
+radio:0
+centro: (-520,1034,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (504,155,184)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,137,175)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,120,165)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,104,153)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,90,139)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,76,124)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,65,108)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,55,91)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,46,73)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (504,40,54)
-color:(0.99,0.0,0.99)
+radio:4
+centro: (1856,634,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (504,36,34)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,33,14)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,33,-5)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,34,-25)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,38,-44)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,43,-64)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,50,-82)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,60,-100)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,70,-117)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (504,83,-132)
-color:(0.99,0.0,0.99)
+radio:1
+centro: (1727,-255,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (504,97,-147)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,112,-159)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,129,-171)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,146,-180)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,165,-188)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,184,-194)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,204,-197)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,223,-199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,243,-199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (504,263,-197)
-color:(0.99,0.0,0.99)
+radio:4
+centro: (408,-70,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (504,283,-193)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,302,-187)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,320,-179)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,338,-169)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,354,-158)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,370,-145)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,383,-131)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,396,-115)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,406,-98)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (504,415,-80)
-color:(0.99,0.0,0.99)
+radio:0
+centro: (-604,-545,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (504,423,-62)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,428,-42)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,431,-23)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,432,-3)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,432,16)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,429,36)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,424,56)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,418,74)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,410,93)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:10
-centro: (504,399,110)
-color:(0.99,0.0,0.99)
+radio:1
+centro: (-836,-628,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:5
-centro: (504,387,126)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,374,141)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,359,154)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,343,166)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,326,176)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,308,185)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,289,191)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,270,196)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:5
-centro: (504,250,199)
-color:(0.0,0.0,0.0)
-kd:0.1
-ka:0.1
-ks:0.1
-kn:0.1
-
-/////////////////
-#esfera
-radio:17
-centro: (494,233,18)
-color:(0.99,0.0,0.0)
+radio:4
+centro: (-1812,127,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (503,211,111)
-color:(0.99,0.0,0.0)
+radio:2
+centro: (1958,486,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (481,211,113)
-color:(0.0,0.0,0.99)
+radio:1
+centro: (730,-670,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (513,219,66)
-color:(0.0,0.0,0.99)
+radio:0
+centro: (-289,-760,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (506,245,93)
-color:(0.0,0.0,0.99)
+radio:0
+centro: (-580,484,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (484,211,103)
-color:(0.0,0.0,0.99)
+radio:1
+centro: (-386,448,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (488,235,58)
-color:(0.99,0.0,0.0)
+radio:3
+centro: (-1544,1039,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (513,222,40)
-color:(0.99,0.0,0.0)
+radio:2
+centro: (-518,692,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (507,228,68)
-color:(0.99,0.0,0.0)
+radio:4
+centro: (1641,592,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (491,221,74)
-color:(0.99,0.0,0.0)
+radio:3
+centro: (-1488,-372,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (492,237,9)
-color:(0.0,0.0,0.99)
+radio:1
+centro: (-1546,840,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (508,238,73)
-color:(0.99,0.0,0.0)
+radio:4
+centro: (-1856,-606,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (503,249,13)
-color:(0.0,0.0,0.99)
+radio:0
+centro: (1088,1005,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (480,246,91)
-color:(0.0,0.0,0.99)
+radio:0
+centro: (297,-40,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (502,232,72)
-color:(0.99,0.0,0.0)
+radio:2
+centro: (-230,137,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (514,242,46)
-color:(0.0,0.0,0.99)
+radio:0
+centro: (-1992,255,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (482,236,16)
-color:(0.99,0.0,0.0)
+radio:0
+centro: (1419,727,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (518,212,50)
-color:(0.0,0.0,0.99)
+radio:0
+centro: (-1980,-799,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (501,221,72)
-color:(0.99,0.0,0.0)
+radio:0
+centro: (1734,966,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
 kn:1
 
 /////////////////
 #esfera
-radio:17
-centro: (519,235,55)
-color:(0.99,0.0,0.0)
+radio:3
+centro: (-1146,487,1500)
+color:(0.99,0.99,0.99)
 kd:1.0
-ka:0.7
-ks:0.8
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (764,1081,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-225,-902,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (1163,186,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-1776,735,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-561,882,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (-1888,-1110,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-1884,433,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-1094,-414,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-1127,-320,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-569,-962,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (1758,-198,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-2004,334,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-73,-647,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-1928,-1039,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-1552,164,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-1669,1049,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-777,297,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (1853,83,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-730,-35,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-837,404,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-1842,-106,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (628,-221,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-1458,586,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (-1092,-82,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (8,-1129,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-404,350,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (1473,-426,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (1137,39,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-1503,-819,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (1079,-900,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (1818,786,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-666,-350,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-551,-172,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (1184,373,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (747,885,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-536,-150,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (1624,-441,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-961,316,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (568,-431,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-964,-864,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (50,827,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-807,-595,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (380,-1022,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (1524,667,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-1448,1034,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (121,-258,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (-1742,-22,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-1764,-731,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-110,-794,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (220,-750,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (660,-323,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (1000,-122,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (109,-498,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (-1583,-362,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (495,-298,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (561,703,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-29,-410,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-1818,-662,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-1653,-144,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (979,-176,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (982,1112,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-1971,1105,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (1664,-46,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (999,259,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-637,-1009,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-737,-196,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-1853,152,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-217,-910,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (810,-294,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-90,-199,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-1994,279,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (1197,-1063,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-1532,-155,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:0
+centro: (407,-416,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-1797,-677,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (488,-1038,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (1334,-623,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (888,1048,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-726,-158,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (-1730,4,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (113,-982,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-585,-669,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (-937,319,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (1312,-913,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-1725,942,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (654,-82,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-1324,-512,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-1384,-256,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (417,-1110,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (409,185,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (1589,422,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:1
+centro: (-1237,845,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (39,161,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (907,1093,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (476,1132,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:4
+centro: (-129,-229,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:2
+centro: (241,587,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
+kn:1
+
+/////////////////
+#esfera
+radio:3
+centro: (2007,-40,1500)
+color:(0.99,0.99,0.99)
+kd:1.0
+ka:0.9
+ks:0.0
 kn:1
 
