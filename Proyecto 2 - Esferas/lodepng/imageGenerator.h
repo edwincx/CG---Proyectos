@@ -4,7 +4,7 @@
 //                                              //
 //////////////////////////////////////////////////
 /*
- 1. Actualizar la vara
+ 1. Actualizar primero
   sudo apt-get update
 
  2. Biblioteca necesaria 
@@ -29,7 +29,7 @@
  7.
  sudo make install
 
- 8. Configurar la vara, si esto no sirve
+ 8. Configurar, si esto no sirve
  sudo ldconfig /usr/local/lib
 
 Referencias:
@@ -37,7 +37,7 @@ http://www.imagemagick.org/script/install-source.php#unix
 http://www.imagemagick.org/download/
 
 
- /////////////////////////////////////////////
+ 
  Para compilar:
 
  gcc -o main main.c `pkg-config --cflags --libs MagickCore`

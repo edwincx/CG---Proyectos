@@ -1,21 +1,21 @@
-////////////////////////////////////////////////////////////////
+
 Instituto Tecnologico de Costa Rica
 Escuela de Ingenieria en Computación
 Computer Graphics
 Ph.D. Francisco Torres R.
 
-Jeffrey Camareno, Olman Quiros y Gabriel Pizarro
-
 Proyecto 2: Ray Tracing Basico
-///////////////////////////////////////////////////////////////
+
+Estudiantes:
+Melissa Molina Corrales
+Edwin Cen Xu
+
+
+Instrucciones
 
 Ejecucion:
-Parametros: ./rayTracer  -i <Archivo de Entrada>  -o <Archivo de Salida> 
 
-Compilar:
 Ejecutar el makefile
 	$ make
 
-Si desea Compilar y linkear manualmente:
-    	$ gcc -o rayTracer rayTracer.c lodepng/lodepng.c -lm 
-
+Una vez terminada la ejecución se generará una imagen con el resultado de la escena creada.
