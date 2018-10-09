@@ -18,7 +18,7 @@ char token_buffer[100];
 
 
 
-void generar_estrellas(int cantidad, float profundidad)
+void generar_ps(int cantidad, float profundidad)
 {
 	/* initialize random seed: */
     	srand ( time(NULL) );
@@ -223,7 +223,7 @@ int scanner(FILE *inFile){
 					}
 				}
 
-				generar_estrellas(cantidad, profundidad);
+				generar_ps(cantidad, profundidad);
 
 				//ungetc(c, inFile);
 				return 0;
@@ -231,10 +231,8 @@ int scanner(FILE *inFile){
 			}
 
 
-			//////////////////////////////////////
-			/////// ESTRTELLA
-			///////////////////////////////////////
-			if((strcmp (token_buffer,"#estrella"))==0){ 
+			
+			if((strcmp (token_buffer,"#p"))==0){ 
 				clear_buffer();			
 	
 				float x_sum;
