@@ -20,7 +20,7 @@
 	#define max( a, b ) ( ((a) > (b)) ? (a) : (b) )
 #endif
 
-#define EPSILON 0.05
+#define LimN 0.05
 
 COLOR **framebuffer;
 COLOR color;
@@ -215,7 +215,7 @@ INTERSECCION First_Intersection(PUNTO3D o, VECTOR dir){
 
   	while(i <= longitudObjetos(objetos)){
   		t = calcularInterseccion(p, o, dir);
-  		if(t < tmin && t > EPSILON){
+  		if(t < tmin && t > LimN){
   			interseccion.objeto = p;
   			tmin = t;
   		}
