@@ -15,7 +15,6 @@ Instrucciones
 
 Ejecucion:
 
-Ejecutar el makefile
-	$ make
+Ejecutar el makefile con el comando make
 
 Una vez terminada la ejecución se generará una imagen con el resultado de la escena creada.
