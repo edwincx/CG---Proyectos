@@ -1,0 +1,242 @@
+/*
+###########################################################
+Este documento define la escena con la siguiente sintaxis:
+//de ser necesario, agregar un comentario
+#nombre_objeto
+nombre_atributo:valor
+###########################################################
+*/
+
+#escena
+background:(0.0,0.00002352,0.004117)
+ojo:(504, 233, -1000)
+//iluminacion ambiente
+ia:0.5
+
+///////////////////
+#luz
+posicion:(1004,200,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1.0
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+///////////////////
+#luz
+posicion:(1004,567,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+////////////////////
+#luz
+posicion:(1204,367,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+
+///////////////////////
+#luz
+posicion:(1204,233,300)
+//Intensidad
+ip:10
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+
+/////////////////
+#esfera
+radio:20
+centro: (800,305,200)
+color:(0.0,0.00002352,0.004117)
+kd:0
+ka:0.7
+
+
+
+/////////////////
+#esfera
+radio:20
+centro: (810,300,210)
+color:(1, 1, 1)
+kd:1.0
+ka:0.0
+
+/////////////////
+#esfera
+radio:150
+centro: (-2100,1533,5800)
+color:(1.0,0.00002352,0.004117)
+kd:1.0
+ka:0.1
+
+/////////////////
+#esfera
+radio:150
+centro: (514,273,0)
+color:(1, 0.8117, 0.4313)
+kd:1.0
+ka:0.1
+
+
+
+
+
+
+
+/////////////////
+#esfera
+radio:40
+centro: (100,200,0)
+color:(0, 1, 0)
+kd:1.0
+ka:1.0
+
+/////////////////
+#esfera
+radio:20
+centro: (100,200,-35)
+color:(1, 1, 1)
+kd:1.0
+ka:1.0
+
+
+
+/////////////////
+#esfera
+radio:5
+centro: (100,200,-55)
+color:(0, 0, 0)
+kd:0
+ka:0
+
+/////////////////
+#esfera
+radio:15
+centro: (120,160,0)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+/////////////////
+#esfera
+radio:10
+centro: (133,142,0)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+/////////////////
+#esfera
+radio:8
+centro: (150,142,0)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+/////////////////
+#esfera
+radio:5
+centro: (155,132,0)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+
+/////////////////
+#esfera
+radio:15
+centro: (130,180,0)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+
+/////////////////
+#esfera
+radio:10
+centro: (150,180,0)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+
+/////////////////
+#esfera
+radio:8
+centro: (158,172,0)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+/////////////////
+#esfera
+radio:5
+centro: (170,172,0)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+/////////////////
+#esfera
+radio:3
+centro: (175,167,0)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+
+/////////////////
+#esfera
+radio:15
+centro: (130,200,50)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+/////////////////
+#esfera
+radio:10
+centro: (150,200,50)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+/////////////////
+#esfera
+radio:8
+centro: (160,205,50)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+/////////////////
+#esfera
+radio:5
+centro: (170,200,50)
+color:(0, 1, 0)
+kd:1
+ka:1
+
+/////////////////inicio
+
+

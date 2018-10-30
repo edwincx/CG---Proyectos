@@ -16,9 +16,85 @@ char token_buffer[100];
 
 
 
+void generar_estrell_poligono(float x_sum, float y_sum, float escala, float color_vector[3])
+{
+
+	///////// Aca crear objeto con estructura Poligono!!!!!
+	struct OBJETO *ptr1;
+	struct POLIGONO *poligono;
+	poligono = (struct POLIGONO*) malloc(sizeof(struct POLIGONO));
+
+	//Inicializar todos los datos de Poligono!
+	poligono->vertices_list = NULL;
+	poligono->vertices_list_2D = NULL;
+	VECTOR vector_vacio;
+	vector_vacio.X = 0;
+	vector_vacio.Y = 0;
+	vector_vacio.Z = 0;
+	poligono->normal = vector_vacio;
+	poligono->vertices_num= 0;
+
+	//Enlazar Objeto y Poligono
+  	ptr1 = creanodo();		
+  	ptr1->p = poligono;
+  	objetos = insertafinal(objetos, ptr1);				
+  	ptr1->tipo = "poligono";
+
+	poligono->A = 0;
+	poligono->B = 0;
+	poligono->C = 1;
+	poligono->D = 0;
+
+	//Color
+	ptr1->color.r = color_vector[0];
+  	ptr1->color.g = color_vector[1];
+  	ptr1->color.b = color_vector[2];
+	//Ka
+	ptr1->Ka = 1;
+	//kd
+	ptr1->Kd = 1;
+	//ks
+	ptr1->Ks = 0;
+	//kn
+	ptr1->Kn = 1;
 
 
-void generar_ps(int cantidad, float profundidad)
+	float vertices_estrella[][2]={{6,9},{0,24},{-6,9},{-26,10},{-11,0},{-20,-20},{0,-7},{19,-19},{10,0},{25,9}};
+
+	int a;
+	for(a=0; a <10;a++)
+	{
+		float vert_x = x_sum + vertices_estrella[a][0]* escala;
+		float vert_y = y_sum + vertices_estrella[a][1]* escala;
+		struct VERTICE *p_vertice;
+		p_vertice = (struct VERTICE*) malloc(sizeof(struct VERTICE));				
+		p_vertice->X = vert_x;
+	  	p_vertice->Y = vert_y;
+	  	p_vertice->Z = 0;
+	
+	
+		if (poligono->vertices_list == NULL){
+			poligono->vertices_list = append_vertice(poligono->vertices_list, p_vertice);
+	  	}
+		else append_vertice(poligono->vertices_list, p_vertice);
+	
+		poligono->vertices_num++;
+
+		// Vertices Aplastados 2D
+		struct VERTICE *p_vertice_2D;
+		p_vertice_2D = (struct VERTICE*) malloc(sizeof(struct VERTICE));
+		p_vertice_2D->X = vert_x;
+		p_vertice_2D->Y = vert_y;
+		p_vertice_2D->Z = 0;
+		if (poligono->vertices_list_2D == NULL){
+		poligono->vertices_list_2D = append_vertice(poligono->vertices_list_2D, p_vertice_2D);
+	  	}
+		else append_vertice(poligono->vertices_list_2D, p_vertice_2D);
+	}
+
+}
+
+void generar_estrellas(int cantidad, float profundidad)
 {
 	/* initialize random seed: */
     	srand ( time(NULL) );
@@ -53,7 +129,9 @@ void generar_ps(int cantidad, float profundidad)
 		//kd
 		ptr1->Kd = 1;
 		//ks
-	
+		ptr1->Ks = 0;
+		//kn
+		ptr1->Kn = 1;
 	
 	}
 
@@ -223,7 +301,7 @@ int scanner(FILE *inFile){
 					}
 				}
 
-				generar_ps(cantidad, profundidad);
+				generar_estrellas(cantidad, profundidad);
 
 				//ungetc(c, inFile);
 				return 0;
@@ -231,8 +309,10 @@ int scanner(FILE *inFile){
 			}
 
 
-			
-			if((strcmp (token_buffer,"#p"))==0){ 
+			//////////////////////////////////////
+			/////// ESTRTELLA
+			///////////////////////////////////////
+			if((strcmp (token_buffer,"#estrella"))==0){ 
 				clear_buffer();			
 	
 				float x_sum;
@@ -283,7 +363,7 @@ int scanner(FILE *inFile){
 					}
 				}
 
-				
+				generar_estrell_poligono( x_sum,  y_sum,  escala,  color_vector);
 				
 				//ungetc(c, inFile);
 				return 0;
@@ -503,7 +583,22 @@ int scanner(FILE *inFile){
 						// Aca asignar el radio con atof(token_buffer);
 						ptr1->Kd = kd_temp;
 					}
-				
+					//kn
+					else if((strcmp (token_buffer,"kn:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float kn_temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						ptr1->Kn = kn_temp;
+					}
+					//ks
+					else if((strcmp (token_buffer,"ks:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float ks_temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						ptr1->Ks = ks_temp;
+					}
 					else
 					{
 						//printf("Error en archivo, propiedad \"%s\" de esfera no identificada!!!\n",token_buffer );
@@ -515,13 +610,189 @@ int scanner(FILE *inFile){
 			}		
 
 
-			
+
+
+			//////////////////////////////
+			/// POLIGONOS
+			//////////////////////////////
+			else if((strcmp (token_buffer,"#poligono"))==0){ 
+				clear_buffer();
+
+				///////// Aca crear objeto con estructura Poligono!!!!!
+				struct OBJETO *ptr1;
+				struct POLIGONO *poligono;
+				poligono = (struct POLIGONO*) malloc(sizeof(struct POLIGONO));
+
+				//Inicializar todos los datos de Poligono!
+				poligono->vertices_list = NULL;
+				poligono->vertices_list_2D = NULL;
+				VECTOR vector_vacio;
+				vector_vacio.X = 0;
+				vector_vacio.Y = 0;
+				vector_vacio.Z = 0;
+				poligono->normal = vector_vacio;
+				poligono->vertices_num= 0;
+
+				//Enlazar Objeto y Poligono
+			  	ptr1 = creanodo();		
+			  	ptr1->p = poligono;
+			  	objetos = insertafinal(objetos, ptr1);				
+			  	ptr1->tipo = "poligono";
+				
+				
+
+			  	while ((in_char = getc(inFile)) != '#'){ //meintras no sea otro objeto => get next token
+					if( scanner(inFile) != 0 ) return -1;
+					if((in_char = getc(inFile)) == EOF) return 0; //Corroborar que no se ha terminado el archivo 
+					ungetc(in_char, inFile);
+	
+					//Radio
+					if((strcmp (token_buffer,"a:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						poligono->A = temp;
+					}
+					else if((strcmp (token_buffer,"b:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						poligono->B = temp;
+					}	
+					else if((strcmp (token_buffer,"c:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						poligono->C = temp;
+					}
+					else if((strcmp (token_buffer,"d:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						poligono->D = temp;
+					}
+					//Vertice
+					else if((strcmp (token_buffer,"vertice:"))==0){
+
+						if( scanner(inFile) != 0 ) return -1;
+						float temp_vector[3];
+						if( parse_vector(token_buffer, token_buffer_index, temp_vector) !=0) return -1;
+
+						struct VERTICE *p_vertice;
+						p_vertice = (struct VERTICE*) malloc(sizeof(struct VERTICE));				
+						p_vertice->X = temp_vector[0];
+					  	p_vertice->Y = temp_vector[1];
+					  	p_vertice->Z = temp_vector[2];
+						
+						
+						if (poligono->vertices_list == NULL){
+							poligono->vertices_list = append_vertice(poligono->vertices_list, p_vertice);
+					  	}
+						else append_vertice(poligono->vertices_list, p_vertice);
+						
+						poligono->vertices_num++;
+
+				
+						
+						// Vertices Aplastados 2D
+						struct VERTICE *p_vertice_2D;
+						p_vertice_2D = (struct VERTICE*) malloc(sizeof(struct VERTICE));
+
+						//Si el coeficiente A es mayor, eliminar X
+						if(abs(poligono->B) <= abs(poligono->A) && abs(poligono->C) <= abs(poligono->A))
+						{
+							p_vertice_2D->X = temp_vector[1];
+					  		p_vertice_2D->Y = temp_vector[2];
+					  		p_vertice_2D->Z = 0;
+						}
+						//Si el coeficiente B es mayor, eliminar Y
+						else if(abs(poligono->A) <= abs(poligono->B) && abs(poligono->C) <= abs(poligono->B)) 
+						{
+							p_vertice_2D->X = temp_vector[0];
+					  		p_vertice_2D->Y = temp_vector[2];
+					  		p_vertice_2D->Z = 0;
+						}
+						else  	//Si el coeficiente C es mayor, eliminar Z
+						{	
+							p_vertice_2D->X = temp_vector[0];
+					  		p_vertice_2D->Y = temp_vector[1];
+					  		p_vertice_2D->Z = 0;
+						}
+						//printf("Vert_2D:%Lf, %Lf\n",p_vertice_2D->X,p_vertice_2D->Y);
+						//append_vertice(poligono->vertices_list_2D, p_vertice_2D);
+
+						if (poligono->vertices_list_2D == NULL){
+						poligono->vertices_list_2D = append_vertice(poligono->vertices_list_2D, p_vertice_2D);
+					  	}
+						else append_vertice(poligono->vertices_list_2D, p_vertice_2D);
+
+						
+						
+					}												
+					//Color
+					else if((strcmp (token_buffer,"color:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float temp_vector[3];
+						if( parse_vector(token_buffer, token_buffer_index, temp_vector) !=0) return -1;
+						
+						ptr1->color.r = temp_vector[0];
+					  	ptr1->color.g = temp_vector[1];
+					  	ptr1->color.b = temp_vector[2];
+
+						//printf("Color: %f, %f, %f \n",temp_vector[0],temp_vector[1],temp_vector[2]);
+					}
+					
+					//ka
+					else if((strcmp (token_buffer,"ka:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float ka_temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						ptr1->Ka = ka_temp;
+					}
+					//ka
+					else if((strcmp (token_buffer,"kd:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float kd_temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						ptr1->Kd = kd_temp;
+					}
+					//kn
+					else if((strcmp (token_buffer,"kn:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float kn_temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						ptr1->Kn = kn_temp;
+					}
+					//ks
+					else if((strcmp (token_buffer,"ks:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float ks_temp = atof(token_buffer);
+						//printf("Radio:%f\n",radio_temp);
+						// Aca asignar el radio con atof(token_buffer);
+						ptr1->Ks = ks_temp;
+					}
+					else
+					{
+						printf("Error en archivo, propiedad \"%s\" de esfera no identificada!!!\n",token_buffer );
+						return -1;
+					}
+				}
+				
+				ungetc(c, inFile);	
+			}
 
 
 			else if((strcmp (token_buffer,"#luz"))==0){ 
 
 
-				
+				//Toda la puya
 
 				ungetc(c, inFile);
 			}
@@ -581,3 +852,25 @@ int scanner(FILE *inFile){
 
 
 
+
+/*
+//Experimento No Descomentar!!!!
+int esfera_data_nums = 5;
+char esfera_ids[5]={"radio","centro","color","kd","ka"};
+int esfera_flags[5];
+
+
+
+
+//Encuentra en que posicion se encuentra cierto dato, recive: nombre del dato, la lista de los nombres y el tamaño de lista
+int get_position(const char* name, const char** list, int sizeof_list){
+  int i;
+  for(i=0; i < sizeof_list; i++){
+    if(strcmp(name,list[i]) == 0){
+      return i;
+    }
+  }
+  return -1;
+}
+
+*/

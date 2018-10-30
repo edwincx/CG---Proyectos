@@ -1,3 +1,10 @@
+/*
+Compilar
+gcc -o rayTracer rayTracer.c lodepng/lodepng.c -lm
+
+
+*/
+
 #include <math.h>
 #include <malloc.h>
 #include <stdio.h>
@@ -7,10 +14,15 @@
 #include <unistd.h>
 #include <stdbool.h>
 
+
+
 #include "rayTracer.h"
 #include "objetos.h"
 #include "scanner.h"
 #include "lodepng/lodepng.h"
+
+
+
 
 #ifndef min
 	#define min( a, b ) ( ((a) < (b)) ? (a) : (b) )
@@ -20,7 +32,9 @@
 	#define max( a, b ) ( ((a) > (b)) ? (a) : (b) )
 #endif
 
-#define LimN 0.05
+#define EPSILON 0.05
+
+
 
 COLOR **framebuffer;
 COLOR color;
@@ -29,6 +43,7 @@ VECTOR vDir;
 PANTALLA P;
 PUNTO3D pm;
 char * output_file_name = "image.png";
+
 
 COLOR De_que_color();
 INTERSECCION First_Intersection();
@@ -40,10 +55,18 @@ VECTOR normalizarVector(VECTOR V){
 
 	norma = sqrt(pow(V.X,2) + pow(V.Y,2) + pow(V.Z,2));
 
+	//printf("V.X = %Lf\n", V.X);
+	//printf("V.Y = %Lf\n", V.Y);
+	//printf("V.Z = %Lf\n", V.Z);
+	//printf("norma = %Lf\n", norma);
 	V.X = V.X/norma;
 	V.Y = V.Y/norma;
 	V.Z = V.Z/norma;
 
+	//printf("V.X/norma = %Lf\n", V.X);
+	//printf("V.Y/norma = %Lf\n", V.Y);
+	//printf("V.Z/norma = %Lf\n", V.Z);
+	//printf("finaliza\n");
 	return V;
 }
 
@@ -57,13 +80,35 @@ VECTOR normalEsfera(struct ESFERA *e, PUNTO3D punto_interseccion){
 
 
 
+VECTOR normalPoligono(struct POLIGONO *p, PUNTO3D punto_interseccion)
+{
+	if(p->normal.X == 0 && p->normal.Y == 0 && p->normal.Z == 0 ) //Si el vector esta vacio, calcularlo
+	{
+		VECTOR N;
+		N.X = abs(p->A);// - punto_interseccion.Xw;
+		N.Y = abs(p->B);// - punto_interseccion.Yw;
+		N.Z = abs(p->C);// - punto_interseccion.Zw;
+	
+
+		p->normal = N;
+	}
+	return p->normal;
+}
+
+
 VECTOR calcularNormal(struct OBJETO *Q, PUNTO3D punto_interseccion){
 	VECTOR N;
 	if(Q->tipo == "esfera"){
 		N = normalEsfera(Q->p, punto_interseccion);
+		//printf("N.X = %Lf\n", N.X);
 	}
 	
+	else if(Q->tipo == "poligono"){
+		N = normalPoligono(Q->p, punto_interseccion);
+	}
+
 	N = normalizarVector(N);
+	//printf("N:%Lf,%Lf,%Lf\n",N.X, N.Y, N.Z);
 	return N;
 }
 
@@ -186,8 +231,103 @@ long double interseccionEsfera(struct ESFERA *e, PUNTO3D o, VECTOR d){
 		}
 	}
 
+	
 	return t;
 }
+
+
+
+
+
+int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
+{
+  int i, j, c = 0;
+  for (i = 0, j = nvert-1; i < nvert; j = i++) {
+    if ( ((verty[i]>testy) != (verty[j]>testy)) &&
+     (testx < (vertx[j]-vertx[i]) * (testy-verty[i]) / (verty[j]-verty[i]) + vertx[i]) )
+       c = !c;
+  }
+  return c;
+}
+
+long double interseccionPoligono(struct POLIGONO *poligono, PUNTO3D ojo, VECTOR dir){
+	long double nominador,denominador,t;
+
+
+	nominador = -( ( poligono->A * ojo.Xw ) + ( poligono->B * ojo.Yw ) + ( poligono->C * ojo.Zw ) + poligono->D);
+	denominador = ( (poligono->A * dir.X) + (poligono->B * dir.Y ) + (poligono->C * dir.Z));
+
+
+
+	if(denominador == 0 ){	// Si no hay interseccion con el Poligono!
+		t = -1;
+		return t;
+	}
+
+	t = nominador/ denominador;
+	if(t<0 )	//Si la interseccion esta detras de la camara!
+	{
+		t = -1;
+		return t;
+	}
+
+	//Calcular Punto de Interseccion!
+	PUNTO3D punto_interseccion;
+  	punto_interseccion.Xw = ojo.Xw + t * dir.X;
+  	punto_interseccion.Yw = ojo.Yw + t * dir.Y;
+  	punto_interseccion.Zw = ojo.Zw + t * dir.Z;
+
+
+	//Aplanar punto de interseccion a 2D!
+	PUNTO3D punto_interseccion_2D;
+	//Si el coeficiente A es mayor, eliminar X
+	if(abs(poligono->B) < abs(poligono->A) && abs(poligono->C) < abs(poligono->A))
+	{
+		punto_interseccion_2D.Xw = punto_interseccion.Yw;
+  		punto_interseccion_2D.Yw = punto_interseccion.Zw;
+  		punto_interseccion_2D.Zw = 0;
+	}
+	//Si el coeficiente B es mayor, eliminar Y
+	else if(abs(poligono->A) < abs(poligono->B) && abs(poligono->C) < abs(poligono->B))
+	{
+		punto_interseccion_2D.Xw = punto_interseccion.Xw;
+  		punto_interseccion_2D.Yw = punto_interseccion.Zw;
+  		punto_interseccion_2D.Zw = 0;
+	}
+	else  	//Si el coeficiente C es mayor, eliminar Z
+	{
+		punto_interseccion_2D.Xw = punto_interseccion.Xw;
+  		punto_interseccion_2D.Yw = punto_interseccion.Yw;
+  		punto_interseccion_2D.Zw = 0;
+	}
+
+
+	int NV = poligono->vertices_num;
+	float IX = punto_interseccion_2D.Xw;
+	float IY = punto_interseccion_2D.Yw;
+
+
+
+	float vertx[NV];
+	float verty[NV];
+
+	struct VERTICE  * vert_temp = poligono->vertices_list_2D;
+	int a;
+	for(a=0; a < NV; a++)
+	{
+		vertx[a]= (float) vert_temp->X;
+		verty[a]= (float) vert_temp->Y;
+		vert_temp=vert_temp->sig;
+	}
+
+
+	int c = pnpoly(NV, vertx, verty, IX, IY);
+
+	if (c ==0) c =-1;
+
+	return c;
+}
+
 
 
 long double calcularInterseccion(struct OBJETO *objeto, PUNTO3D ojo, VECTOR dir){
@@ -195,8 +335,17 @@ long double calcularInterseccion(struct OBJETO *objeto, PUNTO3D ojo, VECTOR dir)
 	long double t = 0.00000;
 	tipo = objeto->tipo;
 	if(tipo == "esfera"){
-
+		//printf("soy una bolita\n");
+		//printf("%Lf\n", interseccionEsfera(objeto->p, ojo, dir));
 		t = interseccionEsfera(objeto->p, ojo, dir);
+	}
+	
+	else if(tipo == "poligono"){
+		//printf("soy un poligono\n");
+		//printf("%Lf\n", interseccionCilindro(objeto->p, ojo, dir));
+		//printf("%Lf\n", i.Xw);
+		t = interseccionPoligono(objeto->p, ojo, dir);
+		//printf("Interseccion con poligono %Lf\n", t);
 	}
 	
 	return t;
@@ -215,7 +364,7 @@ INTERSECCION First_Intersection(PUNTO3D o, VECTOR dir){
 
   	while(i <= longitudObjetos(objetos)){
   		t = calcularInterseccion(p, o, dir);
-  		if(t < tmin && t > LimN){
+  		if(t < tmin && t > EPSILON){
   			interseccion.objeto = p;
   			tmin = t;
   		}
@@ -267,7 +416,7 @@ VECTOR calcularL(PUNTO3D punto_interseccion, PUNTO3D posLuz){
 	L.Y = (posLuz.Yw - punto_interseccion.Yw);
 	L.Z = (posLuz.Zw - punto_interseccion.Zw);
 	L = normalizarVector(L);
-
+	//printf("punto_interseccion = (%Lf, %Lf, %Lf) \n", punto_interseccion.Xw, punto_interseccion.Yw, punto_interseccion.Zw);
 	return L;
 }
 
@@ -315,15 +464,18 @@ COLOR De_que_color(PUNTO3D ojo, VECTOR vDir){
 	else
 	{	
 		color = interseccion.objeto->color;
-
+		//printf("color = (%lf, %lf, %lf)\n", color.r, color.g, color.b);	
 		Q = interseccion.objeto;
 		N = calcularNormal(Q, interseccion.punto_interseccion);
-
+		//printf("Vector N = [%Lf, %Lf, %Lf]\n", N.X, N.Y, N.Z);
+		
+		
 		
 		if(ProductoPunto(N,vDir) > 0 && interseccion.objeto->tipo != "poligono"){
 			N.X = -1 * N.X;
 			N.Y = -1 * N.Y;
 			N.Z = -1 * N.Z;
+			//if(interseccion.objeto->tipo == "poligono"){printf("<<< %s\n",interseccion.objeto->tipo);}
 		}
 		
 		
@@ -332,7 +484,9 @@ COLOR De_que_color(PUNTO3D ojo, VECTOR vDir){
 		p = luces;
 		for(k = 0; k < longitudLuces(luces); k++){			
 			L = calcularL(interseccion.punto_interseccion, p->pos);
+			//printf("Vector L = [%Lf, %Lf, %Lf]\n", L.X, L.Y, L.Z);
 			Fatt = calcularFatt(p, interseccion);
+			//printf("ProductoPunto(N,L) = %Lf\n", ProductoPunto(N,L));
 			if(ProductoPunto(N,L) > 0.0){
 				obstaculo = First_Intersection(interseccion.punto_interseccion, L);
 				if(!obstaculo.objeto || calcularDistancia(interseccion.punto_interseccion, p->pos) > interseccion.tmin){
@@ -340,8 +494,14 @@ COLOR De_que_color(PUNTO3D ojo, VECTOR vDir){
 						
 					I = I + (ProductoPunto(N,L) * Q->Kd * Fatt * p->Ip);
 					R = calcularVectorR(N, L);
+					//printf("Vector R = [%Lf, %Lf, %Lf]\n", R.X, R.Y, R.Z);
+					//printf("Vector V = [%Lf, %Lf, %Lf]\n", V.X, V.Y, V.Z);
+					//printf("ProductoPunto(V,R) = %Lf\n", ProductoPunto(V,R));
 					
-					
+					if(ProductoPunto(V,R) > 0.0){
+						E += (pow(ProductoPunto(V,R), Q->Kn) * Q->Ks * p->Ip * Fatt);
+						
+					}
 				}
 			}
 			p = p->sig;
@@ -350,16 +510,24 @@ COLOR De_que_color(PUNTO3D ojo, VECTOR vDir){
 		I = min(1.0, I);
 		E = min(1.0, E);
 
+		//printf("color(%lf,%lf,%lf)\n", color.r, color.g, color.b);
+		//printf("I = %Lf\n", I);
 
 		color.r = I * Q->color.r;
 		color.g = I * Q->color.g;
 		color.b = I * Q->color.b;
 
+
+		//printf("color(%lf,%lf,%lf)\n", color.r, color.g, color.b);
+		//printf("E = %Lf\n", E);
+
+
 		color.r = color.r + E * (1.0 - color.r);
 		color.g = color.g + E * (1.0 - color.g);
 		color.b = color.b + E * (1.0 - color.b);
 
-
+		//printf("%Lf\n", I);
+		//printf("color(%lf,%lf,%lf)\n", color.r, color.g, color.b);
 	}
 	return color;
 }
@@ -391,10 +559,12 @@ void saveImage(COLOR **framebuffer){
 int main(int argc, char** argv)
 {
 
-	
+	///////////////////////////////////
+	// Escanear argumentos de entrada
+	///////////////////////////////////
 	int opt;
 	//Parsear los argumentos de entrada
-	while ((opt = getopt(argc, argv, "i:o:")) != -1)
+	while ((opt = getopt(argc, argv, "i:o:")) != -1) // : significa que -i resive un argumento, se guarda en "optarg"
 	{
 		switch (opt)
 		{
@@ -411,15 +581,18 @@ int main(int argc, char** argv)
 				exit(0);
 		}
 	}
-
+	/////////////////////////////////////////
+	/////////////////////////////////////////
 
 	int i, j;
 	long double Xw, Yw, Zw, L, Xd ,Yd ,Zd;
 	objetos = NULL;
 
+
+	//////LUZ DE PRUEBA/////////////////////////////////////////////////////////////
+	
 	struct LUZ *luz1 = creaLuz();
-
-
+	//posicion
 	luz1->pos.Xw = 0,0;
 	luz1->pos.Yw = 0.0;
 	luz1->pos.Zw = -500.0;
@@ -434,7 +607,11 @@ int main(int argc, char** argv)
 	luz1->color.g = 0;
 	luz1->color.b = 0;
 
+	//luces = insertarLuz(luces, luz1);
+		
 	
+	////////////////////////datos de prueba////////////////////////////////////////////
+	//ventana max
 	P.Xmax = Hres; //400.0;
 	P.Ymax = Vres; //400.0;
 	P.Zmax = 0.0;//0.0
@@ -448,9 +625,9 @@ int main(int argc, char** argv)
 	ojo.Yw = 540.0;
 	ojo.Zw = -1500.0;//negativo
 
-	
+	//iluminacion ambiente
 	escena.Ia = 0.6;
-	
+	////////////////////////datos de prueba/////////////////////////////////////////////
 
 	
 
@@ -478,6 +655,14 @@ int main(int argc, char** argv)
 
 
 
+	//iniciarOjectosP();
+
+	//for(i = 454; i < 455; i++){
+	//	for(j = 349; j < 350; j++){
+	//for(i = 454; i < 455; i++){
+	//	for(j = 375; j < 376; j++){
+	//for(i = 499; i < 500; i++){
+	//	for(j = 399; j < 400; j++){
 	for(i = 0; i < Hres; i++){
 		for(j = 0; j < Vres; j++){
 
