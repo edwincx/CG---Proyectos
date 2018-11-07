@@ -104,7 +104,7 @@ O3:0.5
 /////////////////
 #esfera
 radio:150
-centro: (514,273,1000)
+centro: (1400,273,1000)
 color:(1, 0.8117, 0.4313)
 textura:"texturas/moon.png"
 norte:(0,1,0)
@@ -402,53 +402,7 @@ O1:0.1
 O2:0.1
 O3:0.8	
 
-/////////////////
-#cono
-//(Xc,Yc,Zc)
-centro:(260, 370.0, 800)
-//Vector de dirección
-q:(90,-10.0,0)
-//(R,G,B)
-color:(0,1,1)
-//Coeficiente reflexion difusa [0,1]
-kd:0.8
-//Coeficiente Iluminacion Ambiente [0,1]
-ka:0.2
-//Coeficiente de reflexión especular
-ks:1.0
-//Potencia
-kn:12
-d1:600
-d2:1200
-k1:12
-k2:2
 
-O1:0.5
-O2:0.3
-O3:0.2
-
-/////////////////
-#cono
-//(Xc,Yc,Zc)
-centro:(260, 600, 0)
-//Vector de dirección
-q:(1,1,0)
-//(R,G,B)
-color:(0,1,1)
-
-kd:0.8
-ka:0.2
-ks:1.0
-kn:12
-
-d1:0
-d2:800
-k1:7
-k2:2
-
-O1:0.5
-O2:0.3
-O3:0.2	
 
 //////////////
 #disco
@@ -477,14 +431,92 @@ O2:0.0
 O3:0.0
 
 
+
+
 /////////////////
 #cono
 //(Xc,Yc,Zc)
 centro:(660, 350, 0)
 //Vector de dirección
-q:(0.4454,0.089087,0.89087080)
+q:(0.480079,0.0872871,0.8728715)
 //(R,G,B)
-color:(0,1,1)
+color:(0.70588235,1,1)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:2800
+d2:2900
+k1:7
+k2:2
+
+O1:0.5
+O2:0.3
+O3:0.2
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0.47058823,1,1)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:2400
+d2:2600
+k1:7
+k2:2
+
+O1:0.5
+O2:0.3
+O3:0.2
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0.2352941,1,1)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:2000
+d2:2200
+k1:7
+k2:2
+
+O1:0.5
+O2:0.3
+O3:0.2
+
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0,0.86274509,0.86274509)
 //Coeficiente reflexion difusa [0,1]
 kd:0.8
 //Coeficiente Iluminacion Ambiente [0,1]
@@ -508,9 +540,9 @@ O3:0.2
 //(Xc,Yc,Zc)
 centro:(660, 350, 0)
 //Vector de dirección
-q:(0.4454,0.089087,0.89087080)
+q:(0.480079,0.0872871,0.8728715)
 //(R,G,B)
-color:(0,1,1)
+color:(0,0.62745098,0.62745098)
 //Coeficiente reflexion difusa [0,1]
 kd:0.8
 //Coeficiente Iluminacion Ambiente [0,1]
@@ -533,9 +565,9 @@ O3:0.2
 //(Xc,Yc,Zc)
 centro:(660, 350, 0)
 //Vector de dirección
-q:(0.4454,0.089087,0.89087080)
+q:(0.480079,0.0872871,0.8728715)
 //(R,G,B)
-color:(0,1,1)
+color:(0,0.3921568,0.3921568)
 //Coeficiente reflexion difusa [0,1]
 kd:0.8
 //Coeficiente Iluminacion Ambiente [0,1]
@@ -558,9 +590,9 @@ O3:0.2
 //(Xc,Yc,Zc)
 centro:(660, 350, 0)
 //Vector de dirección
-q:(0.4454,0.089087,0.89087080)
+q:(0.480079,0.0872871,0.8728715)
 //(R,G,B)
-color:(0,1,1)
+color:(0,0.1568627,0.1568627)
 //Coeficiente reflexion difusa [0,1]
 kd:0.8
 //Coeficiente Iluminacion Ambiente [0,1]
@@ -575,33 +607,10 @@ k1:7
 k2:2
 
 O1:0.5
-O2:0.3
-O3:0.2	
+O2:0.1
+O3:0.4	
 
-/////////////////
-#cono
-//(Xc,Yc,Zc)
-centro:(660, 350, 0)
-//Vector de dirección
-q:(0.4454,0.089087,0.89087080)
-//(R,G,B)
-color:(0,1,1)
-//Coeficiente reflexion difusa [0,1]
-kd:0.8
-//Coeficiente Iluminacion Ambiente [0,1]
-ka:0.2
-//Coeficiente de reflexión especular
-ks:1.0
-//Potencia
-kn:12
-d1:0
-d2:200
-k1:7
-k2:2
 
-O1:0.5
-O2:0.3
-O3:0.2	
 
 
 
