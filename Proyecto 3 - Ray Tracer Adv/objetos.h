@@ -31,6 +31,7 @@ struct ESFERA{
   	float radio;
 	PLANO * planos_corte;
 	VECTOR Norte; //vector para texturas 
+	VECTOR Greenwich; //vector para texturas 
 };
 
 struct CILINDRO{

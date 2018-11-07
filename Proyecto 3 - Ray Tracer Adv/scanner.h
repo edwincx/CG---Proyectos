@@ -601,7 +601,15 @@ int scanner(FILE *inFile){
 					  	e1->Norte.Y = temp_vector[1];
 					  	e1->Norte.Z = temp_vector[2];
 					}
-
+					//Greenwich
+					else if((strcmp (token_buffer,"greenwich:"))==0){
+						if( scanner(inFile) != 0 ) return -1;
+						float temp_vector[3];
+						if( parse_vector(3,token_buffer, token_buffer_index, temp_vector) !=0) return -1;
+						e1->Norte.X = temp_vector[0];
+					  	e1->Norte.Y = temp_vector[1];
+					  	e1->Norte.Z = temp_vector[2];
+					}
 					//ka
 					else if((strcmp (token_buffer,"ka:"))==0){
 						if( scanner(inFile) != 0 ) return -1;

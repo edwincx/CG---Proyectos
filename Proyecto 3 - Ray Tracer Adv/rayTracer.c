@@ -970,12 +970,38 @@ COLOR get_tex_color(INTERSECCION interseccion)
 	objeto = interseccion.objeto;
   	image = objeto->tex_buffer; // Bufer con la textura
 	
+
+
 	//Si u y v no han sido calculadas, calcularlas con el puntero a funcion
 	 //if( objeto->u == -1 || objeto->v == -1) 
 	objeto->map_texture(interseccion);
 		
 	
 	//color = (u * THres, v * TVres),
+  	if(objeto->tipo=="esfera"){
+
+  		VECTOR M;
+  		VECTOR V;
+  		struct ESFERA *e1;
+		e1 = objeto->p;
+  		objeto->v = (3.14159265359-acos(ProductoPunto(e1->Norte,vDir)))/3.14159265359; 
+
+  		float a = 36*(interseccion.punto_interseccion.Yw)-9828;
+  		V.Y=-1*a;
+  		V.Z=0;
+  		V.X=0;
+
+  		VECTOR I;
+  		I.X=interseccion.punto_interseccion.Xw;
+  		I.Y=interseccion.punto_interseccion.Yw;
+  		I.Z= interseccion.punto_interseccion.Zw;
+  		// M.X = V.X+interseccion.punto_interseccion.Xw;
+  		// M.Y = V.Y+interseccion.punto_interseccion.Yw;
+  		// M.Z = V.Z+interseccion.punto_interseccion.Zw;
+  		M = producto_cruz(V,I);
+
+  		objeto->u = (acos(ProductoPunto(M,e1->Greenwich)))/(2*3.14159265359);
+  	}
 	
 	x = round(objeto->u * objeto->THres);
 	y = round(objeto->v * objeto->TVres);
@@ -1368,7 +1394,7 @@ int main(int argc, char** argv)
 
 
 	//////LUZ DE PRUEBA/////////////////////////////////////////////////////////////
-	/*
+	
 	struct LUZ *luz1 = creaLuz();
 	//posicion
 	luz1->pos.Xw = 0,0;
@@ -1384,7 +1410,7 @@ int main(int argc, char** argv)
 	luz1->color.r = 1;
 	luz1->color.g = 0;
 	luz1->color.b = 0;
-	*/
+	
 	//luces = insertarLuz(luces, luz1);
 		
 	

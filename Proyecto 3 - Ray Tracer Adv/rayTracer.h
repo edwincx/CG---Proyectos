@@ -77,7 +77,7 @@ typedef struct {
 
 
 
-unsigned Hres = 1080, Vres = 1080;
+unsigned Hres = 1008, Vres = 567;
 COLOR BACKGROUND;
 PUNTO3D ojo;
 ESCENA escena;
