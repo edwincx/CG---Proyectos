@@ -68,7 +68,7 @@ color:(1,1,1)
 /////////////////
 #esfera
 radio:20
-centro: (810,300,210)
+centro: (610,100,210)
 norte:(0,1,0)
 color:(1, 1, 1)
 kd:1.0
@@ -87,7 +87,7 @@ O3:0.8
 #esfera
 radio:30
 centro: (700,510,200)
-color:(1.0,0.3352,0.004117)
+color:(0.93333333, 0.590607, 0)
 norte:(0,1,0)
 kd:1.0
 ka:0.1
@@ -105,7 +105,7 @@ O3:0.5
 #esfera
 radio:150
 centro: (1400,273,1000)
-color:(1, 0.8117, 0.4313)
+color:(0, 0, 1)
 textura:"texturas/moon.png"
 norte:(0,1,0)
 greenwich:(1,0,0)
@@ -120,7 +120,7 @@ O1:0.5
 O2:0.3
 O3:0.2	
 
-
+////////////////////////////////////////////////////////////////////////ALIEN
 
 /////////////////
 #esfera
@@ -401,7 +401,7 @@ kn:50
 O1:0.1
 O2:0.1
 O3:0.8	
-
+////////////////////////////////////////////////////////////////////////ALIEN
 
 
 //////////////
@@ -409,7 +409,7 @@ O3:0.8
 radio: 60
 anillo: 40
 centro: (700,510,200)
-color:(1, 1, 0)
+color:(1, 0.8705882, 0.33333333)
 d1: (300,200,0)
 d2: (10,50,0)
 a:1
@@ -475,7 +475,7 @@ ks:1.0
 //Potencia
 kn:12
 d1:2400
-d2:2600
+d2:2500
 k1:7
 k2:2
 
@@ -500,7 +500,7 @@ ks:1.0
 //Potencia
 kn:12
 d1:2000
-d2:2200
+d2:2100
 k1:7
 k2:2
 
@@ -526,7 +526,7 @@ ks:1.0
 //Potencia
 kn:12
 d1:1600
-d2:1800
+d2:1700
 k1:7
 k2:2
 
@@ -552,7 +552,7 @@ ks:1.0
 //Potencia
 kn:12
 d1:1200
-d2:1400
+d2:1300
 k1:7
 k2:2
 
@@ -577,7 +577,7 @@ ks:1.0
 //Potencia
 kn:12
 d1:800
-d2:1000
+d2:900
 k1:7
 k2:2
 
@@ -602,7 +602,7 @@ ks:1.0
 //Potencia
 kn:12
 d1:400
-d2:600
+d2:500
 k1:7
 k2:2
 
@@ -610,19 +610,69 @@ O1:0.5
 O2:0.1
 O3:0.4	
 
+#poligono
+	a:0
+	b:0
+	c:1
+	d:0
+	color:(0,0,0)
+	textura: "texturas/texturaPanel.png"
+	//Vertices
+	vertice:(175,62,100)
+	vertice:(210,62,100)
+	vertice:(220,50,300)
+	vertice:(185,50,300)
+	centro:(0,0,0)
+	escala: 3
+	//Coeficiente reflexion difusa [0,1]
+	kd:0.9
+	//Coeficiente Iluminacion Ambiente [0,1]
+	ka:0.3
+	//Coeficiente de reflexión especular
+	ks:0.3
+	//Potencia
+	kn:10
+	//clip_n:(0,30,0,-2090)
+	O1:0.9
+	O2:0.1
+	O3:0.0	
 
-
-
+#poligono
+	a:0
+	b:0
+	c:1
+	d:0
+	color:(0,0,0)
+	textura: "texturas/texturaPanel.png"
+	//Vertices
+	vertice:(240,62,100)
+	vertice:(275,62,100)
+	vertice:(285,50,300)
+	vertice:(250,50,300)
+	centro:(0,0,0)
+	escala: 3
+	//Coeficiente reflexion difusa [0,1]
+	kd:0.9
+	//Coeficiente Iluminacion Ambiente [0,1]
+	ka:0.3
+	//Coeficiente de reflexión especular
+	ks:0.3
+	//Potencia
+	kn:10
+	//clip_n:(0,30,0,-2090)
+	O1:0.9
+	O2:0.1
+	O3:0.0	
 
 //////////////////////////////
 #cilindro
-radio:50
+radio:30
 //(Xc,Yc,Zc)
-centro:(260, -250, 0)
+centro:(760, 450, 0)
 //Vector de dirección
-q:(0,20,0)
+q:(0.23570226,0.94280904,0.23570226)
 //(R,G,B)
-color:(0,0,1)
+color:(1,1,1)
 //Coeficiente reflexion difusa [0,1]
 kd:0.6
 //Coeficiente Iluminacion Ambiente [0,1]
@@ -631,14 +681,37 @@ ka:0.5
 ks:0.6
 //Potencia
 kn:20
-d1:900
-d2:900
+d1:600
+d2:600
 
-O1:0.5
-O2:0.3
-O3:0.2
+O1:1.0
+O2:0.0
+O3:0.0
+
+//////////////////////////////
+#cilindro
+radio:5
+//(Xc,Yc,Zc)
+centro:(760, 165, 0)
+//Vector de dirección
+q:(-0.9578262851,0,0.28734788)
+//(R,G,B)
+color:(1,1,1)
+//Coeficiente reflexion difusa [0,1]
+kd:0.6
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.5
+//Coeficiente de reflexión especular
+ks:0.6
+//Potencia
+kn:20
+d1:600
+d2:600
+
+O1:1.0
+O2:0.0
+O3:0.0
 
 
-/////////////////inicio
 
 
