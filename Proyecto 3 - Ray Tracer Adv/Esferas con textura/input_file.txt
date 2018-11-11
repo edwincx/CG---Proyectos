@@ -1,0 +1,1280 @@
+/*
+###########################################################
+Este documento define la escena con la siguiente sintaxis:
+//de ser necesario, agregar un comentario
+#nombre_objeto
+nombre_atributo:valor
+###########################################################
+*/
+
+#escena
+background:(0.0,0.00002352,0.004117)
+ojo:(504, 233, -1000)
+//iluminacion ambiente
+ia:0.5
+
+
+
+///////////////////
+#luz
+posicion:(1004,200,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1.0
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+///////////////////
+#luz
+posicion:(1004,567,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+////////////////////
+#luz
+posicion:(1204,367,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+
+///////////////////////
+#luz
+posicion:(1204,233,300)
+//Intensidad
+ip:3
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+
+/////////////////
+#esfera
+radio:20
+centro: (610,100,210)
+norte:(0,1,0)
+color:(1, 1, 1)
+kd:1.0
+ka:0.0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+#esfera
+radio:30
+centro: (700,510,200)
+color:(0.93333333, 0.590607, 0)
+norte:(0,1,0)
+kd:1.0
+ka:0.1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.5
+O2:0.0
+O3:0.5	
+
+
+
+
+
+
+//////////////
+#disco
+radio: 60
+anillo: 40
+centro: (700,510,200)
+color:(1, 0.8705882, 0.33333333)
+d1: (300,200,0)
+d2: (10,50,0)
+a:1
+b:1
+c:1
+d:1
+//Coeficiente reflexion difusa [0,1]
+kd:0.5
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.3
+//Coeficiente de reflexión especular
+ks:0.5
+//Potencia
+kn:5
+//clip_n:(0,30,0,-1000)
+//clip_p:(0,30,0,-2100)
+O1:1.0
+O2:0.0
+O3:0.0
+
+
+
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0.70588235,1,1)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:2800
+d2:2900
+k1:7
+k2:2
+
+O1:0.5
+O2:0.3
+O3:0.2
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0.47058823,1,1)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:2400
+d2:2500
+k1:7
+k2:2
+
+O1:0.5
+O2:0.3
+O3:0.2
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0.2352941,1,1)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:2000
+d2:2100
+k1:7
+k2:2
+
+O1:0.5
+O2:0.3
+O3:0.2
+
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0,0.86274509,0.86274509)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:1600
+d2:1700
+k1:7
+k2:2
+
+O1:0.5
+O2:0.3
+O3:0.2
+
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0,0.62745098,0.62745098)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:1200
+d2:1300
+k1:7
+k2:2
+
+O1:0.5
+O2:0.3
+O3:0.2
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0,0.3921568,0.3921568)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:800
+d2:900
+k1:7
+k2:2
+
+O1:0.5
+O2:0.3
+O3:0.2
+
+/////////////////
+#cono
+//(Xc,Yc,Zc)
+centro:(660, 350, 0)
+//Vector de dirección
+q:(0.480079,0.0872871,0.8728715)
+//(R,G,B)
+color:(0,0.1568627,0.1568627)
+//Coeficiente reflexion difusa [0,1]
+kd:0.8
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.2
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:12
+d1:400
+d2:500
+k1:7
+k2:2
+
+O1:0.5
+O2:0.1
+O3:0.4	
+
+
+/////////////////
+#esfera
+radio:40
+centro: (150,300,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1.0
+ka:1.0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:20
+centro: (180,320,195)
+color:(1, 1, 1)
+norte:(0,1,0)
+kd:1.0
+ka:1.0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:5
+centro: (205,325,145)
+color:(0, 0, 0)
+norte:(0,1,0)
+kd:0
+ka:0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+
+
+
+/////////////////
+#esfera
+radio:15
+centro: (155,340,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:10
+centro: (160,362,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:8
+centro: (170,360,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:5
+centro: (180,365,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:15
+centro: (180,280,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:10
+centro: (200,280,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:8
+centro: (208,272,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:5
+centro: (220,272,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:3
+centro: (225,267,200)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:15
+centro: (180,300,250)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:10
+centro: (200,300,250)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:8
+centro: (210,305,250)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:5
+centro: (220,300,250)
+color:(1, 0, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+
+////////////////////////////////////////////////////////////////////////ALIEN
+
+/////////////////
+#esfera
+radio:40
+centro: (100,200,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1.0
+ka:1.0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:20
+centro: (100,200,-35)
+color:(1, 1, 1)
+norte:(0,1,0)
+kd:1.0
+ka:1.0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:5
+centro: (100,200,-55)
+color:(0, 0, 0)
+norte:(0,1,0)
+kd:0
+ka:0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+
+
+
+/////////////////
+#esfera
+radio:15
+centro: (120,160,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:10
+centro: (133,142,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:8
+centro: (150,142,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:5
+centro: (155,132,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:15
+centro: (130,180,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:10
+centro: (150,180,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:8
+centro: (158,172,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:5
+centro: (170,172,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:3
+centro: (175,167,0)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:15
+centro: (130,200,50)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:10
+centro: (150,200,50)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:8
+centro: (160,205,50)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:5
+centro: (170,200,50)
+color:(0, 1, 0)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+////////////////////////////////////////////////////////////////////////ALIEN
+
+/////////////////
+#esfera
+radio:150
+centro: (1400,273,1000)
+color:(0, 0, 1)
+textura:"texturas/moon.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.8
+ka:0.1
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.5
+O2:0.3
+O3:0.2	
+
+////////////////////
+#poligono
+	a:0
+	b:0
+	c:1
+	d:0
+	color:(1,1,1)
+	textura: "texturas/texturaPanel.png"
+	//Vertices
+	vertice:(175,62,100)
+	vertice:(210,62,100)
+	vertice:(220,50,300)
+	vertice:(185,50,300)
+	centro:(0,0,0)
+	escala: 3
+	//Coeficiente reflexion difusa [0,1]
+	kd:0.9
+	//Coeficiente Iluminacion Ambiente [0,1]
+	ka:0.3
+	//Coeficiente de reflexión especular
+	ks:0.3
+	//Potencia
+	kn:10
+	//clip_n:(0,30,0,-2090)
+	O1:1.0
+	O2:0.0
+	O3:0.0	
+
+///////////////////
+#poligono
+	a:0
+	b:0
+	c:1
+	d:0
+	color:(1,1,1)
+	textura: "texturas/texturaPanel.png"
+	//Vertices
+	vertice:(240,62,100)
+	vertice:(275,62,100)
+	vertice:(285,50,300)
+	vertice:(250,50,300)
+	centro:(0,0,0)
+	escala: 3
+	//Coeficiente reflexion difusa [0,1]
+	kd:0.9
+	//Coeficiente Iluminacion Ambiente [0,1]
+	ka:0.3
+	//Coeficiente de reflexión especular
+	ks:0.3
+	//Potencia
+	kn:10
+	//clip_n:(0,30,0,-2090)
+	O1:1.0
+	O2:0.0
+	O3:0.0	
+
+//////////////////////////////
+#cilindro
+radio:30
+//(Xc,Yc,Zc)
+centro:(760, 450, 0)
+//Vector de dirección
+q:(0.23570226,0.94280904,0.23570226)
+//(R,G,B)
+color:(1,1,1)
+//Coeficiente reflexion difusa [0,1]
+kd:0.6
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.5
+//Coeficiente de reflexión especular
+ks:0.6
+//Potencia
+kn:20
+d1:600
+d2:600
+
+O1:1.0
+O2:0.0
+O3:0.0
+
+//////////////////////////////
+#cilindro
+radio:5
+//(Xc,Yc,Zc)
+centro:(760, 165, 0)
+//Vector de dirección
+q:(-0.9578262851,0,0.28734788)
+//(R,G,B)
+color:(1,1,1)
+//Coeficiente reflexion difusa [0,1]
+kd:0.6
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:0.5
+//Coeficiente de reflexión especular
+ks:0.6
+//Potencia
+kn:20
+d1:600
+d2:600
+
+O1:1.0
+O2:0.0
+O3:0.0
+
+/////////////////
+#esfera
+radio:40
+centro: (300,400,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1.0
+ka:1.0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:20
+centro: (294,390,265)
+color:(1, 1, 1)
+norte:(0,1,0)
+kd:1.0
+ka:1.0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:5
+centro: (280,380,245)
+color:(0, 0, 0)
+norte:(0,1,0)
+kd:0
+ka:0
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+
+
+
+/////////////////
+#esfera
+radio:15
+centro: (270,360,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:10
+centro: (253,342,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:8
+centro: (240,342,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:5
+centro: (235,332,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:15
+centro: (330,380,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:10
+centro: (350,380,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:8
+centro: (358,372,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:5
+centro: (370,372,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:3
+centro: (375,367,300)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+
+/////////////////
+#esfera
+radio:15
+centro: (330,400,350)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:10
+centro: (350,400,350)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:8
+centro: (360,405,350)
+color:(0.1, 0.876470, 1)
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
+/////////////////
+#esfera
+radio:5
+centro: (370,400,350)
+color:(0.1, 0.876470, 1) 
+norte:(0,1,0)
+kd:1
+ka:1
+ks:1
+kn:50
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.1
+O2:0.1
+O3:0.8	
+
