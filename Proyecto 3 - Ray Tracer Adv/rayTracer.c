@@ -24,11 +24,6 @@ gcc -o rayTracer rayTracer.c lodepng/lodepng.c -lm
 #include "scanner.h"
 
 
-
-
-
-
-
 COLOR **framebuffer;
 COLOR color;
 PUNTO3D punto3D;
@@ -41,12 +36,13 @@ char * output_file_name = "image.png";
 COLOR De_que_color();
 INTERSECCION First_Intersection();
 long double ProductoPunto();
-
+float **imagenTexturaBG;
 
 VECTOR normalizarVector(VECTOR V){
 	long double norma;
 
-	norma = sqrt(pow(V.X,2) + pow(V.Y,2) + pow(V.Z,2));
+	norma = sqrt(pow(V.X,2) + pow(V.Y,2) + pow(V.Z
+		,2));
 
 	if(norma == 1) return V;
 	//printf("V.X = %Lf\n", V.X);
@@ -171,6 +167,8 @@ VECTOR normalCono(struct CONO *c, PUNTO3D i){
 
 	return N;
 }
+
+
 
 
 VECTOR normalPoligono(struct POLIGONO *p, PUNTO3D punto_interseccion)
@@ -959,73 +957,144 @@ VECTOR calcularVectorV(PUNTO3D interseccion){
 }
 
 
-
 COLOR get_tex_color(INTERSECCION interseccion)  
 {
 	COLOR color;
 	struct OBJETO* objeto;
+	struct CILINDRO * cilindro;
 	int x,y;
 	unsigned char* image;
+	VECTOR N;
+	double r, theta;
 	
 	objeto = interseccion.objeto;
+	cilindro = objeto->p;
   	image = objeto->tex_buffer; // Bufer con la textura
-	
+  	PUNTO3D punto_interseccion = interseccion.punto_interseccion;
+  	PUNTO3D ancla = cilindro->centro ;
 
+  	if(objeto->tipo=="poligono"){
 
-	//Si u y v no han sido calculadas, calcularlas con el puntero a funcion
-	 //if( objeto->u == -1 || objeto->v == -1) 
-	objeto->map_texture(interseccion);
+  		objeto->map_texture(interseccion);
 		
+		x = round(objeto->u * objeto->THres);
+		y = round(objeto->v * objeto->TVres);
+		
+
+		int tex_r, tex_g, tex_b;
+		tex_r = image[4 * objeto->THres * y + 4 * x + 0];
+		tex_g = image[4 * objeto->THres * y + 4 * x + 1];
+		tex_b = image[4 * objeto->THres * y + 4 * x + 2];
+		
+
+		
+		color.r = tex_r/255.0;
+		color.g = tex_g/255.0;
+		color.b = tex_b/255.0;
 	
-	//color = (u * THres, v * TVres),
+    }
+
+
+  	if(objeto->tipo =="cilindro"){
+
+  		/*objeto->map_texture(interseccion);
+		
+		x = round(objeto->u * objeto->THres);
+		y = round(objeto->v * objeto->TVres);
+		
+
+		int tex_r, tex_g, tex_b;
+		tex_r = image[4 * objeto->THres * y + 4 * x + 0];
+		tex_g = image[4 * objeto->THres * y + 4 * x + 1];
+		tex_b = image[4 * objeto->THres * y + 4 * x + 2];
+		
+
+		
+		color.r = tex_r/255.0;
+		color.g = tex_g/255.0;
+		color.b = tex_b/255.0;*/
+	
+
+
+
+  		N = calcularNormal(objeto,interseccion.punto_interseccion);
+		
+  		N = normalizarVector(N);
+
+		objeto->u = 0.5 + atan2(N.Z, N.X) / 3.14159265359 * 0.5;
+		objeto->v = N.Y / 3.14159265359;
+		objeto->v = objeto->v- floor(objeto->v);
+
+
+		x = round(objeto->u * objeto->THres);
+		y = round(objeto->v * objeto->TVres);
+		
+
+		int tex_r, tex_g, tex_b;
+		tex_r = image[4 * objeto->THres * y + 4 * x + 0];
+		tex_g = image[4 * objeto->THres * y + 4 * x + 1];
+		tex_b = image[4 * objeto->THres * y + 4 * x + 2];
+		
+
+		
+		color.r = tex_r/255.0;
+		color.g = tex_g/255.0;
+		color.b = tex_b/255.0;
+
+
+		
+		/*theta = atan(cilindro->Q.Y/ cilindro->Q.X);
+
+		objeto->u = theta;
+		objeto->v = cilindro->Q.Z;
+
+
+  		x = round(objeto->u * objeto->THres);
+		y = round(objeto->v * objeto->TVres);
+		
+			
+		int tex_r, tex_g, tex_b;
+		tex_r = image[4 * objeto->THres * y + 4 * x + 0];
+		tex_g = image[4 * objeto->THres * y + 4 * x + 1];
+		tex_b = image[4 * objeto->THres * y + 4 * x + 2];
+			
+
+		color.r = tex_r/255.0;
+		color.g = tex_g/255.0;
+		color.b = tex_b/255.0;*/
+
+    }
+	
+	
+
   	if(objeto->tipo=="esfera"){
 
-  		VECTOR M;
-  		VECTOR V;
-  		struct ESFERA *e1;
-		e1 = objeto->p;
-  		objeto->v = (3.14159265359-acos(ProductoPunto(e1->Norte,vDir)))/3.14159265359; 
+  		N = calcularNormal(objeto, interseccion.punto_interseccion);
 
-  		float a = 36*(interseccion.punto_interseccion.Yw)-9828;
-  		V.Y=-1*a;
-  		V.Z=0;
-  		V.X=0;
+  		objeto->u = 0.5 + atan2(N.Z, N.X) / (2 * 3.14159265359);
+  		objeto->v = 0.5 - asin(N.Y) / 3.14159265359;
 
-  		VECTOR I;
-  		I.X=interseccion.punto_interseccion.Xw;
-  		I.Y=interseccion.punto_interseccion.Yw;
-  		I.Z= interseccion.punto_interseccion.Zw;
-  		// M.X = V.X+interseccion.punto_interseccion.Xw;
-  		// M.Y = V.Y+interseccion.punto_interseccion.Yw;
-  		// M.Z = V.Z+interseccion.punto_interseccion.Zw;
-  		M = producto_cruz(V,I);
 
-  		objeto->u = (acos(ProductoPunto(M,e1->Greenwich)))/(2*3.14159265359);
+  		x = round(objeto->u * objeto->THres);
+		y = round(objeto->v * objeto->TVres);
+		
+			
+		int tex_r, tex_g, tex_b;
+		tex_r = image[4 * objeto->THres * y + 4 * x + 0];
+		tex_g = image[4 * objeto->THres * y + 4 * x + 1];
+		tex_b = image[4 * objeto->THres * y + 4 * x + 2];
+			
+
+		color.r = tex_r/255.0;
+		color.g = tex_g/255.0;
+		color.b = tex_b/255.0;
   	}
-	
-	x = round(objeto->u * objeto->THres);
-	y = round(objeto->v * objeto->TVres);
-	
-	//printf("u:%f, v:%f\n", u,v );
 
-
-	
-	int tex_r, tex_g, tex_b;
-	tex_r = image[4 * objeto->THres * y + 4 * x + 0];
-	tex_g = image[4 * objeto->THres * y + 4 * x + 1];
-	tex_b = image[4 * objeto->THres * y + 4 * x + 2];
-	
-
-	
-	color.r = tex_r/255.0;
-	color.g = tex_g/255.0;
-	color.b = tex_b/255.0;
-	
+  
 
 	return color;
 
 }
-
 
 struct INTERSECCIONES *allIntersections(PUNTO3D o, VECTOR dir, struct INTERSECCIONES* lista_intersecciones){
 	//printf("entrando a allIntersections\n");
@@ -1102,7 +1171,7 @@ COLOR calcularColorTransparencia(struct INTERSECCIONES* interseccion, COLOR colo
 }
 
 
-COLOR De_que_color(PUNTO3D ojo, VECTOR vDir, int levels){
+COLOR De_que_color(PUNTO3D ojo, VECTOR vDir, int levels,int i, int j){
 	COLOR color, color_reflejo, color_transparencia;
 	INTERSECCION interseccion, obstaculo;
 	VECTOR N, L, V, R, vReflejo;
@@ -1112,8 +1181,10 @@ COLOR De_que_color(PUNTO3D ojo, VECTOR vDir, int levels){
 	struct LUZ *p;
 	
 	struct INTERSECCIONES* intersecciones, *cont;
+	
+		color = BACKGROUND;
+	
 
-	color= BACKGROUND;
 
 	V.X = -1 * vDir.X;
 	V.Y = -1 * vDir.Y;
@@ -1122,7 +1193,9 @@ COLOR De_que_color(PUNTO3D ojo, VECTOR vDir, int levels){
 	interseccion = First_Intersection(ojo, vDir);
 
 	if(!interseccion.objeto ){ //|| longitudLuces(luces) == 0
-		color = BACKGROUND;
+		
+			color = BACKGROUND;
+		
 	}
 	else
 	{	
@@ -1151,7 +1224,7 @@ COLOR De_que_color(PUNTO3D ojo, VECTOR vDir, int levels){
 		}
 		
 		if(levels > 0)
-			color_reflejo = De_que_color(interseccion.punto_interseccion, vReflejo, levels - 1);
+			color_reflejo = De_que_color(interseccion.punto_interseccion, vReflejo, levels - 1,i,j);
 
 		color_transparencia.r = 0;
 		color_transparencia.g = 0;
@@ -1325,7 +1398,7 @@ COLOR antialiasing(int i, int j, float a, float b){
 	vDir.Z = (punto3D.Zw - ojo.Zw) / L;
 	
 
-	color = De_que_color(ojo,vDir,MAX_LEVELS);
+	color = De_que_color(ojo,vDir,MAX_LEVELS,i,j);
 
 	return color;
 }
@@ -1366,6 +1439,9 @@ int main(int argc, char** argv)
 	///////////////////////////////////
 	// Escanear argumentos de entrada
 	///////////////////////////////////
+
+	
+
 	int opt;
 	//Parsear los argumentos de entrada
 	while ((opt = getopt(argc, argv, "i:o:")) != -1) // : significa que -i resive un argumento, se guarda en "optarg"
@@ -1485,7 +1561,7 @@ int main(int argc, char** argv)
 				vDir.Z = (punto3D.Zw - ojo.Zw) / L;
 				
 
-				framebuffer[i][Vres-j] = De_que_color(ojo,vDir,MAX_LEVELS);
+				framebuffer[i][Vres-j] = De_que_color(ojo,vDir,MAX_LEVELS,i,j);
 			}else{
 				framebuffer[i][Vres-j] = calcularPixel(i,j,anti,0,1,0,1);
 			}
