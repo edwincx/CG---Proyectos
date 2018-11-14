@@ -81,14 +81,73 @@ kn:30
 //O2:0.4
 O1:0.999999
 O2:0.000001
-O3:0.2	
+O3:0.0	
 
+///////////////// Esfera 1
+#esfera
+radio:150
+centro: (-298,528,1000)
+textura:"texturas/globo1.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.8
+ka:0.2
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+//O1:0.5
+//O2:0.4
+O1:0.999999
+O2:0.000001
+O3:0.0	
+
+///////////////// Esfera 1
+#esfera
+radio:100
+centro: (-298,448,1000)
+textura:"texturas/globo1.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.8
+ka:0.2
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+//O1:0.5
+//O2:0.4
+O1:0.999999
+O2:0.000001
+O3:0.0	
+
+///////////////// Esfera 1
+#esfera
+radio:60
+centro: (-298,390,1000)
+textura:"texturas/globo1.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.8
+ka:0.2
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+//O1:0.5
+//O2:0.4
+O1:0.999999
+O2:0.000001
+O3:0.0	
 
 ///////////////// cilindro derecho
 #cilindro
-radio:10
+radio:2
 //(Xc,Yc,Zc)
-centro:(-208,300,1000)
+centro:(-280,300,1000)
 //Vector de dirección
 q:(0,10,0)
 //(R,G,B)
@@ -109,7 +168,7 @@ O3:0.0
 
 ///////////////// cilindro del centro
 #cilindro
-radio:10
+radio:2
 //(Xc,Yc,Zc)
 centro:(-300,290,1000)
 //Vector de dirección
@@ -133,9 +192,9 @@ O3:0.0
 
 ///////////////// cilindro izquierdo
 #cilindro
-radio:10
+radio:2
 //(Xc,Yc,Zc)
-centro:(-390,290,1000)
+centro:(-320,290,1000)
 //Vector de dirección
 q:(0,10,0)
 //(R,G,B)
@@ -166,12 +225,12 @@ textura: "texturas/canasta2.png"
 
 //Vertices
  //Vertices arriba
-vertice:(175,80,100) 
-vertice:(225,80,100)
+vertice:(190,85,100) 
+vertice:(208,85,100)
 
  //Vertices abajo
-vertice:(215,50,300)
-vertice:(185,50,300)
+vertice:(205,75,300)
+vertice:(193,75,300)
 
 centro:(-165,5,0)
 escala: 3
@@ -209,11 +268,51 @@ O2:0.000001
 //O2:0.4
 O3:0.3	
 
+///////////////// globo 2
+#esfera
+radio:130
+centro: (460,640,1000)
+textura:"texturas/globo5.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.4
+ka:0.5
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.999999
+O2:0.000001
+//O1:0.5
+//O2:0.4
+O3:0.3	
+
+///////////////// globo 2
+#esfera
+radio:80
+centro: (460,560,1000)
+textura:"texturas/globo5.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.4
+ka:0.5
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.999999
+O2:0.000001
+//O1:0.5
+//O2:0.4
+O3:0.3	
+
 ///////////////// cilindro izquierdo
 #cilindro
-radio:8
+radio:2
 //(Xc,Yc,Zc)
-centro:(397,970,990)
+centro:(440,970,990)
 //Vector de dirección
 q:(0,10,0)
 //(R,G,B)
@@ -234,7 +333,7 @@ O3:0.0
 
 ///////////////// cilindro centro
 #cilindro
-radio:8
+radio:2
 //(Xc,Yc,Zc)
 centro:(460,970,1000)
 //Vector de dirección
@@ -257,9 +356,9 @@ O3:0.0
 
 ///////////////// cilindro derecho
 #cilindro
-radio:8
+radio:2
 //(Xc,Yc,Zc)
-centro:(525,970,990)
+centro:(480,970,990)
 //Vector de dirección
 q:(0,10,0)
 //(R,G,B)
@@ -287,15 +386,15 @@ d:0
 color:(1,1,1)
 textura: "texturas/canasta2.png"
 //Vertices
-//Vertices arriba
-vertice:(175,80,100) 
-vertice:(225,80,100)
+ //Vertices arriba
+vertice:(190,85,100) 
+vertice:(208,85,100)
 
-//Vertices abajo
-vertice:(215,50,300)
-vertice:(185,50,300)
+ //Vertices abajo
+vertice:(205,75,300)
+vertice:(193,75,300)
 
-centro:(40,95,0)
+centro:(42,85,0)
 escala: 2
 //Coeficiente reflexion difusa [0,1]
 kd:0.9
@@ -330,11 +429,71 @@ O2:0.000001
 //O2:0.4
 O3:0.3	
 
+///////////////// globo 3
+#esfera
+radio:70
+centro: (890,750,1000)
+textura:"texturas/globo2.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.4
+ka:0.5
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.999999
+O2:0.000001
+//O1:0.5
+//O2:0.4
+O3:0.3	
+
+///////////////// globo 3
+#esfera
+radio:40
+centro: (890,700,1000)
+textura:"texturas/globo2.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.4
+ka:0.5
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.999999
+O2:0.000001
+//O1:0.5
+//O2:0.4
+O3:0.3	
+
+///////////////// globo 3
+#esfera
+radio:25
+centro: (890,680,1000)
+textura:"texturas/globo2.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.4
+ka:0.5
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.999999
+O2:0.000001
+//O1:0.5
+//O2:0.4
+O3:0.3	
+
 ///////////////// cilindro izquierdo
 #cilindro
-radio:7
+radio:1
 //(Xc,Yc,Zc)
-centro:(849,1600,1000)
+centro:(880,1750,1000)
 //Vector de dirección
 q:(0,10,0)
 //(R,G,B)
@@ -355,9 +514,9 @@ O3:0.0
 
 ///////////////// cilindro centro
 #cilindro
-radio:7
+radio:1
 //(Xc,Yc,Zc)
-centro:(890,1600,1000)
+centro:(890,1750,1000)
 //Vector de dirección
 q:(0,10,0)
 //(R,G,B)
@@ -378,9 +537,9 @@ O3:0.0
 
 ///////////////// cilindro derecho
 #cilindro
-radio:7
+radio:1
 //(Xc,Yc,Zc)
-centro:(940,1600,1000)
+centro:(900,1750,1000)
 //Vector de dirección
 q:(0,10,0)
 //(R,G,B)
@@ -409,13 +568,13 @@ O3:0.0
 	color:(1,1,1)
 	textura: "texturas/canasta2.png"
 	//Vertices
-//Vertices arriba
-vertice:(175,80,100) 
-vertice:(225,80,100)
+ //Vertices arriba
+vertice:(192,88,100) 
+vertice:(206,88,100)
 
-//Vertices abajo
-vertice:(215,50,300)
-vertice:(185,50,300)
+ //Vertices abajo
+vertice:(203,80,300)
+vertice:(195,80,300)
 	centro:(150,130,0)
 	escala: 2
 	//Coeficiente reflexion difusa [0,1]
