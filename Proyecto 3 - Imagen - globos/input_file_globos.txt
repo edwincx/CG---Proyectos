@@ -1,0 +1,325 @@
+/*
+###########################################################
+Este documento define la escena con la siguiente sintaxis:
+//de ser necesario, agregar un comentario
+#nombre_objeto
+nombre_atributo:valor
+###########################################################
+*/
+
+#escena
+background:(0.2980392157,0.6431372549,0.9098039216)
+ojo:(504, 233, -1000)
+//iluminacion ambiente
+ia:0.8
+
+
+///////////////////
+#luz
+posicion:(1004,200,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1.0
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+///////////////////
+#luz
+posicion:(1004,567,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+////////////////////
+#luz
+posicion:(1204,367,300)
+//Intensidad
+ip:6
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+
+///////////////////////
+#luz
+posicion:(1204,233,300)
+//Intensidad
+ip:3
+//valores de atenuacion
+c1:1
+c2:0.005
+c3:0.0
+//color
+color:(1,1,1)
+
+///////////////// Esfera 1
+#esfera
+radio:170
+centro: (-300,500,1000)
+textura:"texturas/globo1.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.8
+ka:0.2
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.5
+O2:0.3
+O3:0.2	
+
+///////////////// Esfera 2
+#esfera
+radio:100
+centro: (100,700,1300)
+textura:"texturas/globo2.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.4
+ka:0.5
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.5
+O2:0.3
+O3:0.2	
+
+/////////////////
+#esfera
+radio:150
+centro: (500,300,1000)
+textura:"texturas/globo5.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.4
+ka:0.5
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.5
+O2:0.3
+O3:0.2	
+
+/////////////////
+#esfera
+radio:150
+centro: (1500,990,4000)
+textura:"texturas/globo4.png"
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.4
+ka:0.5
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.5
+O2:0.3
+O3:0.2	
+
+
+/////////////////////// Arbol
+#cilindro
+	radio:30
+	//(Xc,Yc,Zc)
+	centro: (1070,-600,500)
+	//Vector de dirección
+	q:(0,-1,0)
+	//(R,G,B)
+	color:(0.2,0.0980392157,0)
+	//Coeficiente reflexion difusa [0,1]
+	kd:1.0
+	//Coeficiente Iluminacion Ambiente [0,1]
+	ka:0
+	//Coeficiente de reflexión especular
+	ks:0
+	//Potencia
+	kn:20
+	d1:200
+	d2:500
+	O1:1.0
+	O2:0.0
+	O3:0.0
+
+///////////////// cilindro derecho
+#cilindro
+radio:8
+//(Xc,Yc,Zc)
+centro:(500,970,1000)
+//Vector de dirección
+q:(0,10,0)
+//(R,G,B)
+color:(0.2,0.0980392157,0)
+//Coeficiente reflexion difusa [0,1]
+kd:1.0
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:1.0
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:20
+d1:900
+d2:800
+O1:1.0
+O2:0.0
+O3:0.0
+
+
+///////////////// cilindro centro
+#cilindro
+radio:8
+//(Xc,Yc,Zc)
+centro:(890,997,1000)
+//Vector de dirección
+q:(0,10,0)
+//(R,G,B)
+color:(0.2,0.0980392157,0)
+//Coeficiente reflexion difusa [0,1]
+kd:1.0
+//Coeficiente Iluminacion Ambiente [0,1]
+ka:1.0
+//Coeficiente de reflexión especular
+ks:1.0
+//Potencia
+kn:20
+d1:800
+d2:800
+O1:1.0
+O2:0.0
+O3:0.0
+
+///////////////// Arbol
+#esfera
+radio:60
+centro: (1070,100,500)
+color:(0,0.4,0.2)
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.4
+ka:0.5
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+O1:0.5
+O2:0.4
+O3:0.0	
+
+/////////////////////// Arbol
+#cilindro
+	radio:15
+	//(Xc,Yc,Zc)
+	centro: (1070,-600,1000)
+	//Vector de dirección
+	q:(0,-1,0)
+	//(R,G,B)
+	color:(0.2,0.0980392157,0)
+	//Coeficiente reflexion difusa [0,1]
+	kd:1.0
+	//Coeficiente Iluminacion Ambiente [0,1]
+	ka:0
+	//Coeficiente de reflexión especular
+	ks:0
+	//Potencia
+	kn:20
+	d1:200
+	d2:500
+	O1:1.0
+	O2:0.0
+	O3:0.0
+
+///////////////// Sol
+#esfera
+radio:200
+centro: (1500,800,1000)
+color:(1,1,0)
+norte:(0,1,0)
+greenwich:(1,0,0)
+kd:0.8
+ka:0.2
+ks:0.2
+kn:30
+//planos de corte: n=negativo p=positivo //clip_n:(A,B,C,D)
+//clip_n:(0,30,0,-1900)
+//clip_n:(100,30,45,-1900)
+//O1:0.5
+//O2:0.1
+O1:0.999999
+O2:0.000001
+O3:0.0	
+
+///////////////////////
+#cilindro
+	radio:6
+	//(Xc,Yc,Zc)
+	centro: (2000,800,500)
+	
+	//Vector de dirección
+	q:(0.8164965809,0.4082482904,0.4082482904)
+	//(R,G,B)
+	color:(1,1,0)
+	//Coeficiente reflexion difusa [0,1]
+	kd:1.0
+	//Coeficiente Iluminacion Ambiente [0,1]
+	ka:0
+	//Coeficiente de reflexión especular
+	ks:0
+	//Potencia
+	kn:20
+	d1:200
+	d2:200
+	O1:1.0
+	O2:0.0
+	O3:0.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
