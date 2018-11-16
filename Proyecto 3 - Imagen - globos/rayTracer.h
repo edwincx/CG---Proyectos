@@ -12,7 +12,7 @@
 #define EPSILON 0.05
 #define MAX_LEVELS 6
 #define NIVELES_TRANSPARENCIA 4
-#define anti 1
+#define anti 0
 #define antialiasingActivo 0
 
 ///////////////////////////
